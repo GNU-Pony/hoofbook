@@ -35,17 +35,18 @@ Texts. A copy of the license is included in the section entitled
 @end quotation
 @end copying
 
-@c Define top node and insert copyright notice for info and html version
+@c define top node and insert copyright notice for info and html version
 @ifnottex
 @node Top
 @top The GNU/Pony hoofbook
 @insertcopying
 @end ifnottex
 
-@c Define title page for tex version
+@c define title page for tex version
 @titlepage
 @title The GNU/Pony hoofbook
 @c @subtitle
+@image{logo,434.5px}
 @author by Mattias Andrée (maandree)
 
 @page
@@ -54,7 +55,7 @@ Texts. A copy of the license is included in the section entitled
 @insertcopying
 @end titlepage
 
-@c Print table of content in tex and html version
+@c print table of content in tex and html version
 @contents
 
 
@@ -67,7 +68,7 @@ Texts. A copy of the license is included in the section entitled
 
 
 
-@c Full license text, this must never be removed 
+@c full license text, this must never be removed
 @node GNU Free Documentation License
 @appendix GNU Free Documentation License
 @include fdl.texinfo
