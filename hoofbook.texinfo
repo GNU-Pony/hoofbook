@@ -97,7 +97,7 @@ operativing system GNU and the operativing
 system kernel Linux with additional tools to
 make your life easier.
 
-The GNU Project started in 1984 by Richard
+The GNU Project started in 1983 by Richard
 Stallman, also known as rms (from Richard
 Matthew Stallman) so that your can have
 freedom when you use your computer.
