@@ -43,16 +43,25 @@ pdf: $(PROGRAM).pdf.gz
 ps: $(PROGRAM).ps.gz
 dvi: $(PROGRAM).dvi.gz
 
-%.info: $(TEXINFO_DIR)/%.texinfo
+logo.pdf: logo.svg
+	rsvg-convert --format=pdf "$<" > "$@"
+
+logo.eps: logo.ps
+	ps2eps "$<"
+
+logo.ps: logo.svg
+	rsvg-convert --format=pdf "$<" > "$@"
+
+$(PROGRAM).info: $(TEXINFO_DIR)/$(PROGRAM).texinfo
 	$(MAKEINFO) "$<"
 
-%.pdf: $(TEXINFO_DIR)/%.texinfo
+$(PROGRAM).pdf: $(TEXINFO_DIR)/$(PROGRAM).texinfo logo.pdf
 	texi2pdf "$<"
 
-%.dvi: $(TEXINFO_DIR)/%.texinfo
+$(PROGRAM).dvi: $(TEXINFO_DIR)/$(PROGRAM).texinfo logo.eps
 	$(TEXI2DVI) "$<"
 
-%.ps: $(TEXINFO_DIR)/%.texinfo
+$(PROGRAM).ps: $(TEXINFO_DIR)/$(PROGRAM).texinfo logo.eps
 	texi2pdf --ps "$<"
 
 .PHONY: install-info
@@ -69,7 +78,7 @@ uninstall-info:
 clean: clean-texinfo
 clean-texinfo:
 	-rm -- *.{info,pdf,ps,dvi}{,.gz,.bz2,.xz} 2>/dev/null
-	-rm -- *.{aux,cp,cps,fn,ky,log,pg,pgs,toc,tp,vr,vrs} 2>/dev/null
+	-rm -- *.{aux,cp,cps,fn,ky,log,pg,pgs,toc,tp,vr,vrs,eps} 2>/dev/null
 
 ## License section
 

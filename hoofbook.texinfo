@@ -46,7 +46,9 @@ Texts. A copy of the license is included in the section entitled
 @titlepage
 @title The GNU/Pony hoofbook
 @c @subtitle
-@image{logo,434.5px}
+@vskip 0pt plus 1filll
+@center @image{logo,200px}
+@vskip 0pt plus 1filll
 @author by Mattias Andrée (maandree)
 
 @page
