@@ -63,10 +63,56 @@ Texts. A copy of the license is included in the section entitled
 
 
 @menu
+* Introduction::
+
 * GNU Free Documentation License::
 * Concept and program index::
 * Variable and option index::
 @end menu
+
+
+
+@node Introduction
+@chapter Introduction
+
+@menu
+* What is GNU/Pony?::
+* Who is GNU/Pony for?::
+@end menu
+
+
+
+@node What is GNU/Pony?
+@section What is GNU/Pony?
+
+GNU/Pony is a GNU/Linux distribution that aims
+to be extremely customisable and simple. A
+GNU/linux distribution is a combination of the
+operativing system GNU and the operativing
+system kernel Linux with additional tools to
+make your life easier.
+
+The GNU Project started in 1984 by Richard
+Stallman, also known as rms (from Richard
+Matthew Stallman) so that your can have
+freedom when you use your computer.
+
+
+
+@node Who is GNU/Pony for?
+@section Who is GNU/Pony for?
+
+GNU/Pony is for the computer enthusiast that
+wants an operativing system tailored to her
+own preferences down to that last detail and
+does not mind building software from source.
+
+GNU/Pony also includes some option programs
+designed for using in terminals with a
+specific paradigm: ephemeral, the run during
+as short of time as possible. so you have as
+few running processes at the same time as
+possible. 
 
 
 
