@@ -65,6 +65,7 @@ Texts. A copy of the license is included in the section entitled
 @menu
 * Introduction::
 * Conventions::
+* Software packages::
 
 * GNU Free Documentation License::
 * Concept and program index::
@@ -161,6 +162,42 @@ are named with a `d' as the end.
 
 Programs used for editing of sometimes named
 with `ed' in the end for `editor'.
+
+
+
+@node Software packages
+@chapter Software packages
+
+This chapter introduces the concept of
+software packages to new users that do not
+come from a GNU/Linux system or similar
+system. It also gives an overview how it
+this works specifically in GNU/Pony.
+
+@menu
+* What are software packages?::
+@end menu
+
+
+
+@node What are software packages?
+@section What are software packages?
+
+Software packages is a concept this is
+very popular for Free Software operativing
+systems and distributions. Software packages
+are basically scripts with instructions for
+downloading and installing specific programs.
+With a program called a package manager,
+uninstallation, conflicts, dependencies and
+updates can be handled in addition to
+installations. Package managers also gives
+you a method for find and install programs.
+you may be interested in.
+
+Distributions such as GNU/Linux have
+collections of packages in what are called
+package repositories.
 
 
 
