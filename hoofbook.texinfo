@@ -75,6 +75,9 @@ Texts. A copy of the license is included in the section entitled
 @node Introduction
 @chapter Introduction
 
+This chapter gives you a short introduction
+to what GNU/Pony is.
+
 @menu
 * What is GNU/Pony?::
 * Who is GNU/Pony for?::
