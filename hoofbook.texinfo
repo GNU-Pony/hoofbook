@@ -64,6 +64,7 @@ Texts. A copy of the license is included in the section entitled
 
 @menu
 * Introduction::
+* Conventions::
 
 * GNU Free Documentation License::
 * Concept and program index::
@@ -115,7 +116,51 @@ designed for using in terminals with a
 specific paradigm: ephemeral, the run during
 as short of time as possible. so you have as
 few running processes at the same time as
-possible. 
+possible.
+
+
+
+@node Conventions
+@chapter Conventions
+
+This chapter gives you a brief overview of
+conventions used in GNU/Linux system and
+other Unix-like systems.
+
+@menu
+* Filename conventions::
+* Process name conventions::
+@end menu
+
+
+
+@node Filename conventions
+@section Filename conventions
+
+Configuration files are often called dotfiles,
+specially if user private. This comes from the
+fact that they have a `.' at the beginning of
+their name the make them hidden.
+
+Many of these are named with `rc', exactly
+why is not known, but it could stand for
+`run commands' or `run(time) configurations'.
+
+Directories with modular configuration files
+are conventionally named with `.d' at the
+end for `directory'.
+
+
+
+@node Process name conventions
+@section Process name conventions
+
+Daemon processes are system processes that
+run continuously in the background. These
+are named with a `d' as the end.
+
+Programs used for editing of sometimes named
+with `ed' in the end for `editor'.
 
 
 
