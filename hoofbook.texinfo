@@ -176,6 +176,7 @@ this works specifically in GNU/Pony.
 
 @menu
 * What are software packages?::
+* Package management in GNU/Pony::
 @end menu
 
 
@@ -197,7 +198,45 @@ you may be interested in.
 
 Distributions such as GNU/Linux have
 collections of packages in what are called
-package repositories.
+package repositories. These are often
+called ports trees if they are downloaded
+to the users rather than remotely queried.
+
+
+
+@node Package management in GNU/Pony
+@section Package management in GNU/Pony
+
+GNU/Pony's package repository is community
+operated and consists for five Git branches:
+
+@itemize
+core: Recommended core packages
+extra: Recommended packages
+more: Additional packages
+limbo: Removed packages
+spool: Upcoming packages
+@end itemize
+
+The packages are then additional grouped
+into categories.
+
+The packages for GNU/Pony are called scrolls
+or Spike scrolls. These are Python scripts, that
+uses a module called `dragonsuite' that provides
+common functionality used when installing
+programs, that provide metainformation for a
+package and where to download the programs
+source code and how to build and install it.
+
+Users have the entires package repository
+(ports tree) downloaded as a git repository.
+This allows you to do local modificatios to
+packages without losing the changes you have
+made when the ports tree is updated.
+
+The package manager for GNU/Pony is called
+Spike, the command is @command{spike}.
 
 
 
