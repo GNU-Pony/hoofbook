@@ -143,9 +143,13 @@ specially if user private. This comes from the
 fact that they have a `.' at the beginning of
 their name the make them hidden.
 
-Many of these are named with `rc', exactly
-why is not known, but it could stand for
+Many of these are named with `rc' at the end,
+exactly why is not known, but it could stand for
 `run commands' or `run(time) configurations'.
+Other configuration files, but seemingly
+exclusively system configuration file, are
+named with `tab' at the end, which stands for
+`table'.
 
 Directories with modular configuration files
 are conventionally named with `.d' at the
