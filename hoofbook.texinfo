@@ -113,6 +113,7 @@ Texts. A copy of the license is included in the section entitled
 * Introduction::
 * Conventions::
 * Software packages::
+* The boot process::
 
 * GNU Free Documentation License::
 * Concept and program index::
@@ -322,6 +323,135 @@ GNU/Pony also have a package repository cannibaliser
 called Sweetie Bot that crawls other GNU/Linux
 distributions and converts them to Spike scrolls
 (or optionally any other format).
+
+
+
+@node The boot process
+@chapter The boot process
+
+This chapter gives you an overview of how a computers
+boots, the entire way to your login manager. These
+chapter are in the order of occurrence.
+
+@menu
+* The master boot record::
+* The boot manager::
+* The bootloader::
+* The initial random access memory disc::
+* The initialisation process::
+@end menu
+
+
+
+@node The master boot record
+@section The master boot record
+
+By default your BIOS will execute your storage
+devices with the lowest port index. Execute
+literally means that the entire content of
+the device is treaded as machine code that
+the computer runs.
+
+The first 512 bytes in the device is called
+the master boot record (MBR). The first 440
+(or at most 446) bytes is the executed code,
+and it ends with a halt instruction, so that
+nothing beyond that is executed. The MBR also
+contains information about the the zero to
+four primary partitions. For this documentation
+we are going to assume that this is this
+construction is used, but it is not a technical
+requirement, it is all up to the operating
+system and boot manager.
+
+
+
+@node The boot manager
+@section The boot manager
+
+The boot manager a program stored in the
+absolute beginning of a storage device, and
+is the program that the BIOS executes.
+
+The mission in life for the boot manager
+is to load the bootloader. It does this by
+finding which primary partition@footnote{A
+boot manager could technically also look at
+logical and even extended paritions.} that
+has a boot (also known as active) flag set.
+Some boot managers supports multiple boot
+flags and chooses either the first or last,
+but partition table manipulators will often
+unflag all flagged partitions when another
+partition is flagged.
+
+The bootloader is executed in the same way
+as the boot manager, except it executes from
+the beginning of the partition rather than
+from the beginning of the disc.
+
+SYSLINUX is a popular project that provides
+a boot manager.
+
+
+
+@node The bootloader
+@section The bootloader
+
+Some users, and some operating systems, choose
+to hide the bootloader. It is the step where
+the user can choose which operating system,
+by its kernel, to start, it can also do chain
+loading where it boots another bootloader or
+boot manager.
+
+The bootloader also lets you pass settings
+to the operating systems kernel, such as
+runlevel and root partition.
+
+Technically a bootloader could open other
+partitions, but traditionally it will either
+chain load or execute files located in the
+partition the bootloader is attached to.
+
+SYSLINUX is a popular project that provides
+a bootloader.
+
+
+
+@node The initial random access memory disc
+@section The initial random access memory disc
+
+The initial random access memory disc (init
+RAM disc, initrd, or initramfs@footnote{Initial
+RAM filesystem}) is an optional auxiliary boot
+process step. It is a file archive, stored in the
+same parition as the kernel, that is mounted to
+the random access memory (RAM).
+
+The initrd provides boot instructions before
+the root filesystem is mounted, the most important
+parts are to located partitions and decrypting
+encrypted file systems. When it is done it
+swiches to the root filesystem and executes
+/sbin/init, the initialisation process.
+
+GNU/Pony's default initrd is simple called initram.
+
+
+
+@node The initialisation process
+@section The initialisation process
+
+The initialisation process a the final step and
+largest step in the boot process. In GNU/Pony's
+default setup this process is provided by
+SysVInit which is assisted by GNU/Pony's package
+@w{pony-initialisation}.
+
+SysVInit and pony-initialisation applies system
+configurations, loads daemon processes and
+starts your login manager.
 
 
 
