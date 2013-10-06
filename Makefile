@@ -2,6 +2,11 @@ PROGRAM = hoofbook
 PKGNAME = hoofbook
 TEXINFO_DIR = .
 
+ALL_COMPRESS = #.gz
+PDF_COMPRESS = $(ALL_COMPRESS)
+PS_COMPRESS = $(ALL_COMPRESS)
+DVI_COMPRESS = $(ALL_COMPRESS)
+
 PREFIX = /usr
 DATA = /share
 
@@ -12,13 +17,13 @@ all:
 
 
 %.gz: %
-	gzip -9c < "$<" > "$@"
+	gzip -9  "$<"
 
 %.bz2: %
-	bzip2 -9c < "$<" > "$@"
+	bzip2 -9 "$<"
 
 %.xz: %
-	xz -e9 < "$<" > "$@"
+	xz -e9 "$<"
 
 
 .PHONY: install
@@ -33,15 +38,18 @@ clean:
 
 ## Texinfo manual section
 
-.PHONY: doc
+.PHONY: doc doc.gz
 all: doc
-doc: info pdf ps dvi
+doc: info pdf$(PDF_COMPRESS) ps$(PS_COMPRESS) dvi$(DVI_COMPRESS)
 
-.PHONY: info pdf ps dvi
+.PHONY: info pdf ps dvi pdf.gz ps.gz dvi.gz
 info: $(PROGRAM).info.gz
-pdf: $(PROGRAM).pdf.gz
-ps: $(PROGRAM).ps.gz
-dvi: $(PROGRAM).dvi.gz
+pdf: $(PROGRAM).pdf
+pdf.gz: $(PROGRAM).pdf.gz
+ps: $(PROGRAM).ps
+ps.gz: $(PROGRAM).ps.gz
+dvi: $(PROGRAM).dvi
+dvi.gz: $(PROGRAM).dvi.gz
 
 logo.pdf: logo.svg
 	rsvg-convert --format=pdf "$<" > "$@"
