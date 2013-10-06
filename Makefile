@@ -58,15 +58,15 @@ $(PROGRAM).info: $(TEXINFO_DIR)/$(PROGRAM).texinfo
 
 $(PROGRAM).pdf: $(TEXINFO_DIR)/$(PROGRAM).texinfo logo.pdf
 	mkdir -p obj
-	cd obj && texi2pdf "../$<" && mv "$@" ..
+	cd obj && texi2pdf "../$<" && texi2pdf "../$<" && mv "$@" ..
 
 $(PROGRAM).dvi: $(TEXINFO_DIR)/$(PROGRAM).texinfo logo.eps
 	mkdir -p obj
-	cd obj && $(TEXI2DVI) "../$<" && mv "$@" ..
+	cd obj && $(TEXI2DVI) "../$<" && $(TEXI2DVI) "../$<" && mv "$@" ..
 
 $(PROGRAM).ps: $(TEXINFO_DIR)/$(PROGRAM).texinfo logo.eps
 	mkdir -p obj
-	cd obj && texi2pdf --ps "../$<" && mv "$@" ..
+	cd obj && texi2pdf --ps "../$<" && texi2pdf --ps "../$<" && mv "$@" ..
 
 .PHONY: install-info
 install: install-info
