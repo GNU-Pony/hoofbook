@@ -9,17 +9,20 @@
 @finalout
 @c %**end of header
 
-@c define option index and bind it to variable
-@c index and bind concept index to program index
-@defindex op
-@synindex op vr
-@synindex cp pg
 
 @c metainfo for info dir
 @dircategory General
 @direntry
 * hoofbook: (hoofbook).               The GNU/Pony hoofbook
 @end direntry
+
+
+@c define option index and bind it to variable
+@c index and bind concept index to program index
+@defindex op
+@synindex op vr
+@synindex cp pg
+
 
 @c define copyright notice
 @copying
