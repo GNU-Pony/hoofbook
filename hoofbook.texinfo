@@ -274,7 +274,7 @@ into categories.
 
 The packages for GNU/Pony are called scrolls
 or Spike scrolls. These are Python scripts, that
-uses a module called `dragonsuite' that provides
+use a module called `dragonsuite' that provides
 common functionality used when installing
 programs, that provide metainformation for a
 package and where to download the programs
