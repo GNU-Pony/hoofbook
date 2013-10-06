@@ -17,13 +17,13 @@ all:
 
 
 %.gz: %
-	gzip -9  "$<"
+	gzip -9f  "$<"
 
 %.bz2: %
-	bzip2 -9 "$<"
+	bzip2 -9f "$<"
 
 %.xz: %
-	xz -e9 "$<"
+	xz -e9f "$<"
 
 
 .PHONY: install
@@ -58,7 +58,7 @@ logo.eps: logo.ps
 	ps2eps "$<"
 
 logo.ps: logo.svg
-	rsvg-convert --format=pdf "$<" > "$@"
+	rsvg-convert --format=ps "$<" > "$@"
 
 $(PROGRAM).info: $(TEXINFO_DIR)/$(PROGRAM).texinfo
 	mkdir -p obj
