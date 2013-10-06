@@ -228,6 +228,7 @@ this works specifically in GNU/Pony.
 @menu
 * What are software packages?::
 * Package management in GNU/Pony::
+* Package maintenance in GNU/Pony::
 @end menu
 
 
@@ -288,6 +289,39 @@ made when the ports tree is updated.
 
 The package manager for GNU/Pony is called
 Spike, the command is @command{spike}.
+
+
+
+@node Package maintenance in GNU/Pony
+@section Package maintenance in GNU/Pony
+
+GNU/Pony has a toolchain for maintaining packages.
+Starswirl is a program that can be used to generate
+Spike scrolls and Celestia templates, from Spike
+scroll tempates. Celestia is meant to be invoked
+periodically by @command{cron}, it is a program
+that generates Spike scrolls from Celestia
+templates when a new version of a program is
+released. You choose to pipe Celestia to a program
+that is some mannar notifies you about each line
+it prints, but if you want to take the automation
+on step further you can pipe it to the DragonFire
+program that commits them to a git repository.
+
+For Celestia you have a list of packages it should
+maintain. For DragonFire you have a mapping to
+which category a package belong. DragonFire should
+also have a private clone of the package repository's
+spool branch. You then manually push the repository
+@footnote{Since you really should not store passwords
+in plain text, but you caused, and do a push when
+Celestia and DragonFire exited.}, test them and
+cherry pick them to there appropriate branch.
+
+GNU/Pony also have a package repository cannibaliser
+called Sweetie Bot that crawls other GNU/Linux
+distributions and converts them to Spike scrolls
+(or optionally any other format).
 
 
 
