@@ -34,7 +34,7 @@ uninstall:
 
 .PHONY: clean
 clean:
-	-rn -r -- bin obj
+	-rm -r -- bin obj
 
 ## Texinfo manual section
 
@@ -51,28 +51,28 @@ ps.gz: $(PROGRAM).ps.gz
 dvi: $(PROGRAM).dvi
 dvi.gz: $(PROGRAM).dvi.gz
 
-logo.pdf: logo.svg
+obj/logo.pdf: logo.svg
 	rsvg-convert --format=pdf "$<" > "$@"
 
-logo.eps: logo.ps
+obj/logo.eps: obj/logo.ps
 	ps2eps "$<"
 
-logo.ps: logo.svg
+obj/logo.ps: logo.svg
 	rsvg-convert --format=ps "$<" > "$@"
 
 $(PROGRAM).info: $(TEXINFO_DIR)/$(PROGRAM).texinfo
 	mkdir -p obj
 	cd obj && $(MAKEINFO) "../$<" && mv "$@" ..
 
-$(PROGRAM).pdf: $(TEXINFO_DIR)/$(PROGRAM).texinfo logo.pdf
+$(PROGRAM).pdf: $(TEXINFO_DIR)/$(PROGRAM).texinfo obj/logo.pdf
 	mkdir -p obj
 	cd obj && texi2pdf "../$<" && texi2pdf "../$<" && mv "$@" ..
 
-$(PROGRAM).dvi: $(TEXINFO_DIR)/$(PROGRAM).texinfo logo.eps
+$(PROGRAM).dvi: $(TEXINFO_DIR)/$(PROGRAM).texinfo obj/logo.eps
 	mkdir -p obj
 	cd obj && $(TEXI2DVI) "../$<" && $(TEXI2DVI) "../$<" && mv "$@" ..
 
-$(PROGRAM).ps: $(TEXINFO_DIR)/$(PROGRAM).texinfo logo.eps
+$(PROGRAM).ps: $(TEXINFO_DIR)/$(PROGRAM).texinfo obj/logo.eps
 	mkdir -p obj
 	cd obj && texi2pdf --ps "../$<" && texi2pdf --ps "../$<" && mv "$@" ..
 
