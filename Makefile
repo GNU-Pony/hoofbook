@@ -17,13 +17,13 @@ all:
 
 
 %.gz: %
-	gzip -9f  "$<"
+	gzip -9c < "$<" > "$@"
 
 %.bz2: %
-	bzip2 -9f "$<"
+	bzip2 -9c < "$<" > "$@"
 
 %.xz: %
-	xz -e9f "$<"
+	xz -e9 < "$<" > "$@"
 
 
 .PHONY: install
