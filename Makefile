@@ -53,16 +53,20 @@ logo.ps: logo.svg
 	rsvg-convert --format=pdf "$<" > "$@"
 
 $(PROGRAM).info: $(TEXINFO_DIR)/$(PROGRAM).texinfo
-	$(MAKEINFO) "$<"
+	mkdir -p obj
+	cd obj && $(MAKEINFO) "../$<" && mv "$@" ..
 
 $(PROGRAM).pdf: $(TEXINFO_DIR)/$(PROGRAM).texinfo logo.pdf
-	texi2pdf "$<"
+	mkdir -p obj
+	cd obj && texi2pdf "../$<" && mv "$@" ..
 
 $(PROGRAM).dvi: $(TEXINFO_DIR)/$(PROGRAM).texinfo logo.eps
-	$(TEXI2DVI) "$<"
+	mkdir -p obj
+	cd obj && $(TEXI2DVI) "../$<" && mv "$@" ..
 
 $(PROGRAM).ps: $(TEXINFO_DIR)/$(PROGRAM).texinfo logo.eps
-	texi2pdf --ps "$<"
+	mkdir -p obj
+	cd obj && texi2pdf --ps "../$<" && mv "$@" ..
 
 .PHONY: install-info
 install: install-info
