@@ -47,7 +47,11 @@ Texts. A copy of the license is included in the section entitled
 @title The GNU/Pony hoofbook
 @c @subtitle
 @vskip 0pt plus 1filll
-@center @image{obj/logo,200px}
+@c this way, it is centered exactly in pdf and approximently in dvi and ps
+@c @center does not work for @image in dvi and ps
+@multitable @columnfractions 0.15 0.7
+@item @tab @center @image{obj/logo,200px}
+@end multitable
 @vskip 0pt plus 1filll
 @author by Mattias Andrée (maandree)
 
