@@ -24,6 +24,28 @@
 @synindex cp pg
 
 
+@c define abstract text
+@macro abstract
+@titlefont{Abstract}
+@iftex
+@*
+@end iftex
+
+@ifnottex
+@quotation
+@end ifnottex
+
+Welcome to GNU/Pony! This hoofbook covers the installation and day
+to day use of GNU/Pony. This manual is intendent as a glue-manual
+and an overview manual, if gives you an overview of the system and
+how subsystems can be configured and combined.
+
+@ifnottex
+@end quotation
+@end ifnottex
+@end macro
+
+
 @c define copyright notice
 @copying
 Copyright @copyright{} 2013 Mattias Andrée
@@ -43,6 +65,8 @@ Texts. A copy of the license is included in the section entitled
 @node Top
 @top The GNU/Pony hoofbook
 @insertcopying
+
+@abstract
 @end ifnottex
 
 @c define title page for tex version
@@ -62,7 +86,13 @@ Texts. A copy of the license is included in the section entitled
 @center `What are hands?'
 @vskip 0pt plus 1filll
 @insertcopying
+
+@c insert abstract section before the table of contents without messing up the page numbers
+@page
+@abstract
+
 @end titlepage
+
 
 @c print table of content in tex and html version
 @contents
