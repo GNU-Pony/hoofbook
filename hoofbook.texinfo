@@ -339,9 +339,10 @@ be ran by developers for other distributions.
 @node The boot process
 @chapter The boot process
 
-This chapter gives you an overview of how a computers
+This chapter gives you an overview of how a computer
 boots, the entire way to your login manager. These
-chapter are in the order of occurrence.
+section are in the order of occurrence when booting
+the computer.
 
 @menu
 * The master boot record::
