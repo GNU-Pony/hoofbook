@@ -303,7 +303,7 @@ Spike, the command is @command{spike}.
 GNU/Pony has a toolchain for maintaining packages.
 Starswirl is a program that can be used to generate
 Spike scrolls and Celestia templates, from Spike
-scroll tempates. Celestia is meant to be invoked
+scroll templates. Celestia is meant to be invoked
 periodically by @command{cron}, it is a program
 that generates Spike scrolls from Celestia
 templates when a new version of a program is
