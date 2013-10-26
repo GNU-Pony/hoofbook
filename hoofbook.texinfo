@@ -251,7 +251,7 @@ With a program called a package manager,
 uninstallation, conflicts, dependencies and
 updates can be handled in addition to
 installations. Package managers also gives
-you a method for finding and installing programs.
+you a method for finding and installing programs
 you may be interested in.
 
 Distributions such as GNU/Linux have
