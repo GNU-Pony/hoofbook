@@ -388,7 +388,7 @@ The mission in life for the boot manager
 is to load the bootloader. It does this by
 finding which primary partition@footnote{A
 boot manager could technically also look at
-logical and even extended paritions.} that
+logical and even extended partitions.} that
 has a boot (also known as active) flag set.
 Some boot managers supports multiple boot
 flags and chooses either the first or last,
@@ -437,7 +437,7 @@ The initial random access memory disc (init
 RAM disc, initrd, or initramfs@footnote{Initial
 RAM filesystem}) is an optional auxiliary boot
 process step. It is a file archive, stored in the
-same parition as the kernel, that is mounted to
+same partition as the kernel, that is mounted to
 the random access memory (RAM).
 
 The initrd provides boot instructions before
