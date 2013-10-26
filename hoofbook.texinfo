@@ -210,7 +210,7 @@ end for `directory'.
 
 Daemon processes are system processes that
 run continuously in the background. These
-are named with a `d' as the end.
+are named with a `d' in the end.
 
 Programs used for editing of sometimes named
 with `ed' in the end for `editor'.
