@@ -442,12 +442,12 @@ the random access memory (RAM).
 
 The initrd provides boot instructions before
 the root filesystem is mounted, the most important
-parts are to located partitions and decrypting
+parts are to locate partitions and decrypting
 encrypted file systems. When it is done it
-swiches to the root filesystem and executes
+switches to the root filesystem and executes
 /sbin/init, the initialisation process.
 
-GNU/Pony's default initrd is simple called initram.
+GNU/Pony's default initrd is simply called initram.
 
 
 
