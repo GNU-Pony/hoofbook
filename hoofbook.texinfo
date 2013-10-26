@@ -319,9 +319,9 @@ which category a package belong. DragonFire should
 also have a private clone of the package repository's
 spool branch. You then manually push the repository
 @footnote{Since you really should not store passwords
-in plain text, but you caused, and do a push when
+in plain text, but you could, and do a push when
 Celestia and DragonFire exited.}, test them and
-cherry pick them to there appropriate branch.
+cherry pick them to their appropriate branch.
 
 GNU/Pony also have a package repository cannibaliser
 called Sweetie Bot that crawls other GNU/Linux
