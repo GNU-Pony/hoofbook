@@ -454,7 +454,7 @@ GNU/Pony's default initrd is simply called initram.
 @node The initialisation process
 @section The initialisation process
 
-The initialisation process a the final step and
+The initialisation process is the final step and
 largest step in the boot process. In GNU/Pony's
 default setup this process is provided by
 SysVInit which is assisted by GNU/Pony's package
