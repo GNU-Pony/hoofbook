@@ -47,7 +47,7 @@
 
 Welcome to GNU/Pony! This hoofbook covers the installation and day
 to day use of GNU/Pony. This manual is intendent as a glue-manual
-and an overview manual, if gives you an overview of the system and
+and an overview manual, it gives you an overview of the system and
 how subsystems can be configured and combined.
 
 @c @ifclear DEAD_FLUTTERSHY_EDITION
