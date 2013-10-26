@@ -360,7 +360,7 @@ the computer.
 By default your BIOS will execute your storage
 devices with the lowest port index. Execute
 literally means that the entire content of
-the device is treaded as machine code that
+the device is treated as machine code that
 the computer runs.
 
 The first 512 bytes in the device is called
