@@ -14,7 +14,7 @@
 @ifset DEAD_FLUTTERSHY_EDITION
 @cropmarks
 @setchapternewpage odd
-@endif
+@end ifset
 @finalout
 @c %**end of header
 
