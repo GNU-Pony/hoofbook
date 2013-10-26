@@ -269,10 +269,10 @@ GNU/Pony's package repository is community
 operated and consists for five Git branches:
 
 @itemize
-@item core: Recommended core packages
-@item extra: Recommended packages
-@item more: Additional packages
-@item limbo: Removed packages
+@item core: Recommended core packages, high priority support
+@item extra: Recommended packages, medium priority support
+@item more: Additional packages, low priority support
+@item limbo: Removed packages, no support
 @item spool: Upcoming packages
 @end itemize
 
