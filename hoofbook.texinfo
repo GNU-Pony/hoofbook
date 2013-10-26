@@ -140,7 +140,7 @@ to what GNU/Pony is.
 
 GNU/Pony is a GNU/Linux distribution that aims
 to be extremely customisable and simple. A
-GNU/linux distribution is a combination of the
+GNU/Linux distribution is a combination of the
 operativing system GNU and the operativing
 system kernel Linux with additional tools to
 make your life easier.
