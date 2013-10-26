@@ -287,7 +287,7 @@ package and where to download the programs
 source code and how to build and install it.
 
 Users have the entires package repository
-(ports tree) downloaded as a git repository.
+(ports tree) downloaded as a Git repository.
 This allows you to do local modificatios to
 packages without losing the changes you have
 made when the ports tree is updated.
