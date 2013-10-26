@@ -187,7 +187,7 @@ other Unix-like systems.
 @section Filename conventions
 
 Configuration files are often called dotfiles,
-specially if user private. This comes from the
+especially if user private. This comes from the
 fact that they have a `.' at the beginning of
 their name the make them hidden.
 
