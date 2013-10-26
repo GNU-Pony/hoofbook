@@ -368,7 +368,7 @@ the master boot record (MBR). The first 440
 (or at most 446) bytes is the executed code,
 and it ends with a halt instruction, so that
 nothing beyond that is executed. The MBR also
-contains information about the the zero to
+contains information about the zero to
 four primary partitions. For this documentation
 we are going to assume that this is this
 construction is used, but it is not a technical
