@@ -4,8 +4,17 @@
 @setfilename hoofbook.info
 @settitle GNU/Pony hoofbook
 @afourpaper
+@c @afivepaper
 @documentencoding UTF-8
 @documentlanguage en
+
+@c dead fluttershy edition settings
+@c @set DEAD_FLUTTERSHY_EDITION
+@c @smallbook
+@ifset DEAD_FLUTTERSHY_EDITION
+@cropmarks
+@setchapternewpage odd
+@endif
 @finalout
 @c %**end of header
 
@@ -16,10 +25,6 @@
 * hoofbook: (hoofbook).               The GNU/Pony hoofbook
 @end direntry
 
-
-@c dead fluttershy edition settings
-@c @set DEAD_FLUTTERSHY_EDITION
-@c @smallbook
 
 
 @c define option index and bind it to variable

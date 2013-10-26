@@ -2,6 +2,8 @@ PROGRAM = hoofbook
 PKGNAME = hoofbook
 TEXINFO_DIR = .
 
+TEXIFLAGS = #--force
+
 ALL_COMPRESS = #.gz
 PDF_COMPRESS = $(ALL_COMPRESS)
 PS_COMPRESS = $(ALL_COMPRESS)
@@ -62,19 +64,19 @@ obj/logo.ps: logo.svg
 
 $(PROGRAM).info: $(TEXINFO_DIR)/$(PROGRAM).texinfo
 	mkdir -p obj
-	cd obj && $(MAKEINFO) "../$<" && mv "$@" ..
+	cd obj && $(MAKEINFO) $(TEXIFLAGS) "../$<" && mv "$@" ..
 
 $(PROGRAM).pdf: $(TEXINFO_DIR)/$(PROGRAM).texinfo obj/logo.pdf
 	mkdir -p obj
-	cd obj && texi2pdf "../$<" && texi2pdf "../$<" && mv "$@" ..
+	cd obj && texi2pdf $(TEXIFLAGS) "../$<" && texi2pdf "../$<" && mv "$@" ..
 
 $(PROGRAM).dvi: $(TEXINFO_DIR)/$(PROGRAM).texinfo obj/logo.eps
 	mkdir -p obj
-	cd obj && $(TEXI2DVI) "../$<" && $(TEXI2DVI) "../$<" && mv "$@" ..
+	cd obj && $(TEXI2DVI) $(TEXIFLAGS) "../$<" && $(TEXI2DVI) "../$<" && mv "$@" ..
 
 $(PROGRAM).ps: $(TEXINFO_DIR)/$(PROGRAM).texinfo obj/logo.eps
 	mkdir -p obj
-	cd obj && texi2pdf --ps "../$<" && texi2pdf --ps "../$<" && mv "$@" ..
+	cd obj && texi2pdf $(TEXIFLAGS) --ps "../$<" && texi2pdf --ps "../$<" && mv "$@" ..
 
 .PHONY: install-info
 install: install-info
