@@ -307,11 +307,11 @@ scroll templates. Celestia is meant to be invoked
 periodically by @command{cron}, it is a program
 that generates Spike scrolls from Celestia
 templates when a new version of a program is
-released. You choose to pipe Celestia to a program
-that is some mannar notifies you about each line
+released. You can choose to pipe Celestia to a program
+that is some manner notifies you about each line
 it prints, but if you want to take the automation
 on step further you can pipe it to the DragonFire
-program that commits them to a git repository.
+program that commits them to a Git repository.
 
 For Celestia you have a list of packages it should
 maintain. For DragonFire you have a mapping to
