@@ -155,7 +155,7 @@ freedom when you use your computer.
 @node Who is GNU/Pony for?
 @section Who is GNU/Pony for?
 
-GNU/Pony is for the computer enthusiast that
+GNU/Pony is for the computer enthusiast who
 wants an operativing system tailored to her
 own preferences down to that last detail and
 does not mind building software from source.
