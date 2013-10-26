@@ -228,7 +228,7 @@ with `ed' in the end for `editor'.
 This chapter introduces the concept of
 software packages to new users that do not
 come from a GNU/Linux system or any similar
-system. It also gives an overview how it
+system. It also gives an overview how
 this works specifically in GNU/Pony.
 
 @menu
