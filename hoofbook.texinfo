@@ -162,8 +162,8 @@ does not mind building software from source.
 
 GNU/Pony also includes some optional programs
 designed for using in terminals with a
-specific paradigm: ephemeral, the run during
-as short of time as possible. so you have as
+specific paradigm: ephemeral, to run during
+as short of time as possible, so you have as
 few running processes at the same time as
 possible.
 
