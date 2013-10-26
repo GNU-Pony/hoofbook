@@ -326,7 +326,13 @@ cherry pick them to their appropriate branch.
 GNU/Pony also have a package repository cannibaliser
 called Sweetie Bot that crawls other GNU/Linux
 distributions and converts them to Spike scrolls
-(or optionally any other format).
+(or optionally any other format). As a GNU/Pony user
+or system administrator you do not need to know about
+Sweetie Bot. Sweetie Bot has a module for each
+foreign package repository it knows about, and each
+module is only supposted to be ran by one user world
+wide, a GNU/Pony developer. Sweetie Bot could also
+be ran by developers for other distributions.
 
 
 
