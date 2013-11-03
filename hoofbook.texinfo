@@ -401,7 +401,7 @@ especially worthless is consistency of the interface.
 
 @node Philosophy of the GNU/Pony project
 @section Philosophy of the GNU/Pony project
-@cindex gnu/pony
+@cindex GNU/Pony
 @cindex philosophy
 
 @table @asis
