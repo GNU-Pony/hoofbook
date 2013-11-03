@@ -147,7 +147,7 @@ to what GNU/Pony is.
 GNU/Pony is a GNU/Linux distribution that aims
 to be extremely customisable and simple. A
 GNU/Linux distribution is a combination of the
-operativing system GNU and the operativing
+operating system GNU and the operating
 system kernel Linux with additional tools to
 make your life easier.
 
@@ -162,7 +162,7 @@ freedom when you use your computer.
 @section Who is GNU/Pony for?
 
 GNU/Pony is for the computer enthusiast who
-wants an operativing system tailored to her
+wants an operating system tailored to her
 own preferences down to that last detail and
 does not mind building software from source.
 
@@ -257,7 +257,7 @@ this works specifically in GNU/Pony.
 
 @cindex package manager
 Software packages is a concept this is
-very popular for Free Software operativing
+very popular for Free Software operating
 systems and distributions. Software packages
 are basically scripts with instructions for
 downloading and installing specific programs.
