@@ -216,7 +216,7 @@ under the GNU General Public license 3 and the
 GNU Affero General Public license 3, with parts
 being licensed under the GNU All Permissive License.
 
-There however two exceptions:
+There are however two exceptions:
 @itemize @bullet
 @item netcfg: New BSD License (3-clause BSD License)
 @item miscellaneous:
