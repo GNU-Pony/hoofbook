@@ -117,6 +117,7 @@ Texts. A copy of the license is included in the section entitled
 
 @menu
 * Introduction::
+* Philosophy::
 * Conventions::
 * Software packages::
 * The boot process::
@@ -182,6 +183,7 @@ possible.
 
 @node License information
 @section License information
+@cindex licenses of GNU/Pony
 
 GNU/Pony is an operating system distribution
 with contains a few layers, which are licensed
@@ -189,27 +191,32 @@ differenly:
 
 @table @asis
 @item The boot manager
+@cindex boot manager
 The default boot manager is provided by SYSLINUX
 which is licensed under the GNU General Public
 License version 2.
 
 @item The bootloader
+@cindex bootloader
 The default bootloader is provided by SYSLINUX
 which is licensed under the GNU General Public
 License version 2.
 
 @item The kernel
+@cindex kernel
 The default kernel is currently Linux which is
 licensed under the GNU General Public
 License version 2 amoung other licenses.
 
 @item The core userland
+@cindex code userland
 The default core userland is almost exclusively
 GNU, a large collection of programs, which is
 licensed under the GNU General Public License
 version 3 and few other licenses.
 
 @item The distribution userland
+@cindex distribution userland
 The GNU/Pony userland is the programs written
 specifically for GNU/Pony. They are licensed
 under the GNU General Public license 3 and the
@@ -224,6 +231,8 @@ Do what the fuck you want to public license, version 2
 @end itemize
 
 @item The ports tree
+@cindex package repository
+@cindex ports tree
 The GNU/Pony package repository is licensed under
 the GNU General Public License version 3, but the
 individual scrolls are licensed under the GNU All
@@ -238,10 +247,119 @@ install non-free programs, even if they are shareable.
 
 @end table
 
+@cindex Free Software
 In short: with the exception for parts of the interim
 default kernel, GNU/Pony is entirely Free Software,
 but only almost entirely Open Source (but it does not
 aim to be Open Source, only to be Free Software.)
+
+
+
+@node Philosophy
+@chapter Philosophy
+
+This chapter describes the collection of philosophies
+that makes up GNU/Pony.
+
+@menu
+* Philosophy of the GNU Project::
+* Unix philosophy::
+@end menu
+
+
+
+@node Philosophy of the GNU Project
+@section Philosophy of the GNU Project
+@cindex GNU Project
+@cindex the GNU Project
+@cindex Free Software
+@cindex philosophy
+
+Free Software means that the software's users have freedom
+(it is not an issue about price.) The GNU operating system
+was developed so that users can have freedom in their
+computing. It is not just a matter of being able to share
+software solutions, it is matter of having freedom in
+computer space, both in softare and in hardware.
+
+A program is Free Software if the program's users have the
+four essential freedoms:
+
+@itemize @bullet
+@item @i{Freedom 0:}
+The freedom to run the program, for any purpose as you wish.
+
+@item @i{Freedom 1:}
+The freedom to study how the program works, and change it so
+it does wait you wish.
+
+@item @i{Freedom 2:}
+The freedom to redistribute copies so you can help your neighbour.
+
+@item @i{Freedom 3:}
+The freedom to contribute to your community by distributing copies
+of your modified versions when you which.
+@end itemize
+
+
+
+@node Unix philosophy
+@section Unix philosophy
+@cindex philosophy
+@cindex Unix
+
+@smallquotation
+`Unix is simple. It just takes a genius to understand its simplicity.'
+– Dennis Ritchie
+@end smallquotation
+
+@smallquotation
+`Unix is user-friendly. It just isn't promiscuous about which users
+it's friendly with.'
+– Steven King
+@end smallquotation
+
+
+@table @asis
+@item Modularity
+@cindex modularity
+@cindex simplicity
+Systems should be build of small programs connected by a well defined
+interface. This simplifies debugging, reduces complexity, increases
+readability and makes it easier to replace or extend parts ot the system.
+@item Composition
+@cindex composition
+@cindex simplicity
+Programs should be written so that they can communicate easily with other
+programs. This enables cannibalisation by invocation, reduces the need
+of code cannibalisation or reinvention, reduces the complexity of a system,
+makes it easier to replace parts ot the system, and enables to user to
+perform actions far beyond what the developer could have imagined.
+@item Separation
+@cindex separation
+@cindex simplicity
+Mechanisms of the programs from the policies of the programs should be
+separated into a front-end interface and back-end engine that interface
+communicates with.
+@item Representation
+@cindex representation
+@cindex simplicity
+When faced with having to choose, make the data more complicated rather
+than the procedural logic.
+@item Generation
+@cindex generation
+@cindex automatication
+Write abstract high-level programs that generate code, this reduces
+development time and reduces bugs.
+@item Diversity
+@cindex diversity
+Programs should be designed to be flexible. This allows them to be
+used in other ways than their developers intended.
+@item Extensibility
+@cindex extensibility
+Write extensible protocols to allow for easy plugins without modification
+to the program's architecture.
+@end table
 
 
 
@@ -293,9 +411,11 @@ end for `directory'.
 @cindex daemon processes
 @cindex system processes
 @cindex background processes
-Daemon processes are system processes that
-run continuously in the background. These
-are named with a `d' in the end.
+Daemon (pronounced exactly as `demon',
+no fancy diphthong) processes are system
+processes that run continuously in the
+background. These are named with a `d'
+in the end.
 
 @cindex @command{-ed}
 Programs used for editing of sometimes named
@@ -602,6 +722,10 @@ starts your login manager.
 
 @node rms transcriptions
 @appendix rms transcriptions
+
+This appendix is a collection of transcriptions
+form talks by Richard Stallman; always informative,
+and sometimes fun.
 
 @menu
 * Free Software is not Open Source::
