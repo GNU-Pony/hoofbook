@@ -154,7 +154,8 @@ make your life easier.
 The GNU Project started in 1983 by Richard
 Stallman, also known as rms (from Richard
 Matthew Stallman) so that your can have
-freedom when you use your computer.
+freedom when you use your computer (not just
+computer programs).
 
 
 
