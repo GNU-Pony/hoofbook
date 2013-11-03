@@ -784,7 +784,7 @@ same partition as the kernel, that is mounted to
 the random access memory (RAM).
 
 @pindex @command{init}
-@pindex @command{/sbin/index}
+@pindex @command{/sbin/init}
 The initrd provides boot instructions before
 the root filesystem is mounted, the most important
 parts are to locate partitions and decrypting
