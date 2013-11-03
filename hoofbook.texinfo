@@ -122,6 +122,7 @@ Texts. A copy of the license is included in the section entitled
 * The boot process::
 
 * GNU Free Documentation License::
+* rms transcriptions::
 * Concept and program index::
 * Variable and option index::
 @end menu
@@ -530,6 +531,379 @@ starts your login manager.
 @node GNU Free Documentation License
 @appendix GNU Free Documentation License
 @include fdl.texinfo
+
+
+
+@node rms transcriptions
+@appendix rms transcriptions
+
+@menu
+* Free Software is not Open Source::
+* GPL version 3 release speech::
+* Virus-free GNU+Linux::
+@end menu
+
+
+
+@node Free Software is not Open Source
+@section Free Software is not Open Source
+
+@c https://www.youtube.com/watch?v=FpAKasXdrXI
+
+@smallquotation
+Richard I so not think requires any
+introduction to this audience, but I
+he is the… almost the certainly the
+father of the modern Open Source
+movement… <interrupted>
+@end smallquotation
+
+No, absolutely not! If am the father of
+Open Source it was done by artificial
+insemination using @emph{stolen} sperm.
+I am @emph{not} a supporter of Open Source,
+I do @emph{not} agree with the basic values
+of Open Source, I do @emph{not} try to
+participate Open Source activities,
+and when anyone refers to my work with
+that term I take offence. You really
+shouldn't have done that!
+@smallquotation
+Apologies!
+@end smallquotation
+You should have known better!
+@smallquotation
+And I do. And I think that is actually
+a point I would like you to speak on
+<unintelligible>.
+@end smallquotation
+The sad thing is that most people thin
+that they are very familiar with my work
+and what they think my work is, its
+something I do not even agree with.
+Completely wrong. I founded the Free
+Software movement, a movement for computer
+users' freedom. Freedom to control your
+own computing and freedom to cooperate
+with other people. These are freedoms
+that I believe every computer user is
+entitled to. It must never be taked away,
+they should be inalienable rights for
+the user of software. That is the idea
+of the software movement. Non-free
+sofware, proprietary software, keeps
+users divided and helpless. Divided
+because they are forbidden share with
+anyone else and helpless because they
+do not have the source code so that
+can't control what the software does.
+And in fact they are at the mercy of
+the developer who does control it.
+So a non-free software functions as
+an instrument of the power of its
+developer, power over the users. This
+is an unjust social system that I
+which to wipe out from the world.
+That is the aim of the Free Software
+movement. In order for every user
+to have freedom that means there most
+be no freedom denying software.
+
+
+
+@node GPL version 3 release speech
+@section GPL version 3 release speech
+
+@c https://www.youtube.com/watch?v=E5G7FU5j2Uc
+@c https://www.youtube.com/watch?v=KZNUVgPQpl8
+
+Can I go to sleep now?
+
+@smallquotation
+Sure(<unintelligible>?) go ahead.
+@end smallquotation
+
+I guess I have to give a speech first.
+I'm happy to say that we are actually
+releasing GPL version 3 today, right
+now I beleave, during this speech.
+It is becoming official and people can
+start to release software under GPL
+version 3.
+
+It has been essentially sixteen years
+since GPL version 2 came out. We didn't
+it would be this long before we made
+the next version. I will try to attend
+to future upgrade needs more quickly;
+we won't wait more then a decade this
+time.
+
+But what is so important about GPL
+version 3? Well first of all what is
+the GPL for, what's its purpose. I
+designed the GNU General Public License
+for a very simple purpose: to defend
+the freedom of @emph{every} user of a free
+program. Not all free programs to this,
+there are free programs that are release
+under other licenses that are lax and
+permissive, that allow modified version
+to be made non-free. Some even allow…
+just compiling it is enough excuse to
+make it non-free; and what happens then?
+The software may be very popular, it
+may be powerful and reliable, but it
+fails to deliver freedom to the users.
+So the GNU General Public License is
+designed to make sure that everyone how
+gets the software also gets the essential
+freedoms that the user of software
+must have. These are:
+
+@itemize @bullet
+@item
+Freedom 0, the freedom to run the
+program as you wish.
+
+@item
+Freedom 1, the freedom to study the
+source code and change it so it does
+what you wish.
+
+@item
+Freedom 2, the freedom to help your
+neighbour, which is the freedom to
+distribute exact copies up to and
+including republication when you wish.
+
+@item
+Freedom 3, the freedom to contribute
+to your community, the freedom to
+distribute copies of your modified
+versions up to and including
+republication when you wish.
+@end itemize
+
+These are the freedoms necessary so we
+can control our own computing and be good
+helpful members of our communities; and
+together they give us democratic control
+over what our software does.
+
+Only with a license @emph{like} the GNU GPL
+do the users have these for freedoms.
+@emph{But} the advisories of freedom don't
+stand still. The thought of new ways to
+separate users from their freedom since
+GPL version 2 came out. So we have had to
+find ways to block them from doing this
+in order to make sure the GPL continues
+to achive what have always been its goal.
+For instance, there is a practice we call
+tivoisation after the product that began
+it. The TiVo contains software that were
+released under the GPL version 2, and
+they comply --- formally --- with the
+requirements of GPL version 2. But it
+doesn't do the user of the TiVo any good.
+Yes, the user can get the source code
+for that software, but if the user tries
+to change it and compile it and install
+it into the TiVo it won't run. It's
+@emph{guaranteed} not to run, and that is
+no accident, the TiVo contains special
+circuitry to check the signature of the
+program and if it has been modified at
+all then it shuts down. Now why would
+they do a thing like this? The reason
+is not innocent, the reason is because
+the TiVo designed to restrict the user
+and spy on the user. Nasty malicious
+features. And they want to make sure
+the user can't get rid of these nasty
+features in the most natural way.
+The way users are suppost to be able
+to do with Free Software.
+
+So GPL version 2 blocks this practice.
+Sorry GPL version @emph{3} blocks this
+practice! It says that if you distribute
+binaries in a product to consumers
+that you got to provide them with
+whatever information is sufficient so
+that they can install and run their
+modified version in the products they
+bought.
+
+This is another variation of tivoisation.
+Which is treacherous computing. That is
+were the computer is designed so that a
+website that you try to talk to can tell
+whether you are running the officially
+approved software or your own modified
+version. And if you are running your own
+modified version then it says they do
+not trust you, so you are not allowed to
+talk to the website. Well, with GPL version
+3 that is not allowed either! They have
+to provide you with information sufficient
+to install your modified versions so that
+they can functions just as the <stumbling>
+original version would have done unless
+your change is to make it do something
+else. They are not allowed to distribute
+it in such a way that the mere fact that
+you modified it prevents it from
+functioning the way the original version
+would have. So we've blocked both varients
+of this way of turning freedom number 1,
+the freedom to study and change the
+source code and make the program do what
+you wish into a sham.
+
+Another threat to our freedom comes from
+software patents. I'm sure you've heard
+about the Novell–Microsoft deal, which as
+dangerous because effectively Novell is
+going to pay Microsoft to give custumers
+protection from some of Microsoft's
+patents. Well, if Microsoft or anyone can
+make users pay for the privilege of
+running Free Software that takes away
+freedom 0, the freedom to run the program
+as you wish. We can't sit idly by and let
+that happen. Now GPL version 2 hade a
+change in it from GPL version 1 to protect
+us against use of software patents to
+make the program effectively non-free.
+But it only applies to when the distributor
+gets a patent license. Well, in the
+Novell–Microsoft deal they were clever
+and Microsoft did not give Novell a patent
+licenses. So they slipped through this
+crack in GPL version 2. Well, in GPL
+version 3 we do not have this crack
+anymore, such deals are not allowed.
+@emph{However}, instead of simply saying that
+Novell cannot distribute GPL version 3
+coverted programs under their deal, we
+found a cleverer thing to do with it:
+when Microsoft upgrades to versions that
+are covered by GPL version 3, GPL version
+3 will extend this patent protection
+from the customers of Novell to everybody
+that uses those programs. Effectively
+we found a way to turn that deal against
+Microsoft and make it backfire. So it is
+extremely important for Free Software
+to upgrade the license to GPL version 3,
+so that Microsoft… <correcting> Novell
+will in the cause of time put in the new
+versions and thus our community will get
+this benefit. It has to be done fairly
+soon, because if we wait @emph{too} long
+Microsoft may distribute all its coupons
+and then we won't be able to turn the
+deal against them anymore. So get your
+programs relicensed @emph{soon}, it is very
+important! We expect @emph{all} the maintainers
+of GNU software to relicense in the next
+few months, it is important. But other
+Free Software developers should also
+relicense. There will be people how ask
+you not to do so. A minority of our
+community seems to be very angry about
+GPL version 3; and when we try to probe
+to find out their motives, it usually
+turns out that they disagrees with the
+goals of the GNU GPL, the goal of
+guaranteeing freedom for every user.
+Please, we people that holds those
+views ask you to leave users' freedom
+vulnerable, don't listen to them, defend
+the freedom users' freedom, that's
+imporant. And even if there are people
+that who would ask us not to do it,
+we got to do it. We have to defend the
+users' freedom against these threats.
+
+There are of cause many other advantages
+in GPL version 3: compatibility with
+the Apache license is one, better
+internationallisation is another.
+You'll also find that its termination
+conditions work much better in the case
+of a distributor of an entire GNU+Linux
+distribution who makes a mistake and
+thus violates the GPL for thousands of
+programs at once and of cause wants to
+correct it. With GPL version 2 those…
+<correcting> that person who made a
+mistake has to… <correcting> loses
+the licenses permanently for every
+program from every copyright holder
+and has to the go and beg forgiveness
+from everyone, which is not feasible.
+But with GPL version 3 if thay correct
+the mistake and the copyright holders
+do not complain in 60 says then they
+are in the clear. So they only have
+to negotiate with those that actually
+did complain. Assuming of cause that
+they are sincere people and they
+correct their mistake. We are still
+in a good position to enforce the
+license against anyone how intends
+to violate it and does not correct
+a mistake. So… GPL version 3 will
+help our community any many ways…
+and I urge people to upgrade to it.
+
+Thank you!
+
+
+
+@node Virus-free GNU+Linux
+@section Virus-free GNU+Linux
+
+@c  https://www.youtube.com/watch?v=Kfli_e923o4
+
+@smallquotation
+They say that GNU systems, or GNU/Linux
+systems doesn't get effected by virus.
+@end smallquotation
+
+Well, that is usally true. And there
+are a few reasons for this. First of
+all, we designed it from the beginning
+as a multiple user time sharing system.
+These days of cause people usually run
+it on a PC and there is only one user.
+But it was designed for a large
+computer that would be having five or
+ten users at the same time. So it was
+designed to keep them isolated from
+each other and not let anybody destroy
+the system. Where as Windows was not
+designed for that. Second, Microsoft
+persistently makes a really kind of
+a decision where they run program
+that arrive in files that you just
+happen to have on your computers. So
+of cause that makes it terrible
+vulnerably to viruses.
+And of cause there is also one other
+factor: since Windows is more widely
+used, virus writers prefers to attack
+Windows. Well some day if the GNU+Linux
+system is more popular we will lose
+that advantage but we will still have
+the other two.
+
+
+
+
 
 @c BEGIN print indices
 @node Concept and program index
