@@ -265,6 +265,7 @@ that makes up GNU/Pony.
 * Philosophy of the GNU Project::
 * Unix philosophy::
 * Worse is better::
+* Philosophy of the GNU/Pony project::
 @end menu
 
 
@@ -394,6 +395,74 @@ of any other quality and must be sacrificed whenever
 implementation simplicity is jeopardised, but
 consistency can be sacrificed to achieve completeness;
 especially worthless is consistency of the interface.
+@end table
+
+
+
+@node Philosophy of the GNU/Pony project
+@section Philosophy of the GNU/Pony project
+@cindex gnu/pony
+@cindex philosophy
+
+@table @asis
+@item Documentation
+@cindex documentation
+Every feature and internal plumbing of a
+program must be documented as well as
+interresting use tricks. A program is nothing
+without documentation. @command{info} is
+primary, @command{man} is tertiary.
+@item Unused RAM is wasted RAM
+@cindex wasted RAM
+Nopony ever fills her entires RAM; programs
+do no need to minimise RAM, it often makes
+the program more complex or less readable.
+Not utilising the computers RAM, especially
+in these minute quantites, is a waste of RAM.
+@item Wasted RAM is still wasted RAM
+@cindex ephemeral
+@cindex wasted RAM
+Programs should still free memory it does
+not require any more and never will, unless
+it makes to program overly complex. Ephemeral
+programs need not bother about this as they
+there memory will be freed soon anyway
+(but do free everything when the program
+exits to help debugging.)
+@item Reduce complexity not overhead
+@cindex time complexity
+@cindex complexity, time
+@cindex overhead
+@cindex program speed
+Do not rewrite your programs in C or otherwise
+reduce overhead, it is time complexity that is
+important: use efficent algorithms, instruction
+flows, and data structions that do not make the
+program overly complex. The only except if is
+the algorithm cannot be change, is intensive,
+and can be considerably more efficient with a
+faster language and code tweaks; for example
+cryptographic hashing algorithms.
+@item Extensibility
+@cindex extensibility
+Aim for unlimited extensibility, this is often
+closely approximable with onion functions.
+@item Customisibility
+@cindex customisibility
+Aim for unlimited customisibility, this is often
+closely approximable with extension and
+configuration files that are scripts that are
+sourced.
+@item Portability at compile time
+@cindex portability
+Programs should try to utilise the operating
+system as much as possible, portability can
+be implemented as compile rather than runtime.
+@item Minimalism
+@cindex simplicity
+@cindex minimalism
+Programs should be as small as possible and
+be extended with extensions.
 @end table
 
 
