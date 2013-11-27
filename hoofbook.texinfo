@@ -1064,8 +1064,8 @@ Unix-like operating systems.
 @menu
 * Teletypewriter login management::
 * Graphical login management::
+* Login sessions::
 @end menu
-@c TODO write about login sessions
 
 
 
@@ -1182,6 +1182,50 @@ is three core missions: to start the display
 server, to ask for username and passphrase and
 login the user, and to as the user which
 desktop start and start it.
+
+
+
+@node Login sessions
+@section Login sessions
+
+@cindex login session
+@cindex PAM
+@pindex Pluggable Authentication Modules
+@cindex session leader
+@cindex process group
+@cindex login shell
+A login session is the period between a user
+login and a corresponding logout. When a user
+logs in she is granted exclusive access to
+a terminal or X session@footnote{The same
+virtual terminal as the user used to log in,
+but it can theoretically be on any virtual
+terminal.} that was previousely owned by the
+root user. For a non-graphical login, the
+users default shell is executed, as a login
+shell, which means that it 0:th command line
+argument is prefixed by a dash and the profile
+script is executed. The parent to the shell
+is the session leader and the creator of a
+new process groups. If program exits, which
+is does when the login shell exits, all programs
+in the same session is terminated. The login
+program, that started the shell, opens (on login)
+and closes (on logout) a Pluggable Authentication
+Modules (PAM) session if it uses PAM.
+
+@pindex @command{su}
+@cindex user switching
+@cindex switch user
+@cindex nested login
+@cindex login, nested
+Theoretically, and even implemented on some
+old systems, nested login sessions are possible,
+this is however considered insecure, and
+instead you do a user switches, which is when
+your start a new (non-login) shell as a different
+user without create a new session, using the
+command @command{su}.
 
 
 
