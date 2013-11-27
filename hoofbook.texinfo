@@ -889,6 +889,10 @@ be ran by developers for other distributions.
 @node The boot process
 @chapter The boot process
 
+Sometimes the escoteric aspects for your computer
+is the most important aspects for your computer.
+Understanding them gives you insite in how to
+optimally set up your computer after your needs.
 This chapter gives you an overview of how a computer
 boots, the entire way to your login manager. These
 section are in the order of occurrence when booting
