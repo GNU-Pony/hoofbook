@@ -1160,14 +1160,14 @@ A graphical login manager is called a
 does not really manage the display, that
 is done by the display server.
 
-@pindex XDG
+@pindex XDM
 @pindex SLiM
 @pindex systemd
 @pindex PAM
 @pindex Pluggable Authentication Modules
 GNU/Pony does not have a default graphical
 login manager, but popular graphical login
-managers include XDG and SLiM and login
+managers include XDM and SLiM and login
 managers designed for specific desktop
 environments. Before commiting to a graphical
 display manager you should make sure it works
