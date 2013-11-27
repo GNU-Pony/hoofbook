@@ -889,7 +889,7 @@ be ran by developers for other distributions.
 @node The boot process
 @chapter The boot process
 
-Sometimes the escoteric aspects for your computer
+Sometimes the esoteric aspects for your computer
 is the most important aspects for your computer.
 Understanding them gives you insite in how to
 optimally set up your computer after your needs.
