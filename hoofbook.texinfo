@@ -572,10 +572,10 @@ for them. So the remain directories are:
 
 @table @file
 @item /
-Essential program.
+Essential programs.
 
 @item /usr
-Non-essential program. Today many
+Non-essential programs. Today many
 distributions symlinks @file{/bin}
 to @file{/usr/bin}, @file{/sbin}
 to @file{/usr/sbin} and @file{/lib}
@@ -584,7 +584,7 @@ few recommended to put it on a separate
 partition.
 
 @item /usr/local
-Program not included in the distribution:
+Programs not included in the distribution:
 private software and software not yet
 included in the package repostory.
 
