@@ -681,7 +681,7 @@ enough, 10 GB to be safe, if you do not
 have that many large programs or too many
 programs. A 50 GB partition for all program
 can be quite the challenge to deplete,
-80 GB is partically impossible to fill.
+80 GB is practically impossible to fill.
 This can largely be credited to the heavy
 use of dynamic linking, and it even possible
 to compress executables with UPX, strip
