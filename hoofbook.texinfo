@@ -118,6 +118,7 @@ Texts. A copy of the license is included in the section entitled
 @menu
 * Introduction::
 * Philosophy::
+* Installation::
 * Conventions::
 * Software packages::
 * The boot process::
@@ -465,6 +466,229 @@ be implemented as compile rather than runtime.
 Programs should be as small as possible and
 be extended with extensions.
 @end table
+
+
+
+@node Installation
+@chapter Installation
+
+In this chapter you will learn how to install
+GNU/Pony, and get information about details
+you should thinks about when installing your
+system.
+
+@menu
+* Partitioning your harddrive::
+@end menu
+
+
+@node Partitioning your harddrive
+@section Partitioning your harddrive
+
+@cindex partitions
+When installing your system you should think
+about how you want to partition your system.
+Exactly how you want to this depends on your
+requirements and resources.
+
+@cindex @file{/boot}
+@cindex kernel image
+@cindex initramfs
+@cindex initrd
+@cindex bootloader
+@cindex chainloading
+It is highly recommended to have a partition
+for @file{/boot}, the directory containing
+the bootloader (see @ref{The bootloader} for
+more information), and the kernel image and the
+early initialisation image (for more information
+see @ref{The initial random access memory disc}).
+If you only install one kernel to this
+partition, 50 MB will do you quite well. This
+partition needs to be a primary partition unless
+it is chainloaded from another bootloader.
+The size of the a Linux kernel image, depends
+on how it is configures, but it is unlikely that
+is exceeds 5 MB. The early initialisation image
+also unlikely to exceed 5 MB, but a fallback
+for this image can be 20 MB. However, it is
+recommended to use even 100 MB or even 200 MB,
+to be safe, you never now if you want to install
+additional images or if the images will grow
+larger over the years, an installation of a
+rolling release distribution will never need to
+be reinstalled and can last forever.
+
+@cindex extended partition
+@cindex primary partition
+@cindex logical partition
+@cindex bootloader
+@cindex chainloading
+To maximise the flexibility of your partitions,
+it recommended to make an extended partition of
+the remaining disc space. The bootloader needs
+to be in a primary parition to be started by the
+boot manager, and if you are using chainloading
+it is easiest to chainload into primary paritions,
+but beyond that all partitions can be logical.
+A primary partition is a regular partition, an
+extended partition is a special type of primary
+partition than contains additional partitions,
+logical partitions. You can only have at most one
+extended partition. Including your extended
+partition you can only have four primary
+partitions, but you can have an unlimited number
+of logical partitons@footnote{With the exception
+that the kernel as a limited number of major–minor
+number pairs for block devices and only few of
+then are for hard drives and partitions}.
+
+@cindex @file{/}
+@cindex @file{/usr}
+@cindex @file{/usr/local}
+@cindex @file{/usr/games}
+@cindex @file{/usr/local/games}
+@cindex @file{/opt}
+@cindex @file{/home}
+@cindex @file{/srv}
+@cindex @file{/etc}
+@cindex @file{/var}
+@cindex @file{/info}
+@cindex @file{/share}
+How to best partition the rest of the system is
+debated. What you have now to consider is the
+directories @file{/}, @file{/usr}, @file{/usr},
+@file{/usr/local}, @file{/usr/games},
+@file{/usr/local/games}, @file{/opt},
+@file{/home}, @file{/srv}, @file{/etc},
+@file{/var}, @file{/info} and @file{/share}.
+@file{/usr/games} and @file{/usr/local/games}
+were initialially introduces because games
+are typically large and the harddrives was
+not too big back in the days; today not that
+many distrubtions even have them, and we do
+not recommend creating separate partitions
+for them. So the remain directories are:
+
+@table @file
+@item /
+Essential program.
+
+@item /usr
+Non-essential program. Today many
+distributions symlinks @file{/bin}
+to @file{/usr/bin}, @file{/sbin}
+to @file{/usr/sbin} and @file{/lib}
+to @file{/lib}, but even before that
+few recommended to put it on a separate
+partition.
+
+@item /usr/local
+Program not included in the distribution:
+private software and software not yet
+included in the package repostory.
+
+@item /opt
+Serves as hosting directory for the same
+category of programs as @file{/usr}, but
+self-contained and large cases. Because
+of this and the size of today's harddrives
+it is recommended that it is not separated
+from @file{/usr}.
+
+@item /home
+User home directories. It is generally
+agreed that this directory is placed on its
+own partition because you do not want to
+lose files because you forget to backup
+dotfiles or lose it if the system partition
+gets corrupted. There is however no sense
+in separating it just so you can have two
+or more systems sharing it, as the
+configuration by the dotfiles can cause
+problems.
+
+@item /srv
+Directory for services hosted by the machine.
+
+@item /etc
+@cindex initramfs
+@cindex initrd
+Host specific system-wide configurations.
+Separating this directory to a partition
+separate from @file{/} is tricky but possible:
+it must be mounted in the early boot process.
+
+@item /var
+Variable data files.
+
+@item /info
+GNU/Pony directory for administrated shared files.
+
+@item /share
+GNU/Pony directory for user shared data.
+
+@end table
+
+This is how we recommend that you partition
+your system, in four partitions:
+
+@table @asis
+@item @file{/}, @file{/var} and @file{/etc}
+One partition for the essentials, and the variable
+data including the system logs.
+
+@item @file{/usr} and @file{/opt}
+One partition for non-essential programs.
+
+@item @file{/usr/local}, @file{/srv}, @file{/home}, @file{/info} and @file{/share}
+One partition for local and user files.
+
+@item Spare partition
+A spare partition of the same size as that
+of @file{/}. This allows you to backup your
+essentials when you know that it is in a
+good state, allowing you to boot into it if
+@file{/} breaks or gets corrupted.
+Additionally this allows you to temporarly
+use another partition for @file{/} and
+reformat your actual @file{/} into a newer
+filesystem without reinstalling your system.
+
+@end table
+
+This partitioning setup is unconventional not
+straight forward how to setup. You can
+create a hidden directory named @file{~/.parts},
+in which you can create two mountpoint
+directories: @file{usr}, @file{local},
+which can be used from creating @file{/usr}
+and @file{/opt} and @file{/usr/local},
+@file{/srv}, @file{/home}, @file{/info}
+and @file{/share} as symlinks to inner
+directories you need to create.
+
+However, if your @file{/usr} and @file{/opt}
+directories are not going to be that large,
+it makes more sense to combine that partition
+with that of @file{/}.
+
+@pindex UPX
+Provided that you do not have too many
+local and user files. A GNU/Linux installation
+can be quite small. 5 GB can actually be
+enough, 10 GB to be safe, if you do not
+have that many large programs or too many
+programs. A 50 GB partition for all program
+can be quite the challenge to deplete,
+80 GB is partically impossible to fill.
+This can largely be credited to the heavy
+use of dynamic linking, and it even possible
+to compress executables with UPX, strip
+unused symboles for executables and to
+optimise the compilation of problem to
+minimise the size of the create executable.
+
 
 
 
