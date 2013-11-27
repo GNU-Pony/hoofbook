@@ -543,6 +543,29 @@ that the kernel as a limited number of major–minor
 number pairs for block devices and only few of
 then are for hard drives and partitions}.
 
+@cindex extended partition
+@cindex logical partition
+@cindex MBR
+@cindex Master Boot Record
+@cindex GUID Partition Table
+@cindex GPT
+@cindex Unified Extensible Firmware Interface
+@cindex UEFI
+@cindex Basic Input/Output System
+@cindex BIOS
+The limitation of 4 primary and extended
+partitions in a limitation in Master
+Boot Record (MBR) which is a disc
+formatting for how partitions hard layed
+out and addressed. If perfer, you can
+instead use GUID Partition Table (GPT)
+which typically can hold 128 partitions.
+Some operating system are not compatibly
+with GPT and some cannot boot using it
+unless the computer uses Unified Extensible
+Firmware Interface (UEFI) (or sometimes
+Basic Input/Output System (BIOS).)
+
 @cindex @file{/}
 @cindex @file{/usr}
 @cindex @file{/usr/local}
