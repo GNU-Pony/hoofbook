@@ -1032,11 +1032,16 @@ GNU/Pony's default initrd is simply called initram.
 @cindex initialisation process
 @pindex SysVInit
 @pindex pony-initialisation
+@pindex systemd
 The initialisation process is the final step and
 largest step in the boot process. In GNU/Pony's
 default setup this process is provided by
 SysVInit which is assisted by GNU/Pony's package
-@w{pony-initialisation}.
+@w{pony-initialisation}, or actually reverse:
+@w{pony-initialisation} provides to policy, 
+SysVInit provides to mechanism. A popular
+alternative to the two is systemd, which does not
+to this separation, nor other separations.
 
 @cindex daemon processes
 @cindex login manager
