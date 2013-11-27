@@ -689,6 +689,24 @@ unused symboles for executables and to
 optimise the compilation of problem to
 minimise the size of the create executable.
 
+@cindex swap partition
+@cindex swap memory
+Most users will find that 2 GB is enough
+random access memory (RAM), and that even
+1 GB can be enough; unless they use
+specific programs, or games, that uses a
+lot of memory. If you do not do too much
+100 MB may actually be enough. If you
+feel that you need more, you can create
+a swap partition, this is partition in
+which the kernel can store memory to
+which it feel it does not need frequent
+access. If you have not used GNU/Linux
+before but are not using any programs
+that uses a lot of memory you might want
+to create a swap partition large enough
+so that it and your RAM totals to 4 GB
+and you will be safe.
 
 
 
