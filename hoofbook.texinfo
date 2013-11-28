@@ -123,6 +123,7 @@ Texts. A copy of the license is included in the section entitled
 * Software packages::
 * The boot process::
 * The login process::
+* Usage basics::
 
 * GNU Free Documentation License::
 * rms transcriptions::
@@ -139,6 +140,7 @@ Texts. A copy of the license is included in the section entitled
 @include chap/software-packages.texinfo
 @include chap/the-boot-process.texinfo
 @include chap/the-login-process.texinfo
+@include chap/usage-basics.texinfo
 
 
 
