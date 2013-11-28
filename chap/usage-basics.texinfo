@@ -5,6 +5,7 @@
 * Virtual terminals::
 * Shells::
 * Text editors::
+* Account management::
 @end menu
 
 
@@ -142,4 +143,61 @@ similar to those of the shell. Emacs
 is exited with the key combination
 @kbd{C-x, C-c} with stands for
 @kbd{Ctrl+x} followed by @kbd{Ctrl+c}.
+
+
+
+@node Account management
+@section Account management
+
+@cindex passphrase, change
+@cindex passwords, change
+@cindex passphrase, generate
+@cindex passwords, generate
+@pindex @command{passwd}
+@pindex @command{correctpony}
+In today's world it is important to
+secure your computers. One part of
+this is to have strong passphrases.
+You can change your user passphrase
+with the command @command{passwd}.
+To be sure that your passphrase is
+secure, do not change it too often
+and use passphrase generation. You
+can installed the package correctpony
+and run @command{correctpony} to
+create a passphrase that is very
+strong but easy to remember. If you
+choose this method, use the first
+passphrase it generates for you
+and do not regenerate until you
+find something you find easier to
+remember. The only case you should
+generate a new passphrase is if
+you cannot spell the passphrase
+that as generated or if it actually
+forms a grammatically correct
+sentence even if it is nonsense.
+
+@cindex administrator
+@cindex root, user
+@cindex create user
+@cindex user, create
+@cindex delete user
+@cindex user, delete
+@cindex remove user
+@cindex user, remove
+@cindex modify user
+@cindex user, modify
+@pindex @command{sudo}
+@pindex @command{useradd}
+@pindex @command{userdel}
+@pindex @command{usermod}
+If you are an administrator, that is,
+if you login or switch user to root,
+or can use @command{sudo} to get
+additional permissions, then you can
+create, delete and modify users by
+using the commands @command{useradd},
+@command{userdel}, and
+@command{usermod}, respectively.
 
