@@ -3,6 +3,7 @@
 
 @menu
 * Virtual terminals::
+* Shells::
 @end menu
 
 
@@ -11,6 +12,10 @@
 
 @cindex switch terminal
 @cindex terminals, switch
+@cindex TTY
+@cindex teletypewriter
+@cindex virtual terminal
+@cindex terminal
 By default no graphical environment is
 installed, which means that you will
 only have a basic terminal. However,
@@ -20,5 +25,41 @@ The terminals are index @file{tty1}
 though @file{tty63} (all are not
 available by default), pressing
 @kbd{Alt+F4}, for example, will switch
-directly to @file{tty4}.
+directly to @file{tty4}. These terminals
+of often called TTY:s (teletypewriters).
+
+
+
+@node Shells
+@section Shells
+
+@cindex shell
+@cindex terminal
+When you log in on a terminal, or
+open a new terminal in a graphical
+session, a shell is opened. This is
+program that lets you start other
+program and perform actions using
+script shell language. To start a
+program you simply name it in the
+most basic cases.
+
+@pindex GNU Bash
+@pindex @command{bash}
+@pindex @command{chsh}
+@cindex shell, change default
+The default shell is GNU Bash, or
+simply @command{bash}, if you want
+to change it you can use the command
+@command{chsh}.
+
+@cindex @file{.bashrc}
+@cindex @file{~/.bashrc}
+Must shells uses a script file in the
+user's home directory to configure,
+which includes how the shell looks.
+The file is a dotfile (the filename
+starts with a dot) with means it is
+hidden. GNU Bash uses the file
+@file{.bashrc}.
 
