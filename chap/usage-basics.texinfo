@@ -126,7 +126,7 @@ you want to edit or create.
 @pindex GNU Emacs
 @pindex @command{emacs}
 @pindex @command{emacs -nw}
-@oindex @option{-nw}, Emacs
+@opindex @option{-nw}, Emacs
 A powerful alternative is GNU Emacs,
 often just called Emacs, which is
 started with the command @command{emacs}
