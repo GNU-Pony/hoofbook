@@ -4,6 +4,7 @@
 @menu
 * Virtual terminals::
 * Shells::
+* Text editors::
 @end menu
 
 
@@ -71,4 +72,74 @@ package `bash.d' to configure your
 GNU Bash shell, it is a collection
 of files that can be included in
 your @file{~/.bashrc} file.
+
+@cindex shell, stop
+@cindex shell, terminal
+@cindex shell, close
+To stop a program in the shell press
+@kbd{Ctrl+c}. There are a few programs
+that disables this which means that
+you need to learn how to close those
+programs individually.
+
+@cindex shell, logout
+You can close a shell by typing
+@command{exit}, or in some shells
+@command{logout}. If you have not
+typed anything since the last time
+you pressed enter, you can also
+press @kbd{Ctrl+d}. Closing the
+login shell means that you logout.
+The login shell is the first shell
+that is opened when you log in if
+you have logged in on a terminal.
+
+@cindex shell, pause
+@cindex shell, suspend
+@cindex shell, resume
+You can also suspend a program
+by pressing @kbd{Ctrl+z}. which
+means that the program will be
+completely paused and you are
+returned to the shell. Typing
+@command{%} or @command{fg}
+resumes the last suspended
+program.
+
+
+
+@node Text editors
+@section Text editors
+
+@cindex text editor
+@cindex editor, text
+@pindex GNU Nano
+@pindex @command{nano}
+To edit configurations, and write
+files in general, you need a text
+editor. The simplest is called GNU
+Nano, often just called Nano,
+which is started with the command
+@command{nano} followed by the file
+you want to edit or create.
+
+@pindex GNU Emacs
+@pindex @command{emacs}
+@pindex @command{emacs -nw}
+@oindex @option{-nw}, Emacs
+A powerful alternative is GNU Emacs,
+often just called Emacs, which is
+started with the command @command{emacs}
+instead of Nano's @command{nano}, or
+@command{emacs -nw} if you want to
+start it in the terminal and are
+using a graphical environment. Learning
+GNU Emacs, or another powerful, editor
+will save you time (and mental sanity)
+in the long run. Choosing Emacs means
+that you will learn keyboard commands
+similar to those of the shell. Emacs
+is exited with the key combination
+@kbd{C-x, C-c} with stands for
+@kbd{Ctrl+x} followed by @kbd{Ctrl+c}.
 
