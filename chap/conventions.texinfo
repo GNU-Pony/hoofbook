@@ -1,0 +1,58 @@
+@node Conventions
+@chapter Conventions
+
+This chapter gives you a brief overview of
+conventions used in GNU/Linux system and
+other Unix-like systems.
+
+@menu
+* Filename conventions::
+* Process name conventions::
+@end menu
+
+
+
+@node Filename conventions
+@section Filename conventions
+
+@cindex dotfiles
+@cindex configuration files
+Configuration files are often called dotfiles,
+especially if user private. This comes from the
+fact that they have a `.' at the beginning of
+their name the make them hidden.
+
+@cindex @file{-rc}
+@cindex @file{-tab}
+Many of these are named with `rc' at the end,
+exactly why is not known, but it could stand for
+`run commands' or `run(time) configurations'.
+Other configuration files, but seemingly
+exclusively system configuration file, are
+named with `tab' at the end, which stands for
+`table'.
+
+@cindex @file{-.d}
+Directories with modular configuration files
+are conventionally named with `.d' at the
+end for `directory'.
+
+
+
+@node Process name conventions
+@section Process name conventions
+
+@cindex @command{-d}
+@cindex daemon processes
+@cindex system processes
+@cindex background processes
+Daemon (pronounced exactly as `demon',
+no fancy diphthong) processes are system
+processes that run continuously in the
+background. These are named with a `d'
+in the end.
+
+@cindex @command{-ed}
+Programs used for editing of sometimes named
+with `ed' in the end for `editor'.
+

@@ -1,0 +1,262 @@
+@node Installation
+@chapter Installation
+
+In this chapter you will learn how to install
+GNU/Pony, and get information about details
+you should thinks about when installing your
+system.
+
+@menu
+* Partitioning your harddrive::
+@end menu
+
+
+@node Partitioning your harddrive
+@section Partitioning your harddrive
+
+@cindex partitions
+When installing your system you should think
+about how you want to partition your system.
+Exactly how you want to this depends on your
+requirements and resources.
+
+@cindex @file{/boot}
+@cindex kernel image
+@cindex initramfs
+@cindex initrd
+@cindex bootloader
+@cindex chainloading
+It is highly recommended to have a partition
+for @file{/boot}, the directory containing
+the bootloader (see @ref{The bootloader} for
+more information), and the kernel image and the
+early initialisation image (for more information
+see @ref{The initial random access memory disc}).
+If you only install one kernel to this
+partition, 50 MB will do you quite well. This
+partition needs to be a primary partition unless
+it is chainloaded from another bootloader.
+The size of the a Linux kernel image, depends
+on how it is configures, but it is unlikely that
+is exceeds 5 MB. The early initialisation image
+also unlikely to exceed 5 MB, but a fallback
+for this image can be 20 MB. However, it is
+recommended to use even 100 MB or even 200 MB,
+to be safe, you never now if you want to install
+additional images or if the images will grow
+larger over the years, an installation of a
+rolling release distribution will never need to
+be reinstalled and can last forever.
+
+@cindex extended partition
+@cindex primary partition
+@cindex logical partition
+@cindex bootloader
+@cindex chainloading
+To maximise the flexibility of your partitions,
+it recommended to make an extended partition of
+the remaining disc space. The bootloader needs
+to be in a primary parition to be started by the
+boot manager, and if you are using chainloading
+it is easiest to chainload into primary paritions,
+but beyond that all partitions can be logical.
+A primary partition is a regular partition, an
+extended partition is a special type of primary
+partition than contains additional partitions,
+logical partitions. You can only have at most one
+extended partition. Including your extended
+partition you can only have four primary
+partitions, but you can have an unlimited number
+of logical partitons@footnote{With the exception
+that the kernel as a limited number of major–minor
+number pairs for block devices and only few of
+then are for hard drives and partitions}.
+
+@cindex extended partition
+@cindex logical partition
+@cindex MBR
+@cindex Master Boot Record
+@cindex GUID Partition Table
+@cindex GPT
+@cindex Unified Extensible Firmware Interface
+@cindex UEFI
+@cindex Basic Input/Output System
+@cindex BIOS
+The limitation of 4 primary and extended
+partitions in a limitation in Master
+Boot Record (MBR) which is a disc
+formatting for how partitions hard layed
+out and addressed. If perfer, you can
+instead use GUID Partition Table (GPT)
+which typically can hold 128 partitions.
+Some operating system are not compatibly
+with GPT and some cannot boot using it
+unless the computer uses Unified Extensible
+Firmware Interface (UEFI) (or sometimes
+Basic Input/Output System (BIOS).)
+
+@cindex @file{/}
+@cindex @file{/usr}
+@cindex @file{/usr/local}
+@cindex @file{/usr/games}
+@cindex @file{/usr/local/games}
+@cindex @file{/opt}
+@cindex @file{/home}
+@cindex @file{/srv}
+@cindex @file{/etc}
+@cindex @file{/var}
+@cindex @file{/info}
+@cindex @file{/share}
+How to best partition the rest of the system is
+debated. What you have now to consider is the
+directories @file{/}, @file{/usr}, @file{/usr},
+@file{/usr/local}, @file{/usr/games},
+@file{/usr/local/games}, @file{/opt},
+@file{/home}, @file{/srv}, @file{/etc},
+@file{/var}, @file{/info} and @file{/share}.
+@file{/usr/games} and @file{/usr/local/games}
+were initialially introduces because games
+are typically large and the harddrives was
+not too big back in the days; today not that
+many distrubtions even have them, and we do
+not recommend creating separate partitions
+for them. So the remain directories are:
+
+@table @file
+@item /
+Essential programs.
+
+@item /usr
+Non-essential programs. Today many
+distributions symlinks @file{/bin}
+to @file{/usr/bin}, @file{/sbin}
+to @file{/usr/sbin} and @file{/lib}
+to @file{/lib}, but even before that
+few recommended to put it on a separate
+partition.
+
+@item /usr/local
+Programs not included in the distribution:
+private software and software not yet
+included in the package repostory.
+
+@item /opt
+Serves as hosting directory for the same
+category of programs as @file{/usr}, but
+self-contained and large cases. Because
+of this and the size of today's harddrives
+it is recommended that it is not separated
+from @file{/usr}.
+
+@item /home
+User home directories. It is generally
+agreed that this directory is placed on its
+own partition because you do not want to
+lose files because you forget to backup
+dotfiles or lose it if the system partition
+gets corrupted. There is however no sense
+in separating it just so you can have two
+or more systems sharing it, as the
+configuration by the dotfiles can cause
+problems.
+
+@item /srv
+Directory for services hosted by the machine.
+
+@item /etc
+@cindex initramfs
+@cindex initrd
+Host specific system-wide configurations.
+Separating this directory to a partition
+separate from @file{/} is tricky but possible:
+it must be mounted in the early boot process.
+
+@item /var
+Variable data files.
+
+@item /info
+GNU/Pony directory for administrated shared files.
+
+@item /share
+GNU/Pony directory for user shared data.
+
+@end table
+
+This is how we recommend that you partition
+your system, in four partitions:
+
+@table @asis
+@item @file{/}, @file{/var} and @file{/etc}
+One partition for the essentials, and the variable
+data including the system logs.
+
+@item @file{/usr} and @file{/opt}
+One partition for non-essential programs.
+
+@item @file{/usr/local}, @file{/srv}, @file{/home}, @file{/info} and @file{/share}
+One partition for local and user files.
+
+@item Spare partition
+A spare partition of the same size as that
+of @file{/}. This allows you to backup your
+essentials when you know that it is in a
+good state, allowing you to boot into it if
+@file{/} breaks or gets corrupted.
+Additionally this allows you to temporarly
+use another partition for @file{/} and
+reformat your actual @file{/} into a newer
+filesystem without reinstalling your system.
+
+@end table
+
+This partitioning setup is unconventional not
+straight forward how to setup. You can
+create a hidden directory named @file{~/.parts},
+in which you can create two mountpoint
+directories: @file{usr}, @file{local},
+which can be used from creating @file{/usr}
+and @file{/opt} and @file{/usr/local},
+@file{/srv}, @file{/home}, @file{/info}
+and @file{/share} as symlinks to inner
+directories you need to create.
+
+However, if your @file{/usr} and @file{/opt}
+directories are not going to be that large,
+it makes more sense to combine that partition
+with that of @file{/}.
+
+@pindex UPX
+Provided that you do not have too many
+local and user files. A GNU/Linux installation
+can be quite small. 5 GB can actually be
+enough, 10 GB to be safe, if you do not
+have that many large programs or too many
+programs. A 50 GB partition for all program
+can be quite the challenge to deplete,
+80 GB is practically impossible to fill.
+This can largely be credited to the heavy
+use of dynamic linking, and it even possible
+to compress executables with UPX, strip
+unused symboles for executables and to
+optimise the compilation of problem to
+minimise the size of the create executable.
+
+@cindex swap partition
+@cindex swap memory
+Most users will find that 2 GB is enough
+random access memory (RAM), and that even
+1 GB can be enough; unless they use
+specific programs, or games, that uses a
+lot of memory. If you do not do too much
+100 MB may actually be enough. If you
+feel that you need more, you can create
+a swap partition, this is partition in
+which the kernel can store memory to
+which it feel it does not need frequent
+access. If you have not used GNU/Linux
+before but are not using any programs
+that uses a lot of memory you might want
+to create a swap partition large enough
+so that it and your RAM totals to 4 GB
+and you will be safe.
+

@@ -1,0 +1,210 @@
+@node Philosophy
+@chapter Philosophy
+
+This chapter describes the collection of philosophies
+that makes up GNU/Pony.
+
+@menu
+* Philosophy of the GNU Project::
+* Unix philosophy::
+* Worse is better::
+* Philosophy of the GNU/Pony project::
+@end menu
+
+
+
+@node Philosophy of the GNU Project
+@section Philosophy of the GNU Project
+@cindex GNU Project
+@cindex the GNU Project
+@cindex Free Software
+@cindex philosophy
+
+Free Software means that the software's users have freedom
+(it is not an issue about price.) The GNU operating system
+was developed so that users can have freedom in their
+computing. It is not just a matter of being able to share
+software solutions, it is matter of having freedom in
+computer space, both in softare and in hardware.
+
+A program is Free Software if the program's users have the
+four essential freedoms:
+
+@itemize @bullet
+@item @i{Freedom 0:}
+The freedom to run the program, for any purpose as you wish.
+@item @i{Freedom 1:}
+The freedom to study how the program works, and change it so
+it does wait you wish.
+@item @i{Freedom 2:}
+The freedom to redistribute copies so you can help your
+neighbour.
+@item @i{Freedom 3:}
+The freedom to contribute to your community by distributing
+copies of your modified versions when you which.
+@end itemize
+
+
+
+@node Unix philosophy
+@section Unix philosophy
+@cindex philosophy
+@cindex unix
+
+@smallquotation
+`Unix is simple. It just takes a genius to understand
+its simplicity.' – Dennis Ritchie
+@end smallquotation
+
+@smallquotation
+`Unix is user-friendly. It just isn't promiscuous about
+which users it's friendly with.' – Steven King
+@end smallquotation
+
+
+@table @asis
+@item Modularity
+@cindex modularity
+@cindex simplicity
+Systems should be build of small programs connected
+by a well defined interface. This simplifies debugging,
+reduces complexity, increases readability and makes it
+easier to replace or extend parts ot the system.
+@item Composition
+@cindex composition
+@cindex simplicity
+Programs should be written so that they can communicate
+easily with other programs. This enables cannibalisation
+by invocation, reduces the need of code cannibalisation
+or reinvention, reduces the complexity of a system, makes
+it easier to replace parts ot the system, and enables to
+user to perform actions far beyond what the developer
+could have imagined.
+@item Separation
+@cindex separation
+@cindex simplicity
+Mechanisms of the programs from the policies of the
+programs should be separated into a front-end interface
+and back-end engine that interface communicates with.
+@item Representation
+@cindex representation
+@cindex simplicity
+When faced with having to choose, make the data more
+complicated rather than the procedural logic.
+@item Generation
+@cindex generation
+@cindex automatication
+Write abstract high-level programs that generate code,
+this reduces development time and reduces bugs.
+@item Diversity
+@cindex diversity
+Programs should be designed to be flexible. This allows
+them to be used in other ways than their developers
+intended.
+@item Extensibility
+@cindex extensibility
+Write extensible protocols to allow for easy plugins
+without modification to the program's architecture.
+@end table
+
+
+
+@node Worse is better
+@section Worse is better
+@cindex unix
+@cindex philosophy
+@cindex worse is better
+@cindex better is worse
+
+@table @asis
+@item Simplicity
+@cindex simplicity
+Simplicity is the most important consideration in a
+design, both in implementation and interface
+@item Correctness
+@cindex correctness
+The design must be correct in all observable aspects,
+but it is better to be simple.
+@item Consistency
+@cindex consistency
+The design should not be overly inconsistent, it can
+be sacrificed for simplicity, but it is better to drop
+less common circumstances.
+@item Completeness
+@cindex completeness
+The design should cover as many situations as is
+practical. Completeness can be sacrificed in favour
+of any other quality and must be sacrificed whenever
+implementation simplicity is jeopardised, but
+consistency can be sacrificed to achieve completeness;
+especially worthless is consistency of the interface.
+@end table
+
+
+
+@node Philosophy of the GNU/Pony project
+@section Philosophy of the GNU/Pony project
+@cindex GNU/Pony
+@cindex philosophy
+
+@table @asis
+@item Documentation
+@cindex documentation
+Every feature and internal plumbing of a
+program must be documented as well as
+interresting use tricks. A program is nothing
+without documentation. @command{info} is
+primary, @command{man} is tertiary.
+@item Unused RAM is wasted RAM
+@cindex wasted RAM
+Nopony ever fills her entires RAM; programs
+do no need to minimise RAM, it often makes
+the program more complex or less readable.
+Not utilising the computers RAM, especially
+in these minute quantites, is a waste of RAM.
+@item Wasted RAM is still wasted RAM
+@cindex ephemeral
+@cindex wasted RAM
+Programs should still free memory it does
+not require any more and never will, unless
+it makes to program overly complex. Ephemeral
+programs need not bother about this as they
+there memory will be freed soon anyway
+(but do free everything when the program
+exits to help debugging.)
+@item Reduce complexity not overhead
+@cindex time complexity
+@cindex complexity, time
+@cindex overhead
+@cindex program speed
+Do not rewrite your programs in C or otherwise
+reduce overhead, it is time complexity that is
+important: use efficent algorithms, instruction
+flows, and data structions that do not make the
+program overly complex. The only except if is
+the algorithm cannot be change, is intensive,
+and can be considerably more efficient with a
+faster language and code tweaks; for example
+cryptographic hashing algorithms.
+@item Extensibility
+@cindex extensibility
+Aim for unlimited extensibility, this is often
+closely approximable with onion functions.
+@item Customisibility
+@cindex customisibility
+Aim for unlimited customisibility, this is often
+closely approximable with extension and
+configuration files that are scripts that are
+sourced.
+@item Portability at compile time
+@cindex portability
+Programs should try to utilise the operating
+system as much as possible, portability can
+be implemented as compile rather than runtime.
+@item Minimalism
+@cindex simplicity
+@cindex minimalism
+Programs should be as small as possible and
+be extended with extensions.
+@end table
+

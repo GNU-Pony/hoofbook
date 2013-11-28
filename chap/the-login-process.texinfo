@@ -1,0 +1,176 @@
+@node The login process
+@chapter The login process
+
+@cindex login
+@cindex login management
+@cindex login session
+This chapter introduces you to how login
+management works in GNU/Pony and other
+Unix-like operating systems.
+
+@menu
+* Teletypewriter login management::
+* Graphical login management::
+* Login sessions::
+@end menu
+
+
+
+@node Teletypewriter login management
+@section Teletypewriter login management
+
+@cindex runlevel
+@cindex runlevel 3
+By default GNU/Pony boots into runlevel 3,
+this is a specification on what you want
+your operating system to start when it
+boots. Runlevel 3 implies multiple virtual
+terminals (teletypewriters) but no graphics
+started by default.
+
+@pindex @command{getty}
+@pindex @command{login}
+@pindex util-linux
+The login management for teletypewriters
+are divided into two programs, the getty
+and the login programs. `getty' is portmanteau
+of `get' and `TTY'@footnote{TTY is an
+abbreviation of teletypewriter.}, its
+purpose is gain access to a terminal and
+start the login program which performs
+the login. It is always the login program
+that reads the passphrase and verifies it,
+but which program that reads the username
+depends on which programs you choose as
+your getty and login programs.
+
+@pindex @command{agetty}
+If choose @command{agetty} and @command{login}
+from util-linux, which is the default on
+GNU/Pony, it is @command{agetty} that reads
+the username, but @command{login} is fully
+capable to do so.
+
+@pindex @command{gates-of-tartaros}
+If you choose GNU/Pony's @command{gates-of-tartaros}
+instead of @command{agetty}, it will also
+read the username, but fore better reasons.
+@command{gates-of-tartaros} is capable to
+start @command{ssh} instead of @command{login}
+if the user specifies which host she wants
+to log in into, and to lock the terminal for
+ten minutes if it detects that somepony is trying
+to cheat its way through user authentication.
+@command{gates-of-tartaros} is also extensible,
+and comes with an extension that allows the
+user to use upper case letter when typing the
+username and in such case behave like Unix and
+configure the terminal to print everything
+(that is ASCII) in upper case, which however
+breaks colouring.
+
+@pindex @command{cerberus}
+@pindex @command{libpassphrase}
+You can also choose to use GNU/Pony's
+@command{cerberus} instead of @command{login},
+either by linking @file{/usr/local/sbin/login}
+to it (or by other means put it into @var{PATH}
+with higher precedence than @command{login}) or
+by configuring @command{gates-of-tartaros} to
+use @command{cerberus} instead of @command{login}.
+@command{cerberus} is not capable of ready
+the username, but is more configurable (but only
+compile-time configurable), minimal, and uses
+libpassphrase which allows you to configure how
+the terminal behaves when the program reads a
+passphrase.
+
+
+
+@node Graphical login management
+@section Graphical login management
+
+@cindex runlevel
+@cindex runlevel 5
+@cindex display manager
+By default GNU/Pony boots into runlevel 3,
+which does not start graphics by default.
+Booting into runlevel 5 instead will start
+graphics by default, and you will graphical
+login manager which is what you will be used
+to if you come from a distribution of
+operating system that is more promiscuous
+about with whom it is user-friendly.
+
+A graphical login manager is called a
+`display manager', which is a misnomer. It
+does not really manage the display, that
+is done by the display server.
+
+@pindex XDM
+@pindex SLiM
+@pindex systemd
+@pindex PAM
+@pindex Pluggable Authentication Modules
+GNU/Pony does not have a default graphical
+login manager, but popular graphical login
+managers include XDM and SLiM and login
+managers designed for specific desktop
+environments. Before commiting to a graphical
+display manager you should make sure it works
+problem free with systemd if you also choose
+to use systemd. Issues by be caused by use of
+Pluggable Authentication Modules (PAM) that is
+incompatible with systemd.
+
+@pindex desktop
+A display manager graphical (login manager)
+is three core missions: to start the display
+server, to ask for username and passphrase and
+login the user, and to as the user which
+desktop start and start it.
+
+
+
+@node Login sessions
+@section Login sessions
+
+@cindex login session
+@cindex PAM
+@pindex Pluggable Authentication Modules
+@cindex session leader
+@cindex process group
+@cindex login shell
+A login session is the period between a user
+login and a corresponding logout. When a user
+logs in she is granted exclusive access to
+a terminal or X session@footnote{The same
+virtual terminal as the user used to log in,
+but it can theoretically be on any virtual
+terminal.} that was previousely owned by the
+root user. For a non-graphical login, the
+users default shell is executed, as a login
+shell, which means that it 0:th command line
+argument is prefixed by a dash and the profile
+script is executed. The parent to the shell
+is the session leader and the creator of a
+new process groups. If program exits, which
+is does when the login shell exits, all programs
+in the same session is terminated. The login
+program, that started the shell, opens (on login)
+and closes (on logout) a Pluggable Authentication
+Modules (PAM) session if it uses PAM.
+
+@pindex @command{su}
+@cindex user switching
+@cindex switch user
+@cindex nested login
+@cindex login, nested
+Theoretically, and even implemented on some
+old systems, nested login sessions are possible,
+this is however considered insecure, and
+instead you do a user switches, which is when
+your start a new (non-login) shell as a different
+user without create a new session, using the
+command @command{su}.
+

@@ -1,0 +1,123 @@
+@node Introduction
+@chapter Introduction
+
+This chapter gives you a short introduction
+to what GNU/Pony is.
+
+@menu
+* What is GNU/Pony?::
+* Who is GNU/Pony for?::
+* License information::
+@end menu
+
+
+
+@node What is GNU/Pony?
+@section What is GNU/Pony?
+
+GNU/Pony is a GNU/Linux distribution that aims
+to be extremely customisable and simple. A
+GNU/Linux distribution is a combination of the
+operating system GNU and the operating
+system kernel Linux with additional tools to
+make your life easier.
+
+The GNU Project started in 1983 by Richard
+Stallman, also known as rms (from Richard
+Matthew Stallman) so that your can have
+freedom when you use your computer (not just
+computer programs).
+
+
+
+@node Who is GNU/Pony for?
+@section Who is GNU/Pony for?
+
+GNU/Pony is for the computer enthusiast who
+wants an operating system tailored to her
+own preferences down to that last detail and
+does not mind building software from source.
+
+@cindex ephemeral
+@cindex paradigm
+GNU/Pony also includes some optional programs
+designed for using in terminals with a
+specific paradigm: ephemeral, to run during
+as short of time as possible, so you have as
+few running processes at the same time as
+possible.
+
+
+
+@node License information
+@section License information
+@cindex licenses of GNU/Pony
+
+GNU/Pony is an operating system distribution
+with contains a few layers, which are licensed
+differenly:
+
+@table @asis
+@item The boot manager
+@cindex boot manager
+The default boot manager is provided by SYSLINUX
+which is licensed under the GNU General Public
+License version 2.
+
+@item The bootloader
+@cindex bootloader
+The default bootloader is provided by SYSLINUX
+which is licensed under the GNU General Public
+License version 2.
+
+@item The kernel
+@cindex kernel
+The default kernel is currently Linux which is
+licensed under the GNU General Public
+License version 2 amoung other licenses.
+
+@item The core userland
+@cindex code userland
+The default core userland is almost exclusively
+GNU, a large collection of programs, which is
+licensed under the GNU General Public License
+version 3 and few other licenses.
+
+@item The distribution userland
+@cindex distribution userland
+The GNU/Pony userland is the programs written
+specifically for GNU/Pony. They are licensed
+under the GNU General Public license 3 and the
+GNU Affero General Public license 3, with parts
+being licensed under the GNU All Permissive License.
+
+There are however two exceptions:
+@itemize @bullet
+@item netcfg: New BSD License (3-clause BSD License)
+@item miscellaneous:
+Do what the fuck you want to public license, version 2
+@end itemize
+
+@item The ports tree
+@cindex package repository
+@cindex ports tree
+The GNU/Pony package repository is licensed under
+the GNU General Public License version 3, but the
+individual scrolls are licensed under the GNU All
+Permissive Licenses, but it is believed that
+copyright is not forced upon them or that they
+can even copyrighted at all.
+
+The package repository is however install copyrighted
+programs that can be of vertially any license. But
+you have to opt out from strict freedom control to
+install non-free programs, even if they are shareable.
+
+@end table
+
+@cindex Free Software
+In short: with the exception for parts of the interim
+default kernel, GNU/Pony is entirely Free Software,
+but only almost entirely Open Source (but it does not
+aim to be Open Source, only to be Free Software.)
+

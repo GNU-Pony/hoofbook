@@ -1,0 +1,132 @@
+@node Software packages
+@chapter Software packages
+
+This chapter introduces the concept of
+software packages to new users that do not
+come from a GNU/Linux system or any similar
+system. It also gives an overview how
+this works specifically in GNU/Pony.
+
+@menu
+* What are software packages?::
+* Package management in GNU/Pony::
+* Package maintenance in GNU/Pony::
+@end menu
+
+
+
+@node What are software packages?
+@section What are software packages?
+
+@cindex package manager
+Software packages is a concept this is
+very popular for Free Software operating
+systems and distributions. Software packages
+are basically scripts with instructions for
+downloading and installing specific programs.
+With a program called a package manager,
+uninstallation, conflicts, dependencies and
+updates can be handled in addition to
+installations. Package managers also gives
+you a method for finding and installing programs
+you may be interested in.
+
+@cindex package repository
+Distributions such as GNU/Linux have
+collections of packages in what are called
+package repositories. These are often
+called ports trees if they are downloaded
+to the users rather than remotely queried.
+
+
+
+@node Package management in GNU/Pony
+@section Package management in GNU/Pony
+@cindex installing software
+@cindex uninstalling software
+@cindex updating software
+
+GNU/Pony's package repository is community
+operated and consists for five Git branches:
+
+@itemize
+@item core: Recommended core packages, high priority support
+@item extra: Recommended packages, medium priority support
+@item more: Additional packages, low priority support
+@item limbo: Removed packages, no support
+@item spool: Upcoming packages
+@end itemize
+
+The packages are further grouped into categories.
+
+@cindex scrolls
+@cindex Spike scrolls
+@cindex dragonsuite
+The packages for GNU/Pony are called scrolls
+or Spike scrolls. These are Python scripts, that
+use a module called `dragonsuite' that provides
+common functionality used when installing
+programs, that provide metainformation for a
+package and where to download the programs
+source code and how to build and install it.
+
+@cindex ports tree
+Users have the entires package repository
+(ports tree) downloaded as a Git repository.
+This allows you to do local modificatios to
+packages without losing the changes you have
+made when the ports tree is updated.
+
+@pindex @command{spike}
+The package manager for GNU/Pony is called
+Spike, the command is @command{spike}.
+
+
+
+@node Package maintenance in GNU/Pony
+@section Package maintenance in GNU/Pony
+
+@pindex @command{starswirl}
+@pindex @command{cron}
+@pindex @command{celestia}
+@cindex Spike scroll templates
+@cindex Celestia templates
+@cindex automation, package maintenance
+@cindex @command{dragonfire}
+GNU/Pony has a toolchain for maintaining packages.
+Starswirl is a program that can be used to generate
+Spike scrolls and Celestia templates, from Spike
+scroll templates. Celestia is meant to be invoked
+periodically by @command{cron}, it is a program
+that generates Spike scrolls from Celestia
+templates when a new version of a program is
+released. You can choose to pipe Celestia to a program
+that is some manner notifies you about each line
+it prints, but if you want to take the automation
+on step further you can pipe it to the DragonFire
+program that commits them to a Git repository.
+
+For Celestia you have a list of packages it should
+maintain. For DragonFire you have a mapping to
+which category a package belong. DragonFire should
+also have a private clone of the package repository's
+spool branch. You then manually push the repository
+@footnote{Since you really should not store passwords
+in plain text, but you could, and do a push when
+Celestia and DragonFire exited.}, test them and
+cherry pick them to their appropriate branch.
+
+@cindex cannibalisation, package repository
+@cindex package repository cannibalisation
+@pindex @command{sweetiebot}
+GNU/Pony also have a package repository cannibaliser
+called Sweetie Bot that crawls other GNU/Linux
+distributions and converts them to Spike scrolls
+(or optionally any other format). As a GNU/Pony user
+or system administrator you do not need to know about
+Sweetie Bot. Sweetie Bot has a module for each
+foreign package repository it knows about, and each
+module is only supposted to be ran by one user world
+wide, a GNU/Pony developer. Sweetie Bot could also
+be ran by developers for other distributions.
+

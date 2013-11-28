@@ -1,6 +1,5 @@
 PROGRAM = hoofbook
 PKGNAME = hoofbook
-TEXINFO_DIR = .
 
 TEXIFLAGS = #--force
 
@@ -11,6 +10,10 @@ DVI_COMPRESS = $(ALL_COMPRESS)
 
 PREFIX = /usr
 DATA = /share
+
+
+MANE_SRC = $(PROGRAM).texinfo
+INCLUDED_SRC = $(shell find chap | grep '\.texinfo$$')
 
 
 
@@ -62,19 +65,19 @@ obj/logo.eps: obj/logo.ps
 obj/logo.ps: logo.svg
 	rsvg-convert --format=ps "$<" > "$@"
 
-$(PROGRAM).info: $(TEXINFO_DIR)/$(PROGRAM).texinfo
+$(PROGRAM).info: $(MANE_SRC) $(INCLUDED_SRC)
 	mkdir -p obj
 	cd obj && $(MAKEINFO) $(TEXIFLAGS) "../$<" && mv "$@" ..
 
-$(PROGRAM).pdf: $(TEXINFO_DIR)/$(PROGRAM).texinfo obj/logo.pdf
+$(PROGRAM).pdf: $(MANE_SRC) $(INCLUDED_SRC) obj/logo.pdf
 	mkdir -p obj
 	cd obj && texi2pdf $(TEXIFLAGS) "../$<" && texi2pdf "../$<" && mv "$@" ..
 
-$(PROGRAM).dvi: $(TEXINFO_DIR)/$(PROGRAM).texinfo obj/logo.eps
+$(PROGRAM).dvi: $(MANE_SRC) $(INCLUDED_SRC) obj/logo.eps
 	mkdir -p obj
 	cd obj && $(TEXI2DVI) $(TEXIFLAGS) "../$<" && $(TEXI2DVI) "../$<" && mv "$@" ..
 
-$(PROGRAM).ps: $(TEXINFO_DIR)/$(PROGRAM).texinfo obj/logo.eps
+$(PROGRAM).ps: $(MANE_SRC) $(INCLUDED_SRC) obj/logo.eps
 	mkdir -p obj
 	cd obj && texi2pdf $(TEXIFLAGS) --ps "../$<" && texi2pdf --ps "../$<" && mv "$@" ..
 
