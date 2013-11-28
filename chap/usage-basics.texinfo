@@ -55,11 +55,20 @@ to change it you can use the command
 
 @cindex @file{.bashrc}
 @cindex @file{~/.bashrc}
+@cindex shell, configure
+@pindex bash.d
 Must shells uses a script file in the
 user's home directory to configure,
 which includes how the shell looks.
 The file is a dotfile (the filename
 starts with a dot) with means it is
 hidden. GNU Bash uses the file
-@file{.bashrc}.
+@file{.bashrc}, which generally is
+called @file{~/.bashrc}, @file{~/}
+means that it is located in your
+home directory. You can use the
+package `bash.d' to configure your
+GNU Bash shell, it is a collection
+of files that can be included in
+your @file{~/.bashrc} file.
 
