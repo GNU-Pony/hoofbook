@@ -40,4 +40,58 @@ weaks.
 @node Transitioning from Windows
 @section Transitioning from Windows
 
+Many Windows users find it difficult it
+transition to any GNU/Linux distribution.
+Many users try to ease it by dual-booting
+(having both operating systems installed
+on the same computer), this is not
+recommended as you often find yourself
+booting into Windows quickly when you do
+not know how to perform a task and get
+stuck in Windows. It may be easier to
+install GNU/Linux on your primary computer
+and Windows on a secondary computer that
+you perfer not to use, or put Windows in
+VirtualBox if you only have one computer.
+
+Windows users should keep in mind that
+GNU/Linux is a completely different
+philosophy of computing. Try to find
+replacements for your Windows programs
+that run on both Windows and GNU/Linux
+and switch them one after each other
+one.
+
+When you have switched all programs
+it easiest to switch to a GNU/Linux
+that is beginner-friendly and uses a
+desktop environment similar to that of
+Windows. For this step you will need
+to look at GNU/Linux distributions
+yourself, do not ask a friend unless
+she as switched herself and use her
+computer very similarly to yourself.
+DistroWatch can be a good source for
+finding distributions. You can also
+take a look at Linux Mint with Cinnamon
+or Maté and at Zorin OS.
+
+Once you feel conformatable with
+the GNU/Linux distribution you have
+choosen you can try Arch Linux,
+followed by Parabola GNU/Linux for
+a completely free computer experience.
+
+Once you feel conformatable working
+with Arch Linux and optionally
+Parabola GNU/Linux you should be
+ready to switch to GNU/Pony.
+
+Keep in mind that switching from Windows
+is a transition that can be challenging
+and can take a very long time due to the
+large difference in how you use it and
+the program on it. But there are at
+least 70 reasons to switch and you can
+do your computing in freedom.
 
