@@ -55,7 +55,8 @@ stuck in Windows. It may be easier to
 install GNU/Linux on your primary computer
 and Windows on a secondary computer that
 you perfer not to use, or put Windows in
-VirtualBox if you only have one computer.
+QEMU or VirtualBox if you only have one
+computer.
 
 Windows users should keep in mind that
 GNU/Linux is a completely different
