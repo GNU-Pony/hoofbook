@@ -1,0 +1,94 @@
+@node Advanced installation
+@chapter Advanced installation
+
+The normal way to install GNU/Pony is by
+creating an bootable persistent storage
+USB. In this chapter you will learn how
+to install GNU/Pony using other methods.
+
+
+@menu
+* Installing without an installation medium::
+@end menu
+@c TODO: how to install using SSH
+@c TODO: how to install using PXE
+@c TODO: how to create a CD or DVD
+@c TODO: how to write an installation medium from another operating system
+@c TODO: how to create a non-persistent USB
+@c TODO: how to create a multi-arch medium
+
+
+@node Installing without an installation medium
+@section Installing without an installation medium
+
+If you have a remote server or a computer
+without any CD or DVD drive and cannot
+boot USB devices or use PXE, you can still
+install GNU/Pony using a method described
+in this section.
+
+For this, you will require a swap partition
+or an partition other than your
+@file{/boot}-partition that you do not mind
+losing in case you are not successful,
+and a USB installation medium image.
+
+Rather than copying the installation medium
+to a USB device you @command{swapoff} your
+swap partition and copy the image to your
+swap partition. If your swap partition is
+@command{/dev/sdx99}, type:
+
+@example
+swapoff /dev/sdx99 #  or swapoff --all
+dd if=THE_IMAGE_FILE of=/dev/sdx99
+@end example
+
+If you are using an encrypted swap partition
+you should @command{dd} into the
+@file{/dev/sd*} file and not the
+@file{/dev/mapper/*}, and similarly if
+you use RAID or LVM for your swap parition.
+
+You do not need to update your bootloader
+configuration as you can edit it temporarly
+when the bootloader is running. But if
+you have it set not show up you should
+configuration it to show up, and if you
+have a remote server you most set it to
+load the former swap partition by default.
+
+When you have @command{dd}:d your
+installation medium image to your swap
+partition and thereby converting your
+swap partition to a regular boot partition
+you can reboot your computer and chainload
+to it. If your @file{/boot} have SYSLINUX
+on it, you can, when SYSLINUX starts,
+press @kbd{Tab} and type something similar
+to one of the following lines:
+
+@table @command
+@item .com chain.c32 hd0 0
+Chainload into @file{/dev/sda}.
+@item .com chain.c32 hd0 1
+Chainload into @file{/dev/sda1}.
+@item .com chain.c32 hd0 2
+Chainload into @file{/dev/sda2}.
+@item .com chain.c32 hd1 0
+Chainload into @file{/dev/sdb}.
+@item .com chain.c32 hd1 1
+Chainload into @file{/dev/sdb1}.
+@item .com chain.c32 hd1 2
+Chainload into @file{/dev/sdb2}.
+@end table
+
+To be on the safe side, do not override
+the partition with a new swap partition
+before verifing that your installation
+is working. And do not override your
+existing @file{/boot} just edit the line
+for how to boot the operating system
+after you have successfully booted into
+it.
+
