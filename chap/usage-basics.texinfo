@@ -122,7 +122,10 @@ editor. The simplest is called GNU
 Nano, often just called Nano,
 which is started with the command
 @command{nano} followed by the file
-you want to edit or create.
+you want to edit or create. You
+can set the environment variable
+@var{EDITOR} to the command you
+want to use as your default editor.
 
 @pindex GNU Emacs
 @pindex @command{emacs}
