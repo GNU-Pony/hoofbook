@@ -5,7 +5,7 @@
 * Virtual terminals::
 * Shells::
 * Text editors::
-* Account management::
+* User management::
 * Documentation::
 @end menu
 
@@ -150,8 +150,8 @@ is exited with the key combination
 
 
 
-@node Account management
-@section Account management
+@node User management
+@section User management
 
 @cindex passphrase, change
 @cindex passwords, change
