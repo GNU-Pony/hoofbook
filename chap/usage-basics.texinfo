@@ -6,6 +6,7 @@
 * Shells::
 * Text editors::
 * Account management::
+* Documentation::
 @end menu
 
 
@@ -203,4 +204,83 @@ create, delete and modify users by
 using the commands @command{useradd},
 @command{userdel}, and
 @command{usermod}, respectively.
+
+
+
+@node Documentation
+@section Documentation
+
+Many programs have online
+documentation, that is,
+documentation that is included
+in there's package can be
+accesses on the computer.
+
+@opindex @option{--help}
+@opindex @option{-h}
+@opindex @option{-H}
+Documentation comes in many
+forms. The simplest it write
+@command{xyz --help} to get
+a bit of documentation for
+the command @command{xyz}.
+However some programs by
+use something else than
+@option{--help}, sometimes
+just @option{-h} or @option{-H}.
+
+@cindex manpages
+@cindex manual pages
+@pindex @command{man}
+For a bit more information
+about a program you can
+usally type @command{man xyz}.
+@command{man} is a command
+that opens a so called manpage
+or manual page. These often
+document efterthing you need
+to know and is avaible for
+many other things then program,
+such a C header files and
+system calls and functions
+provided by libraries, as
+well as configuration files.
+
+@pindex @command{info}
+If you want even more
+documenation, most GNU programs
+and GNU/Pony programs includes
+@command{info} manuals, which is
+the documentation format of
+choose for GNU and GNU/Pony, but
+other programs use them as well,
+although not quite as many as
+there are using @command{man}.
+@command{info} manuals are
+hypertext books. If a program
+does not have an @command{info}
+manuals, the command
+@command{info} will open the
+manpage for the program if it
+has one.
+
+@pindex @command{apropos}
+@opindex @option{--apropos}, @command{info}
+@pindex @command{info --apropos}
+The commands @command{apropos}
+and @command{info --apropos} can
+be used to look up a concept
+avaible in an unspecified manpage
+or @command{info} manual, respectively.
+
+@cindex @file{/use/doc}
+@cindex HTML documentation
+@cindex PDF documentation
+@cindex plain text documentation
+There is also a directory named
+@file{/use/doc} in which package can
+add documention of any form, usally
+you will find HTML pages and PDF
+manuals here, or sometimes just
+plain text files.
 
