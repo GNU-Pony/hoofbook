@@ -46,7 +46,7 @@
 @end ifnottex
 
 Welcome to GNU/Pony! This hoofbook covers the installation and day
-to day use of GNU/Pony. This manual is intendent as a glue-manual
+to day use of GNU/Pony. This manual is intended as a glue-manual
 and an overview manual, it gives you an overview of the system and
 how subsystems can be configured and combined. For details on
 specific topics you should read that program's manual.
