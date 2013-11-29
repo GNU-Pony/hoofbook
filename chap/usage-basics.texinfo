@@ -1,6 +1,14 @@
 @node Usage basics
 @chapter Usage basics
 
+This chapter will help you getting
+started using an installation of
+GNU/Pony. It is recommended to
+read this chapter in its entirety
+before starting if you have only
+used an operating system in a
+graphical environment before.
+
 @menu
 * Virtual terminals::
 * Shells::
