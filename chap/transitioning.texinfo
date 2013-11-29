@@ -22,7 +22,10 @@ find it helpful to first transition to
 Parabola GNU/Linux (if coming from a
 GNU/Linux-libre distribution) or
 Arch Linux (otherwise), and use it for
-a week or two.
+a week or two, if they are not
+comfortable using the terminal to do
+everything that can be done in the
+terminal.
 
 
 
