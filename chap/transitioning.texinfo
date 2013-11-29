@@ -1,0 +1,43 @@
+@node Transitioning
+@chapter Transitioning
+
+This chapter is intended to help you
+with transitioning to GNU/Pony from
+other operating systems.
+
+@menu
+* Transitioning from other distributions::
+* Transitioning from a BSD::
+* Transitioning from Windows::
+@end menu
+
+
+@node Transitioning from other distributions
+@section Transitioning from other distributions
+
+Users of Arch Linux, Gentoo and similar
+distributions should feel comfortable
+switching to GNU/Pony. Other users may
+find it helpful to first transition to
+Parabola GNU/Linux (if coming from a
+GNU/Linux-libre distribution) or
+Arch Linux (otherwise), and use it for
+a week or two.
+
+
+
+@node Transitioning from a BSD
+@section Transitioning from a BSD
+
+FreeBSD users should feel comfortable
+switching to GNU/Pony. PC-BSD users
+may find it helpful to first transition
+to FreeBSD and stay on it for about two
+weaks.
+
+
+
+@node Transitioning from Windows
+@section Transitioning from Windows
+
+

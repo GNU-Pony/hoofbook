@@ -118,6 +118,7 @@ Texts. A copy of the license is included in the section entitled
 @menu
 * Introduction::
 * Philosophy::
+* Transitioning::
 * Installation::
 * Conventions::
 * Software packages::
@@ -135,6 +136,7 @@ Texts. A copy of the license is included in the section entitled
 
 @include chap/introduction.texinfo
 @include chap/philosophy.texinfo
+@include chap/transitioning.texinfo
 @include chap/installation.texinfo
 @include chap/conventions.texinfo
 @include chap/software-packages.texinfo
