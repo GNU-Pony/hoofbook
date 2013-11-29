@@ -284,3 +284,21 @@ you will find HTML pages and PDF
 manuals here, or sometimes just
 plain text files.
 
+If you have not used GNU or any
+Unix-like operating system, such
+as a BSD or Linux, before it is
+highly recommended to take a
+quick look at the first page of
+@command{info coreutils} and
+skim through chapter that you
+think can be useful. You should
+also read @command{man cd}.
+Commands such as @command{ls},
+@command{mkdir}, @command{cp},
+@command{mv} and @command{rm}
+are all very importation, you
+can read about them by typing
+@command{info coreutils} followed
+by the name of one of those
+commands.
+
