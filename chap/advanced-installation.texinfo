@@ -48,7 +48,7 @@ If you are using an encrypted swap partition
 you should @command{dd} into the
 @file{/dev/sd*} file and not the
 @file{/dev/mapper/*}, and similarly if
-you use RAID or LVM for your swap parition.
+you use RAID or LVM for your swap partition.
 
 You do not need to update your bootloader
 configuration as you can edit it temporarly
