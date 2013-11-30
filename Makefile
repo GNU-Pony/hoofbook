@@ -108,12 +108,42 @@ install: install-info
 install-info: $(PROGRAM).info.gz
 	install -Dm644 "$<" -- "$(DESTDIR)$(PREFIX)$(DATA)/info/$(PKGNAME).info.gz"
 
+.PHONY: install-pdf
+install: install-pdf
+install-pdf: $(PROGRAM).pdf$(PDF_COMPRESS)
+	install -Dm644 "$<" -- "$(DESTDIR)$(PREFIX)$(DATA)/doc/$(PKGNAME).pdf$(PDF_COMPRESS)"
+
+.PHONY: install-dvi
+install: install-dvi
+install-dvi: $(PROGRAM).dvi$(DVI_COMPRESS)
+	install -Dm644 "$<" -- "$(DESTDIR)$(PREFIX)$(DATA)/doc/$(PKGNAME).dvi$(DVI_COMPRESS)"
+
+.PHONY: install-ps
+install: install-ps
+install-ps: $(PROGRAM).ps$(PS_COMPRESS)
+	install -Dm644 "$<" -- "$(DESTDIR)$(PREFIX)$(DATA)/doc/$(PKGNAME).ps$(PS_COMPRESS)"
+
 # rules for uninstalling the manual
 
 .PHONY: uninstall-info
 uninstall: uninstall-info
 uninstall-info:
-	-rm -- "$(DESTDIR)$(PREFIX)$(DATA)/info/$(PKGNAME).info.gz"
+	-rm -- "$(DESTDIR)$(PREFIX)$(DATA)/doc/$(PKGNAME).info.gz"
+
+.PHONY: uninstall-pdf
+uninstall: uninstall-pdf
+uninstall-pdf:
+	-rm -- "$(DESTDIR)$(PREFIX)$(DATA)/doc/$(PKGNAME).pdf$(PDF_COMPRESS)"
+
+.PHONY: uninstall-dvi
+uninstall: uninstall-dvi
+uninstall-dvi:
+	-rm -- "$(DESTDIR)$(PREFIX)$(DATA)/doc/$(PKGNAME).dvi$(DVI_COMPRESS)"
+
+.PHONY: uninstall-ps
+uninstall: uninstall-ps
+uninstall-ps:
+	-rm -- "$(DESTDIR)$(PREFIX)$(DATA)/doc/$(PKGNAME).ps$(PS_COMPRESS)"
 
 # rules for clean
 
