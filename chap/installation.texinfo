@@ -227,6 +227,16 @@ directories are not going to be that large,
 it makes more sense to combine that partition
 with that of @file{/}.
 
+Someponies recommend putting @file{/var}
+into its own partition. This allows you
+to mount @file{/} and @file{/etc} in
+read only mode. If it is placed in the
+same partition as @file{/home} or
+@file{/share} you can limit @file{/} and
+@file{/etc} to a very small partition
+and let @file{/var} grow as large as
+you like.
+
 @pindex UPX
 Provided that you do not have too many
 local and user files. A GNU/Linux installation
