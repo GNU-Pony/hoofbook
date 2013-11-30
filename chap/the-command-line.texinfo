@@ -1,5 +1,7 @@
 @node The command line
 @chapter The command line
+@cindex terminal
+@cindex shell
 
 The command line is the most powerful
 way to interact with the computer, and
@@ -13,6 +15,7 @@ basic ways.
 
 @menu
 * The command line advantage::
+* Scripting::
 @end menu
 
 
@@ -104,4 +107,64 @@ the terminal, use colours and
 other formating, configure the
 terminal and create graphical
 components in the terminal.
+
+
+
+@node Scripting
+@section Scripting
+@cindex scripts
+@cindex shell
+
+When you use the command line you
+are you are doing using a program
+called a shell. A shell is not
+just a program for starting other
+programs, it is actually an
+interpreter for a programming
+language of the shell script class
+of programming language. A shell
+can execute shell script files or
+be interactive. In interactive
+mode it lets you write in a shell
+script language and runs it as
+you write in it. This means that
+you can create loops, have
+conditionals, store values
+inside variables, and declare
+functions. Most shells use POSIX
+shell script and extends it.
+But a few have their entirely own
+syntax.
+
+If you have create a script file
+you can either run it by typing
+@command{bash your-script} (for
+GNU Bash) or by making it
+executable by running
+@command{chmod a+x your-script}
+and type @command{./your-script}
+if it is the current directory,
+@command{your-script} if it is
+@var{PATH} or by its full file
+name.
+
+You can also type
+@command{. your-script}. Doing
+so includes the your script
+the current script, if are in
+an interative shell it is like
+typing the entire content
+of that file.
+
+@pindex @command{awk}
+As if that is not enough, there
+are other scripting languages
+such as Perl, Python and Awk (Gawk)
+that also use in the shell by
+starting their interpreters.
+@command{awk} is most popular
+for this as it is most fitted
+for this, even though it is
+probably the most difficult of
+them to learn.
 
