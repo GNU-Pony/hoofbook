@@ -13,7 +13,7 @@ DATA = /share
 
 
 MANE_SRC = $(PROGRAM).texinfo
-INCLUDED_SRC = $(shell find chap | grep '\.texinfo$$')
+INCLUDED_SRC = $(shell find chap | grep '\.texinfo$$') $(shell find appx | grep '\.texinfo$$')
 
 
 
