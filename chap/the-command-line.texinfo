@@ -162,7 +162,7 @@ are other scripting languages
 such as Perl, Python and Awk (Gawk)
 that also use in the shell by
 starting their interpreters.
-@command{awk} is most popular
+@command{awk} is the most popular
 for this as it is most fitted
 for this, even though it is
 probably the most difficult of
