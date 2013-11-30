@@ -16,6 +16,7 @@ to install GNU/Pony using other methods.
 @c TODO: how to write an installation medium from another operating system
 @c TODO: how to create a non-persistent USB
 @c TODO: how to create a multi-arch medium
+@c TODO: how to create an offline installation medium
 
 
 @node Installing without an installation medium
