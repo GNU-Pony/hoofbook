@@ -250,7 +250,11 @@ random access memory (RAM), and that even
 1 GB can be enough; unless they use
 specific programs, or games, that uses a
 lot of memory. If you do not do too much
-100 MB may actually be enough. If you
+100 MB may actually be enough.
+@footnote{Graphical web browers usally
+require a bit more memory. If you only
+use a graphical web browser 500 MB
+should be enough for anypony.}. If you
 feel that you need more, you can create
 a swap partition, this is partition in
 which the kernel can store memory to
