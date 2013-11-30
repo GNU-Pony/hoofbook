@@ -36,3 +36,10 @@ a concept called Unix-pipes. Unix-pipes
 is a way to combine programs. This two
 designs combine makes the command line
 virtually unlimited in its flexibility.
+
+@cindex reliability
+Graphical programs are often immature
+and even unstable. In contrast, command
+line tools are most often highly
+reliable.
+
