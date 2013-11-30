@@ -71,6 +71,18 @@ between the mouse and the keyboard
 when using text editors and
 word processors.
 
+The command line is a very
+convenient, accurate and easy
+way to describe how to do something.
+Most help you will find on the
+Internet will use the command
+line and almost always do so
+by writting a set of commands
+in a forum. But there are also
+video using the command line
+with a narrator that explains
+what is going on.
+
 Additionally the command line
 is a great learning experience
 and have more tools as programmer
