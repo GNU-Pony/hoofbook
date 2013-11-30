@@ -235,7 +235,7 @@ programs. A 50 GB partition for all program
 can be quite the challenge to deplete,
 80 GB is practically impossible to fill.
 This can largely be credited to the heavy
-use of dynamic linking, and it even possible
+use of dynamic linking, and it is even possible
 to compress executables with UPX, strip
 unused symboles for executables and to
 optimise the compilation of problem to
