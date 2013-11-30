@@ -8,6 +8,7 @@ system.
 
 @menu
 * Partitioning considerations::
+* Partitioning and formatting::
 @end menu
 
 
@@ -259,4 +260,115 @@ that uses a lot of memory you might want
 to create a swap partition large enough
 so that it and your RAM totals to 4 GB
 and you will be safe.
+
+
+
+@node Partitioning and formatting
+@section Partitioning and formatting
+
+The first thing you do after booting
+the installation medium is to partiting
+and format your hard drive.
+
+@pindex @command{fdisk}
+@cindex disc paritioning
+@cindex paritioning
+To partition a drive you can use the
+command @command{fdisk}. To partition
+your primary drive run
+@command{fdisk /dev/sda}. See
+@ref{Partitioning considerations} for
+recommendations on how to partition
+your system. Do not forget to set
+the bootflag on the @file{/boot}
+partition.
+
+@cindex partition encryption
+@cindex encryption, partition
+@cindex LUKS
+@cindex Linux Unified Key Setup
+@pindex dm-crypt
+@pindex @command{cryptsetup}
+When you have created your partitions
+you can set up encryption for your
+partitions. You cannot encrypt your
+@file{/boot} partition without full
+disc encryption, with is not in the
+scope of this chapter.@footnote{Of
+course it could be possible to find
+a boot manager that supports that,
+but that is probably not very likely.}
+You should consider encryption even
+for older computers; encryption does
+not impact your performance that
+much. In this section you will learn
+of to encrypt your partitions with
+Linux Unified Key Setup (LUKS).
+LUKS cannot be applied or removed
+from an existing partition. It can
+be used to encrypt your swap partition,
+but it is not in the scope if this
+chapter.
+
+@cindex encryption benchmark
+Before commiting to an encryption
+configuration you can benchmark the
+performance of the available systems
+type running
+@command{cryptsetup benchmark}.
+To encrypt a non-formatted partition
+using the aes-xts-plain64 cipher
+(required Linux 2.6.33 or a newer
+kernel), with 512-bit key-size and
+a passhrase hashed with SHA512
+(512 bit Secure Hash Algorithm 2)
+taking 5000 milliseconds to verify,
+run (for partition @file{/dev/sdx99})
+run:
+
+@example
+cryptsetup --cipher     aes-xts-plain64 \
+           --key-size   512             \
+           --hash       sha512          \
+           --iter-time  5000            \
+           --use-random                 \
+           --verify-passphrase          \
+           luksFormat /dev/sdx99
+@end example
+
+Before the encrypted partitions can
+be formatted they must be opened. To
+open the now encrypted partition
+@file{/dev/sdx99} run:
+
+@example
+cryptsetup open --type luks /dev/sdx99 xyz
+@end example
+
+This will create the file
+@file{/dev/mapper/xyz}, which is mapped
+to @file{/dev/sdx99} and encrypts input
+and decrypts output. In other words,
+@file{/dev/mapper/xyz} is now used instead
+of @file{/dev/sdx99} for formatting and
+mounting.
+
+@opindex @option{-t}, mkfs
+@opindex @option{--type}, mkfs
+@opindex @option{-L}, mkfs
+@pindex @command{mkfs}
+To format the partition @file{/dev/sdx99}
+to an ext4 partition, which is the recommended
+format for normal users, and give it the
+label `xyz' run
+@command{mkfs -t ext4 -L xyz /dev/sdx99}.
+The option @option{-t} is implemented in
+@command{mkfs}, all other options are
+implemented by the program that formats
+the partition to the selected format,
+for example @option{-L} is implemented
+in @command{mkfs.ext4}. For more options
+available, in for example ext4, run
+@command{man mkfs.ext4}. For your
+@file{/boot} partition ext2 is recommended.
 
