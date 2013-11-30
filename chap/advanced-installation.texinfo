@@ -28,7 +28,7 @@ install GNU/Pony using a method described
 in this section.
 
 For this, you will require a swap partition
-or an partition other than your
+or a partition other than your
 @file{/boot}-partition that you do not mind
 losing in case you are not successful,
 and a USB installation medium image.
