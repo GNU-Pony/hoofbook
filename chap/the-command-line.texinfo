@@ -75,3 +75,33 @@ often perfer the command line
 and find it boring and strenuous
 to create graphical user interfaces.
 
+The command line is also a great
+diagnostical tool for graphical
+programs. All programs, even
+graphical ones, can be started
+from a terminal. Graphical program
+often send more error messages to
+the terminal than to dialog boxes,
+and you can often fine tune how
+to start graphical programs.
+
+@pindex ncurses
+But just because a program does
+not have a graphical user interface
+does not been you have to do
+more typing. Some programs,
+including basically all text
+editors for the terminal, have
+graphics inside the terminal,
+some even have support for using
+the mouse. These programs are
+often called ncurses-programs
+or curses-programs, named after
+the ncurses and curses libraries.
+ncurses is a library that makes
+it ease to measure the size of
+the terminal, use colours and
+other formating, configure the
+terminal and create graphical
+components in the terminal.
+
