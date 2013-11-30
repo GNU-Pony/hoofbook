@@ -11,3 +11,28 @@ how to use the command line in less
 basic ways.
 
 
+@menu
+* The command line advantage::
+@end menu
+
+
+
+@node The command line advantage
+@section The command line advantage
+
+@cindex flexibility
+@cindex unix-pipes
+@cindex pipes
+The command line is extremely flexible.
+In GNU/Pony and all Unix-like systems
+command line problems are designed to
+to just one thing and be very good at
+it. This by itself does not make the
+the command line great, rather it makes
+it cumbersome to use, but shells in
+Unix-like systems — the program that
+lets you use the command line — implement
+a concept called Unix-pipes. Unix-pipes
+is a way to combine programs. This two
+designs combine makes the command line
+virtually unlimited in its flexibility.
