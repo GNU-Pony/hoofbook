@@ -24,7 +24,7 @@ basic ways.
 @cindex unix-pipes
 @cindex pipes
 The command line is extremely flexible.
-In GNU/Pony and all Unix-like systems
+In GNU and all Unix-like systems
 command line problems are designed to
 to just one thing and be very good at
 it. This by itself does not make the
