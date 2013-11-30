@@ -171,7 +171,7 @@ of that file.
 @pindex @command{awk}
 As if that is not enough, there
 are other scripting languages
-such as Perl, Python and Awk (Gawk)
+such as Perl, Python and AWK
 that also use in the shell by
 starting their interpreters.
 @command{awk} is the most popular
