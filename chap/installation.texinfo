@@ -9,6 +9,7 @@ system.
 @menu
 * Partitioning considerations::
 * Partitioning and formatting::
+* Mounting partitions::
 @end menu
 
 
@@ -39,7 +40,7 @@ partition needs to be a primary partition unless
 it is chainloaded from another bootloader.
 The size of the a Linux kernel image, depends
 on how it is configures, but it is unlikely that
-is exceeds 5 MB. The early initialisation image
+it exceeds 5 MB. The early initialisation image
 also unlikely to exceed 5 MB, but a fallback
 for this image can be 20 MB. However, it is
 recommended to use even 100 MB or even 200 MB,
@@ -371,4 +372,47 @@ in @command{mkfs.ext4}. For more options
 available, in for example ext4, run
 @command{man mkfs.ext4}. For your
 @file{/boot} partition ext2 is recommended.
+
+
+
+@node Mounting partitions
+@section Mounting partitions
+
+@cindex partition, mount
+@cindex partition, unmount
+@cindex mount partition
+@cindex unmount partition
+@pindex @command{mount}
+@pindex @command{umount}
+@cindex mountpoint
+The commands @command{mount DEVICE MOUNTPOINT}
+and @command{umount MOUNTPOINT} can be used
+to mount and unmount partitions, respectively.
+The device is the partition file name in a
+fashion similar to @file{/dev/sdx99} or
+@file{/dev/mapper/xyz}. A mountpoint is a,
+normally empty, directory which should
+contain the content of the partition.
+
+@cindex @file{/mnt}
+The directory @file{/mnt} is normally used
+to mount a filesystem (a formatted partition)
+temporarily. It is customary to mount the
+@file{/} of the system you are installing
+into @file{/mnt}. Doing so means that you
+can access file on the system you are
+installing by accessing the in @file{/mnt}.
+Additional filesystem can be mounted in
+@file{/mnt} after you have mounted your
+@file{/} (root) partition onto it.
+If the system you are installing have two
+partitions, @file{/root} and @file{/},
+on @file{/dev/sdx1} and @file{/dev/sdx2},
+they can be mounted by running:
+
+@example
+mount /dev/sdx2 /mnt
+mkdir /mnt/boot
+mount /dev/sdx1 /mnt/boot
+@end example
 
