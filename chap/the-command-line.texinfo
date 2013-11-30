@@ -1,0 +1,13 @@
+@node The command line
+@chapter The command line
+
+The command line is the most powerful
+way to interact with the computer, and
+it generally is also the fastest way
+to perform actions. But it requires
+some knowledge to take full advantage
+of it. In this chapter you will learn
+how to use the command line in less
+basic ways.
+
+
