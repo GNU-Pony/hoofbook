@@ -137,7 +137,7 @@ desktop start and start it.
 @section Login sessions
 
 @cindex login session
-@cindex PAM
+@pindex PAM
 @pindex Pluggable Authentication Modules
 @cindex session leader
 @cindex process group
