@@ -353,9 +353,9 @@ and decrypts output. In other words,
 of @file{/dev/sdx99} for formatting and
 mounting.
 
-@opindex @option{-t}, mkfs
-@opindex @option{--type}, mkfs
-@opindex @option{-L}, mkfs
+@opindex @option{-t}, @command{mkfs}
+@opindex @option{--type}, @command{mkfs}
+@opindex @option{-L}, @command{mkfs}
 @pindex @command{mkfs}
 To format the partition @file{/dev/sdx99}
 to an ext4 partition, which is the recommended
