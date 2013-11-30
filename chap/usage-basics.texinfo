@@ -125,6 +125,7 @@ program.
 @cindex editor, text
 @pindex GNU Nano
 @pindex @command{nano}
+@vrindex @var{EDITOR}
 To edit configurations, and write
 files in general, you need a text
 editor. The simplest is called GNU

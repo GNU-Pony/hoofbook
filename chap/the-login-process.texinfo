@@ -71,6 +71,7 @@ breaks colouring.
 
 @pindex @command{cerberus}
 @pindex @command{libpassphrase}
+@vrindex @var{PATH}
 You can also choose to use GNU/Pony's
 @command{cerberus} instead of @command{login},
 either by linking @file{/usr/local/sbin/login}
