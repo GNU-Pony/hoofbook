@@ -57,7 +57,7 @@ and Windows on a secondary computer that
 you perfer not to use, or put Windows in
 QEMU or VirtualBox@footnote{VirtualBox
 is not entirely free as it cannot be
-compiled with a free compiler. But is
+compiled with a free compiler. But it is
 easier to get started using than QEMU
 so it may be a better choose in the
 transition phase from Windows.} if you
