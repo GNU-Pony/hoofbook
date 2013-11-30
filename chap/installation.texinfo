@@ -7,12 +7,12 @@ you should thinks about when installing your
 system.
 
 @menu
-* Partitioning your harddrive::
+* Partitioning considerations::
 @end menu
 
 
-@node Partitioning your harddrive
-@section Partitioning your harddrive
+@node Partitioning considerations
+@section Partitioning considerations
 
 @cindex partitions
 When installing your system you should think
