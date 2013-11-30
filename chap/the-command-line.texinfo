@@ -42,7 +42,7 @@ virtually unlimited in its flexibility.
 Graphical programs are often immature
 and even unstable. In contrast, command
 line tools are most often highly
-reliable. Not only are hraphical
+reliable. Not only are graphical
 programs not as stable, they are more
 resource intensive are often slower
 in their output. @footnote{Graphical
