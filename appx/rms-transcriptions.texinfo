@@ -1,3 +1,6 @@
+@node rms transcriptions
+@appendix rms transcriptions
+
 This appendix is a collection of transcriptions
 form talks by Richard Stallman; always informative,
 and sometimes fun.

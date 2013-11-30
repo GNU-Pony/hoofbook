@@ -154,11 +154,7 @@ Texts. A copy of the license is included in the section entitled
 @include appx/fdl.texinfo
 
 
-
-@node rms transcriptions
-@appendix rms transcriptions
 @include appx/rms-transcriptions.texinfo
-
 
 
 @c BEGIN print indices
