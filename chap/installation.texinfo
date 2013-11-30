@@ -264,7 +264,11 @@ lot of memory. If you do not do too much
 @footnote{Graphical web browers usally
 require a bit more memory. If you only
 use a graphical web browser 500 MB
-should be enough for anypony.}. If you
+should be enough for anypony.}. However,
+you will be compile programs, for this
+you will need more memoery, at least 4
+GB is recommended for the computer you
+use to compile your package. If you
 feel that you need more, you can create
 a swap partition, this is partition in
 which the kernel can store memory to
