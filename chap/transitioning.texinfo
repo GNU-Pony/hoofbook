@@ -71,6 +71,13 @@ that run on both Windows and GNU/Linux
 and switch them one after each other
 one.
 
+If you are transitioning a company's
+staff you should move very slowly, it
+is easiest to start by switching the
+artwork, icon by icon, and, if you
+are using a background provided by
+Windows, the background also.
+
 When you have switched all programs
 it easiest to switch to a GNU/Linux
 that is beginner-friendly and uses a
