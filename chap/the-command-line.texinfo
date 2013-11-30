@@ -68,3 +68,10 @@ between the mouse and the keyboard
 when using text editors and
 word processors.
 
+Additionally the command line
+is a great learning experience
+and have more tools as programmer
+often perfer the command line
+and find it boring and strenuous
+to create graphical user interfaces.
+
