@@ -117,7 +117,7 @@ directories @file{/}, @file{/usr}, @file{/usr},
 @file{/var}, @file{/info} and @file{/share}.
 @file{/usr/games} and @file{/usr/local/games}
 were initialially introduces because games
-are typically large and the harddrives was
+are typically large and the hard drives was
 not too big back in the days; today not that
 many distrubtions even have them, and we do
 not recommend creating separate partitions
@@ -139,13 +139,13 @@ partition.
 @item /usr/local
 Programs not included in the distribution:
 private software and software not yet
-included in the package repostory.
+included in the package repository.
 
 @item /opt
 Serves as hosting directory for the same
 category of programs as @file{/usr}, but
 self-contained and large cases. Because
-of this and the size of today's harddrives
+of this and the size of today's hard drives
 it is recommended that it is not separated
 from @file{/usr}.
 
