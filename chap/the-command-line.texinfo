@@ -38,8 +38,33 @@ designs combine makes the command line
 virtually unlimited in its flexibility.
 
 @cindex reliability
+@cindex resouce usage
 Graphical programs are often immature
 and even unstable. In contrast, command
 line tools are most often highly
-reliable.
+reliable. Not only are hraphical
+programs not as stable, they are more
+resource intensive are often slower
+in their output. @footnote{Graphical
+text editors are often marginally
+faster, but can be much faster when
+you paste in a lot of text from
+an external clipboard.}
+
+@cindex interaction speed
+@cindex speed, interaction
+Command line tools are also often
+very fast to use, you can perform
+most actions by type a dozen or
+so keystrokes and you can perform
+the one multiple files without
+having to repeat the interaction
+process. In contrast, many
+graphical programs require that
+you navigate menus and click
+around in long chains. You can
+also often find yourself switch
+between the mouse and the keyboard
+when using text editors and
+word processors.
 
