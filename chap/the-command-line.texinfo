@@ -16,6 +16,7 @@ basic ways.
 @menu
 * The command line advantage::
 * Scripting::
+* The structure of commands::
 @end menu
 
 
@@ -184,3 +185,69 @@ for this, even though it is
 probably the most difficult of
 them to learn.
 
+
+
+@node The structure of commands
+@section The structure of commands
+
+@pindex @command{echo}
+@cindex arguments, command line
+@cindex command line arguments
+A command is composed of an arbitrary
+non-zero number of arguments.
+@command{echo} is a simple command that
+prints arguments verbatim. @command{echo}
+is often built in to the shell so that
+a new programs does not need to be
+executed every time a shell script prints
+something.
+
+@opindex @option{-n}, @command{echo}
+If you type @command{echo foobar} the
+text `foobar' will be printed to the
+terminal on one line, if your type
+@command{echo -n foobar} most
+implementations of @command{echo} will
+not print a line ending at the end of
+the output yeilding that the next
+output starts on the same line, but
+some implements will also print `-n'.
+
+@cindex command line argument whitespace
+@cindex command line whitespace
+If you type @command{echo foo bar} then
+`foo bar' will be printed. But if you
+insert additinal whitespace, `foo bar'
+will still be printed to same why, there
+are still just three arguments: `echo',
+`foo' and `bar'. To make `foo bar' just
+one argument you can put quotes around
+it: @command{echo 'foo bar'}, which makes
+it just one word, and all whitespace will
+be preserved in the output.
+
+@cindex command line special characters
+@cindex special characters, command line
+Some characters are special characters:
+whitespace, quotes, curly, round and
+square brackets, `<', `>' `|', `&', `^'
+(for ZSH, but not for GNU Bash), `$',
+`?', `*', `~', `\' and grave accent (`)
+and depending one on surrounding
+characters `.' and `-'. Special
+characters can be used in verbatim form
+by putting them inside single quotes
+as in the previous paragraph, or by
+putting a backslash (\), this is called
+escaping, directly before it. Double
+quotes will allow special characters
+but whitespace will be included in
+verbatim form. A single-quotation mark
+cannot be included inside single quotes,
+as special character are ignored, indead
+you will have to temporarly close the
+quote and add an escaped single-quotation
+mark ('like'\''this').
+
+@cindex command line options
+@cindex options, command line
