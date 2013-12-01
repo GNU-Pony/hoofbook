@@ -1,0 +1,14 @@
+MAKE DEPENDENCIES:
+
+make
+findutils
+grep
+gzip
+bzip2               (optin: optional for pdf, dvi and ps)
+xz                  (optin: optional for pdf, dvi and ps)
+coreutils
+texinfo
+librsvg             (optout: manditory for pdf, dvi and ps)
+texlive-plainextra  (optout: manditory for pdf, dvi and ps)
+ghostscript         (optout: manditory for dvi and ps)
+
