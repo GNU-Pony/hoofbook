@@ -75,12 +75,14 @@ dvi.xz: $(PROGRAM).dvi.xz
 # rules for creating the logo
 
 obj/logo.pdf: logo.svg
+	mkdir -p obj
 	rsvg-convert --format=pdf "$<" > "$@"
 
 obj/logo.eps: obj/logo.ps
 	ps2eps "$<"
 
 obj/logo.ps: logo.svg
+	mkdir -p obj
 	rsvg-convert --format=ps "$<" > "$@"
 
 # rules for compile the manual to diffent formats
@@ -90,15 +92,12 @@ $(PROGRAM).info: $(MANE_SRC) $(INCLUDED_SRC)
 	cd obj && $(MAKEINFO) $(TEXIFLAGS) "../$<" && mv "$@" ..
 
 $(PROGRAM).pdf: $(MANE_SRC) $(INCLUDED_SRC) obj/logo.pdf
-	mkdir -p obj
 	cd obj && texi2pdf $(TEXIFLAGS) "../$<" && texi2pdf "../$<" && mv "$@" ..
 
 $(PROGRAM).dvi: $(MANE_SRC) $(INCLUDED_SRC) obj/logo.eps
-	mkdir -p obj
 	cd obj && $(TEXI2DVI) $(TEXIFLAGS) "../$<" && $(TEXI2DVI) "../$<" && mv "$@" ..
 
 $(PROGRAM).ps: $(MANE_SRC) $(INCLUDED_SRC) obj/logo.eps
-	mkdir -p obj
 	cd obj && texi2pdf $(TEXIFLAGS) --ps "../$<" && texi2pdf --ps "../$<" && mv "$@" ..
 
 # rules for installing the manual
