@@ -18,6 +18,10 @@ basic ways. This chapter only gives an
 introductory overview of the command
 line and the shell, for more information
 you can read @command{info bash}.
+If you come to love (or just like)
+the command line you should also read
+@command{man ssh} and
+@command{info screen}.
 
 
 @menu
