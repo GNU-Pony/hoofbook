@@ -458,7 +458,7 @@ and @command{grep} will filter
 them. If you type
 @command{find | grep my-document}
 then all files inside the current
-directory and all subdirects contain
+directory and all subdirectories contain
 `my-document' in their file name
 (including directory) will be listed.
 
