@@ -233,7 +233,7 @@ whitespace, quotes, curly, round and
 square brackets, `<', `>' `|', `&', `^'
 (for ZSH, but not for GNU Bash), `$',
 `?', `*', `~', `\' and grave accent (`)
-and depending one on surrounding
+and depending on surrounding
 characters `.' and `-'. Special
 characters can be used in verbatim form
 by putting them inside single quotes
