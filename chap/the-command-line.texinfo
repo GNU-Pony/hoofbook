@@ -17,6 +17,7 @@ basic ways.
 * The command line advantage::
 * Scripting::
 * The structure of commands::
+* Redirections and captures::
 @end menu
 
 
@@ -430,4 +431,34 @@ and all subdirectories. But it can also
 filter its output; if you want to list
 all files named `my-document' you run
 @command{find -name my-document}.
+
+
+@node Redirections and captures
+@section Redirections and captures
+@cindex command line redirections
+@cindex redirections, command line
+@cindex command line captures
+@cindex captures, command line
+
+@pindex @command{grep}
+@cindex Unix-pipes
+@cindex command line pipes
+@cindex pipes, command line
+@cindex pipelines
+What makes to the command line so
+powerful is the ability to combine
+programs. The output of a program
+can be the input of another.
+For example, assume that you
+have not learn @command{find -name}
+but you know the very basics of
+@command{find} and @command{grep};
+@command{find} will list files
+and @command{grep} will filter
+them. If you type
+@command{find | grep my-document}
+then all files inside the current
+directory and all subdirects contain
+`my-document' in their file name
+(including directory) will be listed.
 
