@@ -455,7 +455,7 @@ all files named @file{my-document} you run
 @cindex captures, command line
 
 @pindex @command{grep}
-@cindex Unix-pipes
+@cindex unix-pipes
 @cindex command line pipes
 @cindex pipes, command line
 @cindex pipelines
