@@ -31,6 +31,7 @@ the command line you should also read
 * Redirections and captures::
 * Wildcards and patterns::
 * Shell script syntax::
+* Functions and aliases::
 @end menu
 
 
@@ -827,4 +828,65 @@ $ variable="your very long text"
 $ sed s/long/LONG/g <<<"$@{variable@}"
 your very LONG text
 @end example
+
+
+
+@node Functions and aliases
+@section Functions and aliases
+@cindex shell functions
+@cindex function, shell
+@cindex alias, shell
+@cindex shell aliases
+
+Functions and aliases are two
+constructs you will find your
+self using when customising your
+shell to become more productive.
+
+Aliases are the simpler of the
+two. Assume that your running
+make files a lot, two aliases
+could be very useful to have:
+
+@example
+alias m="make -j"
+alias mm="make -j -B"
+@end example
+
+@pindex @command{make}
+@opindex @option{-j}, @command{make}
+@opindex @option{-B}, @command{make}
+With these to lines in your
+@file{~/.bashrc} you can run
+@command{m} instead of
+@command{make} to build
+thing, and you can still
+defined variables and specify
+what to build. And running
+@command{mm} would force files
+to be rebuild even if the
+timestamp says it is not needed.
+Additionally it will use all
+your CPU:s and not just one
+(the @option{-j} option.)
+
+Functions on the other hand
+can be used to do very complex
+things. But to keep it simple,
+you could define
+
+@example
+function i
+@{
+    info "$@@" invoking
+@}
+@end example
+
+in your @file{~/.bashrc}. This
+will allow to type
+@command{i ponysay} instead of
+@command{info ponysay invoking}
+and @command{i coreutils cp}
+instead of
+@command{info coreutils cp invoking}.
 
