@@ -416,3 +416,17 @@ and @option{++},
 can seldomly be combined with
 other short options.
 
+@pindex @command{find}
+A few programs, such as @command{find},
+uses alternative options. These are
+long options that only have one dash.
+The reason for this complication is
+that long options were never used in
+Unix, and GNU needed to be backwards
+compatible with Unix. @command{find},
+list all files in the current directory
+and all subdirectories. But it can also
+filter its output; if you want to list
+all files named `my-document' you run
+@command{find -name my-document'}.
+
