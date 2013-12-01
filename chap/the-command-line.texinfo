@@ -3,6 +3,10 @@
 @cindex terminal
 @cindex shell
 
+@smallquotation
+`In the beginning@dots{} was the command line.' – Neil Stephenson
+@end smallquotation
+
 The command line is the most powerful
 way to interact with the computer, and
 it generally is also the fastest way
@@ -22,6 +26,7 @@ you can read @command{info bash}.
 * The structure of commands::
 * Redirections and captures::
 * Wildcards and patterns::
+* Shell script syntax::
 @end menu
 
 
@@ -648,5 +653,174 @@ it iterates explicitly:
 @example
 $ echo @{A,B,C@}=@{X,Y,Z@}
 A=X A=Y A=Z B=X B=Y B=Z C=X C=Y C=Z
+@end example
+
+
+
+@node Shell script syntax
+@section Shell script syntax
+
+Many small programs and programs
+that uses a lot of system calls
+are written in shell script. You
+are likely to use it your self,
+if not just a lite in an
+interactive shell just to safe
+time.
+
+The most fundamental control is
+to only do the next action if the
+the last action was successful.
+For example, if you want to
+create a directory named
+@file{my-dir} and move into it
+if you where successful in creating
+it (a prerequisite for that is
+that the directory did not
+already exist) you can run
+@command{mkdir my-dir && cd my-dir}.
+Conversally, you can do the
+next action only if the last
+failed:
+@command{mkdir my-dir || cd my-dir}.
+This will create the directory
+but only move into it if it was
+not create, which would probably
+be because it already existed.
+If you instead what to move into
+it and create if neccessay you
+can run:
+
+@example
+cd my-dir || mkdir my-dir && cd my-dir
+@end example
+
+To be honest, @command{mkdir -p}
+could be used as it will create
+create all needed directories and
+be successful even if the end point
+directory exists.
+
+@code{||} have higher precedence
+than @code{&&}, so this means
+that it will first try
+@command{cd my-dir} and then
+@command{mkdir my-dir && cd my-dir}.
+If you instead run
+@command{mkdir my-dir && cd my-dir || cd my-dir},
+then
+@command{mkdir my-dir && cd my-dir} will
+be tried first.
+
+If you need @code{&&} to have
+precedence over @code{||} you
+can use curly brackets:
+
+@example
+@{mkdir my-dir && mkdir my-dir/subdir && cd my-dir/subdir@} || cd my-dir
+@end example
+
+This will create @file{my-dir/subdir}
+and move into it, but on failure try to
+move into @file{my-dir} which may or may
+not have been created.
+
+You can use round brackets inside of
+curly brackets, but it has another
+effect. Round brackets creates a
+subshell which means that
+@command{cd my-dir/subdir} will
+be executed in another shell and
+therefore have no effect.
+
+@cindex if-statement, shell
+@cindex shell, if-statement
+This because a bit unreadable for
+larger scripts. If-statements
+can be used to add some structure:
+
+@example
+if mkdir my-dir && mkdir my-dir/subdir; then
+    cd my-dir/subdir
+else
+    cd my-dir
+fi
+@end example
+
+In this example you see the special
+character `;', it is used to write
+multiple commands on the same line.
+
+Alternative, you can write:
+
+@example
+mkdir my-dir && mkdir my-dir/subdir
+if [ $? = 0 ] then
+    cd my-dir/subdir
+else
+    cd my-dir
+fi
+@end example
+
+@code{$?} expands to the exit value
+of the last executed command. It is
+an integer between 0 and 255, inclusively.
+A program should return the exit value
+zero if and only if it was successful.
+
+@cindex foor-loop, shell
+@cindex shell, foor-loop
+Another common flow control is the
+for-loop. The command @command{echo}
+prints all arguments on the same line.
+If you want to print on multiple lines
+you need to invoke @command{echo} once
+for every line. A fast wait to do
+this is by using the for-loop:
+
+@example
+for text in alpha beta gamma; do
+  echo "$@{text@}"
+done
+@end example
+
+This will print:
+@example
+alpha
+beta
+gamma
+@end example
+
+@cindex here-document
+@pindex @command{cat}
+Another why to do this is to use
+@command{cat}, which is a command
+that prints the content of a file,
+and a  construct called
+here-documents. Here-documents
+declares files inline in the a
+script file:
+
+@example
+cat <<EOF
+alpha
+beta
+gamma
+EOF
+@end example
+
+Here-documents can include
+the @code{$()} construct.
+
+@cindex here-string
+A similar construct, that
+is available in GNU Bash,
+but not plain POSIX shell,
+is here-strings:
+
+@example
+$ variable="your very long text"
+$ sed s/long/LONG/g <<<"$@{variable@}"
+your very LONG text
 @end example
 
