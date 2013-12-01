@@ -233,7 +233,7 @@ Some characters are special characters:
 whitespace, quotes, curly, round and
 square brackets, `<', `>' `|', `&', `^'
 (for ZSH, but not for GNU Bash), `$', `?',
-`*', `~', `\', '#' and grave accent (`)
+`*', `~', `\', `#', `;' and grave accent (`)
 (for some shells, for example GNU Bash)
 and depending on surrounding
 characters `.' and `-'. Special
@@ -429,7 +429,7 @@ compatible with Unix. @command{find},
 list all files in the current directory
 and all subdirectories. But it can also
 filter its output; if you want to list
-all files named `my-document' you run
+all files named @file{my-document} you run
 @command{find -name my-document}.
 
 
@@ -459,6 +459,82 @@ them. If you type
 @command{find | grep my-document}
 then all files inside the current
 directory and all subdirectories contain
-`my-document' in their file name
+@file{my-document} in their file name
 (including directory) will be listed.
+
+@pindex @command{tee}
+You can also redirect the output
+to a file, or take input from a
+file. If you run
+@command{find | grep my-document > result}.
+The file @file{result} will be
+created, or emptied if it already
+exists, and filled with the output
+of @command{find | grep my-document},
+but no output will be printed to
+the terminal. If want to print to
+the terminal as well, you can use
+the command @command{tee}:
+
+@example
+find | grep my-document | tee result
+@end example
+
+@cindex @file{/dev/null}
+Saving to a file can also be used
+to suppress the output. There is
+a special pseudo-device that output
+can be printed to and the output
+will be not be printed or saved
+any where: @file{/dev/null}.
+
+@command{find} will print error
+messages if, for example, you do
+not have access permission to
+a subdirectory. To suppress this
+you can redirect is standard error
+channel (stderr) to @file{/dev/null}:
+
+@example
+find 2> /dev/null | grep my-document > result
+@end example
+
+@code{>} redirects the standard output
+channel (stdout) to a file while, @code{2>}
+does the same but for standard error.
+
+Put perhaps you do not want to remove
+the content of the existing output file.
+You can append the output to a file by
+using @code{>>} instead of @code{>}
+(and @code{2>>} instead of @code{2>}):
+
+@example
+find | grep my-document       >  result
+find | grep my-other-document >> result
+@end example
+
+In some scripts you will find @code{>|}.
+It does the same thing as @code{>}, except
+that @code{>} will fail if the output file
+already exists if the shell is configured
+to not override existing files.
+
+Now, inside that you have a directory
+with a huge about of files in it and its
+subdirectories. Running @command{find}
+will take a long time. If you want to
+use @command{grep} many times, you
+can store the output of @command{find}
+and use it many times as input for
+@command{grep}:
+
+@example
+find > files
+grep my-document          < files
+grep my-other-document    < files
+grep another-document     < files
+grep yet-another-document < files
+@end example
+
 
