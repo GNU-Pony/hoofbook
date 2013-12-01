@@ -144,6 +144,10 @@ you can create loops, have
 conditionals, store values
 inside variables, and declare
 functions. Most shells use POSIX
+@footnote{POSIX is an abbrivation
+for Portable Operating System
+Interface, ending with an `X' just
+because it is Unix-like.}
 shell script and extends it.
 But a few have their entirely own
 syntax.
