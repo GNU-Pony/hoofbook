@@ -409,7 +409,7 @@ programs use a library called
 `argparser'. Programs using
 argparser and few other programs
 supports the short option
-@option{++} with prevents only
+@option{++} which prevents only
 the next argument to be parsed as
 an option. However, @option{--}
 and @option{++},
