@@ -236,13 +236,13 @@ be preserved in the output.
 Some characters are special characters:
 whitespace, quotes, curly, round and
 square brackets, `<', `>' `|', `&', `^'
-(for ZSH, but not for GNU Bash), `$', `?',
-`*', `~', `\', `#', `;', `!' and grave
-accent (`) (for some shells, for example
-GNU Bash) and depending on surrounding
-characters `.' and `-'. Special
-characters can be used in verbatim form
-by putting them inside single quotes
+(for ZSH, and sometimes for other shells),
+`$', `?', `*', `~', `\', `#', `;', `!'
+and grave accent (`) (for some shells,
+for example GNU Bash) and depending on
+surrounding characters `.',  `,' and `-'.
+Special characters can be used in verbatim
+form by putting them inside single quotes
 as in the previous paragraph, or by
 putting a backslash (\), this is called
 escaping, directly before it. Double
@@ -577,6 +577,11 @@ It is Sunday today.
 @node Wildcards and patterns
 @section Wildcards and patterns
 
+Wildcards and patterns described
+in these section, as well as those
+skipped in this section, cannot be
+used inside quotes.
+
 @pindex @command{rm}
 @cindex swap files
 @cindex backup files
@@ -608,4 +613,40 @@ a wildcard for any one character,
 @code{*} is a wildcard for
 anything it can even be matched
 to correspond to zero characters.
+
+If @command{*} and @command{?}
+cannot be expanded to match any
+existing file, those symbols
+are instead used verbatim.
+
+Cruly brackets can be used to
+reduce the typing. For example,
+if you run @command{echo @{a..h@}}
+the output will be:
+
+@example
+a b c d e f g h
+@end example
+
+If you run @command{echo @{8..14@}}
+the output will be:
+
+@example
+8 9 10 11 12 13 14
+@end example
+
+But you can use it between text:
+
+@example
+$ echo a@{1..4@}c
+a1c a2c a3c a4c
+@end example
+
+Similarily you can specify what
+it iterates explicitly:
+
+@example
+$ echo @{A,B,C@}=@{X,Y,Z@}
+A=X A=Y A=Z B=X B=Y B=Z C=X C=Y C=Z
+@end example
 
