@@ -428,5 +428,5 @@ list all files in the current directory
 and all subdirectories. But it can also
 filter its output; if you want to list
 all files named `my-document' you run
-@command{find -name my-document'}.
+@command{find -name my-document}.
 
