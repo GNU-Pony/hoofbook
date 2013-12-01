@@ -21,6 +21,7 @@ you can read @command{info bash}.
 * Scripting::
 * The structure of commands::
 * Redirections and captures::
+* Wildcards and patterns::
 @end menu
 
 
@@ -236,9 +237,9 @@ Some characters are special characters:
 whitespace, quotes, curly, round and
 square brackets, `<', `>' `|', `&', `^'
 (for ZSH, but not for GNU Bash), `$', `?',
-`*', `~', `\', `#', `;' and grave accent (`)
-(for some shells, for example GNU Bash)
-and depending on surrounding
+`*', `~', `\', `#', `;', `!' and grave
+accent (`) (for some shells, for example
+GNU Bash) and depending on surrounding
 characters `.' and `-'. Special
 characters can be used in verbatim form
 by putting them inside single quotes
@@ -570,3 +571,41 @@ have a shorthand for this:
 $ echo "It is `date +%A` today."
 It is Sunday today.
 @end example
+
+
+
+@node Wildcards and patterns
+@section Wildcards and patterns
+
+@pindex @command{rm}
+@cindex swap files
+@cindex backup files
+When you edit files, backup files
+called swap files are created.
+These files are named like the
+file your are editing but with
+an appending tilde (~).
+If you want to remove all such
+files from a directory use can
+use the command @command{rm}
+an the utilise the wildcard *.
+If you run @command{rm *~} will
+files ending with a tilde but
+not starting with a dot are
+removed. If you want to remove
+all such files except those
+starting with a dot you can
+run @command{rm .*~}. Be aware
+that @command{rm *} removes
+all files in the current
+directory that are not hidden.
+
+If you instead want to remove
+files with just one character
+in its name, you can run
+@command{rm ?}. @code{?} is
+a wildcard for any one character,
+@code{*} is a wildcard for
+anything it can even be matched
+to correspond to zero characters.
+
