@@ -537,4 +537,33 @@ grep another-document     < files
 grep yet-another-document < files
 @end example
 
+But perhaps you to store the errors from
+@command{find} to @file{files} as well:
 
+@example
+find > files 2>&1
+@end example
+
+This firsts redirects stdout to
+@file{files}, than redirects stderr
+to stdout which is now @file{files}.
+
+But wait there is more! You can
+capture the output of commands.
+The command @command{date +%A}
+prints the current weekday:
+
+@example
+$ date +%A
+Sunday
+$ echo "It is $(date +%A) today."
+It is Sunday today.
+@end example
+
+Some shells, for example GNU Bash,
+have a shorthand for this:
+
+@example
+$ echo "It is `date +%A` today."
+It is Sunday today.
+@end example
