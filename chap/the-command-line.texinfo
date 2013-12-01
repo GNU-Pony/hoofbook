@@ -231,8 +231,8 @@ be preserved in the output.
 Some characters are special characters:
 whitespace, quotes, curly, round and
 square brackets, `<', `>' `|', `&', `^'
-(for ZSH, but not for GNU Bash), `$',
-`?', `*', `~', `\' and grave accent (`)
+(for ZSH, but not for GNU Bash), `$', `?',
+`*', `~', `\', '#' and grave accent (`)
 and depending on surrounding
 characters `.' and `-'. Special
 characters can be used in verbatim form
@@ -247,7 +247,172 @@ cannot be included inside single quotes,
 as special character are ignored, indead
 you will have to temporarly close the
 quote and add an escaped single-quotation
-mark ('like'\''this').
+mark ('like'\''this'). Unescaped hashes
+(#) outside quotes are comments, everything
+on the same line after it, include the
+hash itself, is ignored.
 
 @cindex command line options
 @cindex options, command line
+@cindex command line flags
+@cindex flags, command line
+Revisiting @command{echo -n}.
+Commands can have directives on
+how it should behave. Arguments
+starting with a dash (and in some
+cases pluses) almost always changes
+the behaviour of the command, these
+are called options. Simple options
+such as @option{-n} for
+@command{echo} are called flags.
+More complex options have associated
+values. These values are actually
+also called arguments. The associated
+value directly follows the option.
+Consider the command @command{date}.
+It prints the current date and time,
+for example:
+
+@example
+$ date   # The dollar sign indicates that you are typing the line
+Sun  1 Dec 09:03:20 CET 2013
+@end example
+
+If you instead what the date of
+yesterday (but with the same time)
+you can add the option @option{-d}
+with the associated value `yesterday':
+
+@example
+$ date -d yesterday
+Sat 30 Nov 09:03:20 CET 2013
+@end example
+
+Exactly how you can combine options
+and their associated value depends
+on the command, but normally you
+can put them in the same argument:
+
+@example
+$ date -dyesterday
+Sat 30 Nov 09:03:20 CET 2013
+@end example
+
+Recall flags, @command{date -u}
+prints the date and time but in
+Coordinated Universal Time (UTC):
+
+@example
+$ date -u
+Sat 30 Nov 08:03:20 UTC 2013
+@end example
+
+Flags can be combined in the
+same argument and can optionally
+be combined with a options that
+has a value at the end:
+
+@example
+$ date -udyesterday
+Sat 30 Nov 08:03:20 UTC 2013
+
+$ date -ud yesterday
+Sat 30 Nov 08:03:20 UTC 2013
+
+$ date -duyesterday  # works, but the value is incorrect
+date: invalid date ‘uyesterday’
+
+$ date -du yesterday  # not what you meant
+date: the argument ‘yesterday’ lacks a leading '+';
+when using an option to specify date(s), any non-option
+argument must be a format string beginning with '+'
+Try 'date --help' for more information.
+@end example
+
+Options, including flags, like
+these — those starting with a
+single dash (or plus) — are called
+short options and exists in most
+programs and is a convension from
+Unix. GNU with is a Unix-like system
+improved on this by adding long
+options, these are easier to remember
+and much easier to understand.
+Long options starts with two dashes
+(or two pluses), must programs
+implements long option alternatives
+to short options, but some programs
+do not even have short options for
+some options:
+
+@example
+$ date --utc --date yesterday
+Sat 30 Nov 08:03:20 UTC 2013
+@end example
+
+Long options cannot be combined,
+and their associated values must
+either be in there own arguments
+or combined using an equals sign:
+
+@example
+$ date --utc --date=yesterday
+Sat 30 Nov 08:03:20 UTC 2013
+@end example
+
+Some options have an associated
+value that is options. Consider the
+source control management system
+Git, it use GNU Privacy Guard (GPG;
+GnuPG) to digitally sign commits:
+
+@example
+git commit -S
+git commit --gpg-sign
+@end example
+
+Both signs the commit it creates
+with your default key. If you
+want to sign with your GPG key
+XXXXXXXX you can type either of:
+
+@example
+git commit -SXXXXXXXX
+git commit --gpg-sign=XXXXXXXX
+@end example
+
+But you cannot type any of:
+
+@example
+git commit -S XXXXXXXX
+git commit --gpg-sign XXXXXXXX
+@end example
+
+@cindex command line verb
+@cindex verb, command line
+In these examples, @command{commit}
+is called a verb, it specifies
+what subsystem in Git to call, and
+must be placed before all options.
+
+@opindex @option{--}
+@opindex @option{++}
+There is also a special short
+option supported by most programs:
+@option{--}. It stops all arguments
+after it to be parsed as options,
+it is often used, especially in
+scripts, to make sure that filenames
+are not parsed as options if they
+start with dash. Many GNU/Pony
+programs use a library called
+`argparser'. Programs using
+argparser and few other programs
+supports the short option
+@option{++} with prevents only
+the next argument to be parsed as
+an option. However, @option{--}
+and @option{++},
+can seldomly be combined with
+other short options.
+
