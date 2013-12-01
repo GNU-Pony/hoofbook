@@ -10,7 +10,10 @@ to perform actions. But it requires
 some knowledge to take full advantage
 of it. In this chapter you will learn
 how to use the command line in less
-basic ways.
+basic ways. This chapter only gives an
+introductory overview of the command
+line and the shell, for more information
+you can read @command{info bash}.
 
 
 @menu
