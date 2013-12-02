@@ -756,7 +756,7 @@ In this example you see the special
 character `;', it is used to write
 multiple commands on the same line.
 
-Alternative, you can write:
+Alternatively, you can write:
 
 @example
 mkdir my-dir && mkdir my-dir/subdir
