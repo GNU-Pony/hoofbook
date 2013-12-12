@@ -36,7 +36,7 @@ are divided into two programs, the getty
 and the login programs. `getty' is portmanteau
 of `get' and `TTY'@footnote{TTY is an
 abbreviation of teletypewriter.}, its
-purpose is gain access to a terminal and
+purpose is to gain access to a terminal and
 start the login program which performs
 the login. It is always the login program
 that reads the passphrase and verifies it,
