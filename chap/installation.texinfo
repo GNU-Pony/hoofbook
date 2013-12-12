@@ -108,14 +108,14 @@ Basic Input/Output System (BIOS).)
 @cindex @file{/etc}
 @cindex @file{/var}
 @cindex @file{/info}
-@cindex @file{/share}
+@cindex @file{/shared}
 How to best partition the rest of the system is
 debated. What you have now to consider is the
 directories @file{/}, @file{/usr}, @file{/usr},
 @file{/usr/local}, @file{/usr/games},
 @file{/usr/local/games}, @file{/opt},
 @file{/home}, @file{/srv}, @file{/etc},
-@file{/var}, @file{/info} and @file{/share}.
+@file{/var}, @file{/info} and @file{/shared}.
 @file{/usr/games} and @file{/usr/local/games}
 were initialially introduces because games
 are typically large and the hard drives was
@@ -179,7 +179,7 @@ Variable data files.
 @item /info
 GNU/Pony directory for administrated shared files.
 
-@item /share
+@item /shared
 GNU/Pony directory for user shared data.
 
 @end table
@@ -195,7 +195,7 @@ data including the system logs.
 @item @file{/usr} and @file{/opt}
 One partition for non-essential programs.
 
-@item @file{/usr/local}, @file{/srv}, @file{/home}, @file{/info} and @file{/share}
+@item @file{/usr/local}, @file{/srv}, @file{/home}, @file{/info} and @file{/shared}
 One partition for local and user files.
 
 @item Spare partition
@@ -219,7 +219,7 @@ directories: @file{usr}, @file{local},
 which can be used from creating @file{/usr}
 and @file{/opt} and @file{/usr/local},
 @file{/srv}, @file{/home}, @file{/info}
-and @file{/share} as symlinks to inner
+and @file{/shared} as symlinks to inner
 directories you need to create.
 
 However, if your @file{/usr} and @file{/opt}
@@ -232,7 +232,7 @@ into its own partition. This allows you
 to mount @file{/} and @file{/etc} in
 read only mode. If it is placed in the
 same partition as @file{/home} or
-@file{/share} you can limit @file{/} and
+@file{/shared} you can limit @file{/} and
 @file{/etc} to a very small partition
 and let @file{/var} grow as large as
 you like.
