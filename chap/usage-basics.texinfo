@@ -32,7 +32,7 @@ installed, which means that you will
 only have a basic terminal. However,
 you can switch between terminals by
 pressing @kbd{Alt+Left} and @kbd{Alt+Right}.
-The terminals are index @file{tty1}
+The terminals are indexed @file{tty1}
 though @file{tty63} (all are not
 available by default), pressing
 @kbd{Alt+F4}, for example, will switch
