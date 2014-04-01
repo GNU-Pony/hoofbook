@@ -180,7 +180,7 @@ Variable data files.
 GNU/Pony directory for administrated shared files.
 
 @item /shared
-GNU/Pony directory for user shared data.
+GNU/Pony directory for user shared files.
 
 @end table
 
