@@ -36,7 +36,7 @@ FreeBSD users should feel comfortable
 switching to GNU/Pony. PC-BSD users
 may find it helpful to first transition
 to FreeBSD and stay on it for about two
-weaks.
+weeks.
 
 
 
