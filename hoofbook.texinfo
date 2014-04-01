@@ -64,7 +64,7 @@ specific topics you should read that program's manual.
 
 @c define copyright notice
 @copying
-Copyright @copyright{} 2013 Mattias Andrée
+Copyright @copyright{} 2013, 2014 Mattias Andrée
 
 @quotation
 Permission is granted to copy, distribute and/or modify this document
