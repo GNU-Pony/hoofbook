@@ -93,9 +93,12 @@ being licensed under the GNU All Permissive License.
 
 There are however two exceptions:
 @itemize @bullet
-@item netcfg: New BSD License (3-clause BSD License)
+@item netcfg:
+New BSD License (3-clause BSD License)
 @item miscellaneous:
 Do what the fuck you want to public license, version 2
+@item system-configurations:
+New BSD License (3-clause BSD License)
 @end itemize
 
 @item The ports tree
