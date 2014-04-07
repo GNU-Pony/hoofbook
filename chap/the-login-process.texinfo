@@ -170,7 +170,7 @@ Modules (PAM) session if it uses PAM.
 Theoretically, and even implemented on some
 old systems, nested login sessions are possible,
 this is however considered insecure, and
-instead you do a user switches, which is when
+instead you do user switches, which is when
 your start a new (non-login) shell as a different
 user without create a new session, using the
 command @command{su}.
