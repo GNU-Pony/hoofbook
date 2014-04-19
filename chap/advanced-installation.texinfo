@@ -9,6 +9,7 @@ to install GNU/Pony using other methods.
 
 @menu
 * Installing without an installation medium::
+* A quick introduction to QEMU::
 @end menu
 @c TODO: how to install using SSH
 @c TODO: how to install using PXE
@@ -92,4 +93,86 @@ existing @file{/boot} just edit the line
 for how to boot the operating system
 after you have successfully booted into
 it.
+
+
+@node A quick introduction to QEMU
+@section A quick introduction to QEMU
+
+Quick Emulator (QEMU) is a fully free
+(in constrast to VirtualBox) hypervisor.
+that performs hardware virtualisation.
+QEMU if very fast and is perfect for
+testing an operativing system.
+@footnote{Bochs (which is not pronounced
+as you might expect, it is pronounced like
+‘box’) is better if you are doing kernel
+development.}
+
+While QEMU does not require any kernel
+modules (which can be a huge caveat) is
+requires a bit of resource get real
+performance out of.
+
+As for with all computer emulator, you
+are discouraged from having copy-on-write
+enabled on filesystem where you store the
+virtual hard disc drive.
+
+To create a virtual hard disc drive,
+use the command @command{qemu-img} with
+the verb @command{create}. If you want
+a 4 GB disc and want it in raw format run:
+
+@example
+qemu-img create -f raw disc.raw 4G
+@end example
+
+You will now a 4 GB large file, filled
+with NUL characters, named @file{disc.raw}.
+In this example the disc format was
+@code{raw}, so we could also use @command{dd}
+or @command{fallocate}, if you want another
+format you would have to use @command{qemu-img}.
+
+What is nice about the raw format is that
+it can use as the backend file of a loopback
+device which allows you to use it directly
+on your host machine. It can also be manipulated
+directly with tools such as @command{dd}, to
+for example install a boot manager.@footnote{If
+you are using @command{dd} on the file, do not
+forget @option{conv=notrunc}.}
+
+To start QEMU with a CD mounted run:
+
+@example
+qemu-system-x86_64 -cdrom cd.iso -boot order=d disc.raw -m 2048
+@end example
+
+This is start an x86-64 machine with 2048 MB
+of RAM. It will start the ISO file @file{cd.iso}
+and have the hard disc drive @file{disc.raw}
+as its first hard disc drive, which is named
+@file{/dev/sda} on Linux. If you do not need
+the CD, just run.
+
+@example
+qemu-system-x86_64 disc.raw -m 2048
+@end example
+
+These instructions will not give QEMU too much
+performance. To boost it, add @option{-smp 3}
+to let it use three CPU threads, and instruct
+it to utilise Kernel-based Virtual Machine (KVM):
+
+@example
+-machine type=pc,accel=kvm -cpu host
+@end example
+
+So the grand total is:
+
+@example
+qemu-system-x86_64 -cdrom cd.iso -boot order=d disc.raw  \
+     -m 2048 -smp 3 -machine type=pc,accel=kvm -cpu host
+@end example
 
