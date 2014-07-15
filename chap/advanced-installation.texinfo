@@ -100,7 +100,7 @@ it.
 @section A quick introduction to QEMU
 
 Quick Emulator (QEMU) is a fully free
-(in constrast to VirtualBox) hypervisor.
+(in constrast to VirtualBox) hypervisor
 that performs hardware virtualisation.
 QEMU if very fast and is perfect for
 testing an operativing system.
