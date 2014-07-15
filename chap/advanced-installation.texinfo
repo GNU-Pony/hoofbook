@@ -110,7 +110,7 @@ development.}
 
 While QEMU does not require any kernel
 modules (which can be a huge caveat) is
-requires a bit of resource get real
+requires a bit of research to get real
 performance out of.
 
 As for with all computer emulator, you
