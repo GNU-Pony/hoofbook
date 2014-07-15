@@ -160,7 +160,7 @@ together they give us democratic control
 over what our software does.
 
 Only with a license @emph{like} the GNU GPL
-do the users have these for freedoms.
+do the users have these four freedoms.
 @emph{But} the advisories of freedom don't
 stand still. The thought of new ways to
 separate users from their freedom since
