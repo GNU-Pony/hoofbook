@@ -136,7 +136,7 @@ or @command{fallocate}, if you want another
 format you would have to use @command{qemu-img}.
 
 What is nice about the raw format is that
-it can use as the backend file of a loopback
+it can use as the backend file of a loop
 device which allows you to use it directly
 on your host machine. It can also be manipulated
 directly with tools such as @command{dd}, to
