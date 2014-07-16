@@ -10,8 +10,8 @@ to install GNU/Pony using other methods.
 @menu
 * Installing without an installation medium::
 * A quick introduction to QEMU::
+* Installing over QEMU::
 @end menu
-@c TODO: how to install over QEMU
 @c TODO: how to install using SSH
 @c TODO: how to install using PXE
 @c TODO: how to create a CD or DVD
@@ -177,4 +177,49 @@ So the grand total is:
 qemu-system-x86_64 -cdrom cd.iso -boot order=d disc.raw  \
      -m 2048 -smp 3 -sdl -machine type=pc,accel=kvm -cpu host
 @end example
+
+
+@node Installing over QEMU
+@section Installing over QEMU
+
+It behoves you to read @ref{A quick introduction to QEMU}
+before reading this section of the manual.
+
+As QEMU allows you to take any regular file, be it
+empty or not, and use it as a raw virtual disc. QEMU
+allows you to use a block device file as its disc,
+especially interesting with this is that it allows
+you to use a real disc for your disc in QEMU.
+Natually this requires root permissions:
+@footnote{Assuming have not changed permissions for
+this disc to allow you to use it without root permissions.}
+
+@example
+sudo qemu-system-x86_64 /dev/sdx
+@end example
+
+This allows you to run your current system while
+installing a new system. QEMU will even update
+your kernel's partition table for you when QEMU
+exists, assuming it has permission to do so.
+
+With QEMU's superior performance and the
+non-requirement for graphics this is probably
+a really preferable way to install any operating
+system, is it does not require you to run any
+specific operative system as long it you can
+do this, it stops you from accidentally
+typing in the wrong device@footnote{Assuming
+you verify it when you first start the
+installation system} and it lets test that
+everything starts without having to restart
+your computer. Better yet, you will have
+access to the Internet if you have network
+issues on the installation system to help
+you troubleshoot, and the bootstrapping of
+the system is a minimal part of the installation
+process, than you can @command{chroot} to your
+new system have continue the installation
+process with full native performance, assuming
+it uses the same kernel family.
 
