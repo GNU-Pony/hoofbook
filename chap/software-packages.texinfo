@@ -47,7 +47,11 @@ to the users rather than remotely queried.
 @cindex updating software
 
 GNU/Pony's package repository is community
-operated and consists for five Git branches:
+operated@footnote{This is a natural extension of
+the everything is a file-philosofy that states
+that with should be accessed via file descriptors
+so you can use common tools.} and consists
+for five Git branches:
 
 @itemize
 @item core: Recommended core packages, high priority support
