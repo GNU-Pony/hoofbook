@@ -16,7 +16,7 @@ and sometimes fun.
 @node Free Software is not Open Source
 @section Free Software is not Open Source
 
-@c https://www.youtube.com/watch?v=FpAKasXdrXI
+@c https://www.youtube.com/watch?v=FpAKasXdrXI (2:40)
 
 @smallquotation
 Richard I not think requires any
@@ -29,9 +29,9 @@ movement… <interrupted>
 No, absolutely not! If am the father of
 Open Source it was done by artificial
 insemination using @emph{stolen} sperm.
-I am @emph{not} a supporter of Open Source,
-I do @emph{not} agree with the basic values
-of Open Source, I do @emph{not} try to
+I @emph{am not} a supporter of Open Source,
+I @emph{do not} agree with the basic values
+of Open Source, I @emph{do not} try to
 participate Open Source activities,
 and when anyone refers to my work with
 that term I take offence. You really
