@@ -200,7 +200,7 @@ sourced.
 @cindex portability
 Programs should try to utilise the operating
 system as much as possible, portability can
-be implemented as compile rather than runtime.
+be implemented at compile rather than runtime.
 @item Minimalism
 @cindex simplicity
 @cindex minimalism
