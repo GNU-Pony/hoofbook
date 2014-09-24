@@ -182,7 +182,7 @@ reduce overhead, it is time complexity that is
 important: use efficent algorithms, instruction
 flows, and data structions that do not make the
 program overly complex. The only except if is
-the algorithm cannot be change, is intensive,
+the algorithm cannot be changed, is intensive,
 and can be considerably more efficient with a
 faster language and code tweaks; for example
 cryptographic hashing algorithms.
