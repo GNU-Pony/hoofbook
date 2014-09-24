@@ -152,7 +152,7 @@ especially worthless is consistency of the interface.
 @cindex documentation
 Every feature and internal plumbing of a
 program must be documented as well as
-interresting use tricks. A program is nothing
+interesting use tricks. A program is nothing
 without documentation. @command{info} is
 primary, @command{man} is tertiary.
 @item Unused RAM is wasted RAM
