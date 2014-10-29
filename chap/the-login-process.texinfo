@@ -79,7 +79,7 @@ to it (or by other means put it into @var{PATH}
 with higher precedence than @command{login}) or
 by configuring @command{gates-of-tartaros} to
 use @command{cerberus} instead of @command{login}.
-@command{cerberus} is not capable of ready
+@command{cerberus} is not capable of reading
 the username, but is more configurable (but only
 compile-time configurable), minimal, and uses
 libpassphrase which allows you to configure how
