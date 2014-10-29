@@ -84,7 +84,12 @@ the username, but is more configurable (but only
 compile-time configurable), minimal, and uses
 libpassphrase which allows you to configure how
 the terminal behaves when the program reads a
-passphrase.
+passphrase. @command{cerberus}, in contrast to
+@command{login}, does not do login logging; however
+@command{cerberus} supports hooks which can be
+used for this. @command{cerberus-logging} is a
+project that implements login logging for
+@command{cerberus}.
 
 
 
