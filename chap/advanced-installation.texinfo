@@ -211,7 +211,7 @@ specific operative system as long it you can
 do this, it stops you from accidentally
 typing in the wrong device@footnote{Assuming
 you verify it when you first start the
-installation system} and it lets test that
+installation system} and it lets you test that
 everything starts without having to restart
 your computer. Better yet, you will have
 access to the Internet if you have network
