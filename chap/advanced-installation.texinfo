@@ -12,6 +12,7 @@ to install GNU/Pony using other methods.
 * A quick introduction to QEMU::
 * Installing over QEMU::
 @end menu
+@c TODO: live migrations
 @c TODO: how to install using SSH
 @c TODO: how to install using PXE
 @c TODO: how to create a CD or DVD
