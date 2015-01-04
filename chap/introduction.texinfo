@@ -6,7 +6,7 @@ to what GNU/Pony is.
 
 @menu
 * What is GNU/Pony?::
-* Who is GNU/Pony for?::
+* For whom is GNU/Pony?::
 * License information::
 @end menu
 
@@ -30,8 +30,8 @@ computer programs).
 
 
 
-@node Who is GNU/Pony for?
-@section Who is GNU/Pony for?
+@node For whom is GNU/Pony?
+@section For whom is GNU/Pony?
 
 GNU/Pony is for the computer enthusiast who
 wants an operating system tailored to her
