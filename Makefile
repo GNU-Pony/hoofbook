@@ -88,17 +88,23 @@ obj/logo.ps: logo.svg
 # rules for compile the manual to diffent formats
 
 $(PROGRAM).info: $(MANE_SRC) $(INCLUDED_SRC)
-	mkdir -p obj
-	cd obj && $(MAKEINFO) $(TEXIFLAGS) "../$<" && mv "$@" ..
+	@mkdir -p obj/info
+	cd obj/info && $(MAKEINFO) $(TEXIFLAGS) "../../$<" && mv "$@" ../..
 
 $(PROGRAM).pdf: $(MANE_SRC) $(INCLUDED_SRC) obj/logo.pdf
-	cd obj && texi2pdf $(TEXIFLAGS) "../$<" && texi2pdf "../$<" && mv "$@" ..
+	@mkdir -p obj/pdf
+	cd obj/pdf && texi2pdf $(TEXIFLAGS) "../../$<" && \
+                      texi2pdf $(TEXIFLAGS) "../../$<" && mv "$@" ../..
 
 $(PROGRAM).dvi: $(MANE_SRC) $(INCLUDED_SRC) obj/logo.eps
-	cd obj && $(TEXI2DVI) $(TEXIFLAGS) "../$<" && $(TEXI2DVI) "../$<" && mv "$@" ..
+	@mkdir -p obj/dvi
+	cd obj/dvi && $(TEXI2DVI) $(TEXIFLAGS) "../../$<" && \
+                      $(TEXI2DVI) $(TEXIFLAGS) "../../$<" && mv "$@" ../..
 
 $(PROGRAM).ps: $(MANE_SRC) $(INCLUDED_SRC) obj/logo.eps
-	cd obj && texi2pdf $(TEXIFLAGS) --ps "../$<" && texi2pdf --ps "../$<" && mv "$@" ..
+	@mkdir -p obj/ps
+	cd obj/ps && texi2pdf $(TEXIFLAGS) --ps "../../$<" && \
+	             texi2pdf $(TEXIFLAGS) --ps "../../$<" && mv "$@" ../..
 
 # rules for installing the manual
 
