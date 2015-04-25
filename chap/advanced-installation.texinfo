@@ -165,7 +165,7 @@ qemu-system-x86_64 disc.raw -m 2048
 These instructions will not give QEMU too much
 performance. To boost it, add @option{-smp 3}
 to let it use three CPU threads, @option{-sdl},
-to use Simple DirectMedia Lay (SDL), and instruct
+to use Simple DirectMedia Layer (SDL), and instruct
 it to utilise Kernel-based Virtual Machine (KVM):
 
 @example
