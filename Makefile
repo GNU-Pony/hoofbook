@@ -7,6 +7,7 @@ ALL_COMPRESS = #.gz
 PDF_COMPRESS = $(ALL_COMPRESS)
 PS_COMPRESS = $(ALL_COMPRESS)
 DVI_COMPRESS = $(ALL_COMPRESS)
+INFO_COMPRESS = $(ALL_COMPRESS)
 
 PREFIX = /usr
 DATA = /share
@@ -45,14 +46,17 @@ clean:
 
 ## Texinfo manual section
 
-.PHONY: doc doc.gz
+.PHONY: doc
 all: doc
-doc: info pdf$(PDF_COMPRESS) ps$(PS_COMPRESS) dvi$(DVI_COMPRESS)
+doc: info$(INFO_COMPRESS) pdf$(PDF_COMPRESS) ps$(PS_COMPRESS) dvi$(DVI_COMPRESS)
 
 # invokable rules for specific files
 
-.PHONY: info
-info: $(PROGRAM).info.gz
+.PHONY: info info.gz
+info: $(PROGRAM).info
+info.gz: $(PROGRAM).info.gz
+info.bz2: $(PROGRAM).info.bz2
+info.xz: $(PROGRAM).info.xz
 
 .PHONY: pdf pdf.gz pdf.bz2 pdf.xz
 pdf: $(PROGRAM).pdf
@@ -110,8 +114,8 @@ $(PROGRAM).ps: $(MANE_SRC) $(INCLUDED_SRC) obj/logo.eps
 
 .PHONY: install-info
 install: install-info
-install-info: $(PROGRAM).info.gz
-	install -Dm644 "$<" -- "$(DESTDIR)$(PREFIX)$(DATA)/info/$(PKGNAME).info.gz"
+install-info: $(PROGRAM).info$(INFO_COMPRESS)
+	install -Dm644 "$<" -- "$(DESTDIR)$(PREFIX)$(DATA)/info/$(PKGNAME).info$(INFO_COMPRESS)"
 
 .PHONY: install-pdf
 install: install-pdf
@@ -133,7 +137,7 @@ install-ps: $(PROGRAM).ps$(PS_COMPRESS)
 .PHONY: uninstall-info
 uninstall: uninstall-info
 uninstall-info:
-	-rm -- "$(DESTDIR)$(PREFIX)$(DATA)/doc/$(PKGNAME).info.gz"
+	-rm -- "$(DESTDIR)$(PREFIX)$(DATA)/doc/$(PKGNAME).info$(PDF_COMPRESS)"
 
 .PHONY: uninstall-pdf
 uninstall: uninstall-pdf
