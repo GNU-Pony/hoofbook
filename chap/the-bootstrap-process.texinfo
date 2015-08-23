@@ -1,5 +1,5 @@
-@node The boot process
-@chapter The boot process
+@node The bootstrap process
+@chapter The bootstrap process
 
 Sometimes the esoteric aspects for your computer
 is the most important aspects for your computer.
