@@ -1,0 +1,570 @@
+@node Configuration
+@chapter Configuration
+
+In this chapter will guide you through setting up
+configurations on your system.
+
+@menu
+* /etc/geolocation::
+* /etc/hostname::
+* /etc/localtime::
+* /etc/metar::
+@end menu
+
+
+
+@node /etc/geolocation
+@section @file{/etc/geolocation}
+
+@file{/etc/geolocation} is a cross-application configration
+file, which is not used by any of the GNU/Pony software.
+GNU/Pony does not track your location. This section of the
+hoofbook is merely informational. You do not need to set up
+this file.
+
+@file{/etc/geolocation} is a plain-text file. All lines
+except the first line are ignored, even if the first line
+is empty. The first line shall contain the your geographical
+location measured in the Global Positioning System (GPS),
+and stored in decimal format. The line shall contain the
+latitude and the longitude, separated by any amount of
+whitespace. Users on the southern hemisphere shall specify
+a negative latitude. Users on the western hemisphere shall
+specify negative longitude. The line most be in ASCII, and
+dot (@code{.}) is the decimal point.
+
+Good ways to find your location include using an online
+phonebook, or look up your town on Wikipedia and click on
+``Coordinates'' link (to GeoHack) in the corner. Note that
+Wikipedia does not use decimal format, why you need to
+click on the link. Examples:
+
+@table @asis 
+@iftex
+@item Arc de Triomphe de l@sc{@char 13}Étoile
+@end iftex
+@ifnottex
+@item Arc de Triomphe de l'Étoile
+@end ifnottex
+@example
+48.8738 2.295
+@end example
+
+@item Arch of Constantine
+@example
+41.889722 12.490833
+@end example
+
+@item Big Ben
+@example
+51.500756 -0.124661
+@end example
+
+@item Colosseum
+@example
+41.890169 12.492269
+@end example
+
+@item Eiffel Tower
+@example
+48.858222 2.2945
+@end example
+
+@item Gävle Goat
+@example
+60.6730 17.1464
+@end example
+
+@item Hanging Gardens of Babylon
+@example
+32.5355 44.4275
+@end example
+
+@item Jakobsberg's Windmill
+@example
+59.426111 17.829167
+@end example
+
+@item London Eye
+@example
+51.5033 -0.1197
+@end example
+
+@item Kristall, vertikal accent i glas och stål
+@example
+59.332583 18.065194
+@end example
+
+@item Statue of Liberty
+@example
+40.689167 -74.044444
+@end example
+
+@item The Eden Project
+@example
+50.361944 -4.744722
+@end example
+
+@item Tropical Islands Resort
+@example
+52.0375 13.748611
+@end example
+
+@end table
+
+
+
+@node /etc/hostname
+@section @file{/etc/hostname}
+
+@file{/etc/hostname} is a system configuration file.
+It is a single-line plain-text file that shall contain
+the hostname of the machine.
+
+
+
+@node /etc/metar
+@section @file{/etc/metar}
+
+@file{/etc/metar} is a cross-application configration
+file, which is not used by any of the GNU/Pony software.
+GNU/Pony does not track your location. This section of
+the hoofbook is merely informational. You do not need to
+set up this file.
+
+@file{/etc/metar} is a plain-text file. All lines except
+the first line are ignored, even if the first line is
+empty. The first line shall contain the METAR station
+(weather station, commonly an airport) closest to you. The
+METAR station shall be identified by its four-letter/digit
+International Civil Aviation Organization (ICAO) station
+identifier.
+
+The easiest way to set this up is by installing
+@command{metar} and set up @file{/etc/geolocation}
+(see @ref{/etc/geolocation}), and then run
+
+@example
+metar closest > /etc/geolocation
+@end example
+
+To speed up the process, you can instead run (assuming
+your shell is GNU Bash)
+
+@example
+metar closest <(metar list PREFIX) > /etc/geolocation
+@end example
+
+@noindent
+where @code{PREFIX} is selected from the following list:
+
+@itemize @bullet
+@item Afghanistan:
+@code{'\(EQ\|OA\)'}
+@item Alaska:
+@code{P}
+@item Albania:
+@code{LA}
+@item Algeria:
+@code{DA}
+@item Angola:
+@code{FN}
+@item Antarctica:
+@code{NZ}
+@item Argentina:
+@code{SA}
+@item Armenia:
+@code{'U[DG]'}
+@item Australia:
+@code{'[YA]'}
+@item Austria:
+@code{LO}
+@item Azerbaijan:
+@code{'\(AZ\|UB\)'}
+@item Bahamas:
+@code{'M[BY]'}
+@item Bahrain:
+@code{OB}
+@item Bangladesh:
+@code{VG}
+@item Barbados:
+@code{TB}
+@item Belarus:
+@code{UM}
+@item Belgium:
+@code{EB}
+@item Belize:
+@code{MZ}
+@item Benin:
+@code{DB}
+@item Bermuda:
+@code{TX}
+@item Bhutan:
+@code{VQ}
+@item Bolivia:
+@code{SL}
+@item Bosnia-Herzegovina:
+@code{LQ}
+@item Botswana:
+@code{FB}
+@item Brazil:
+@code{'S[BW]'}
+@item Bulgaria:
+@code{LB}
+@item Burkina Faso:
+@code{DF}
+@item Burma:
+@code{'V[BY]'}
+@item Burundi:
+@code{HB}
+@item Cambodia:
+@code{VD}
+@item Cameroon:
+@code{FK}
+@item Canada:
+@code{C}
+@item Cape Verde:
+@code{GV}
+@item Central African Republic:
+@code{FE}
+@item Chad:
+@code{FT}
+@item Chile:
+@code{SC}
+@item China:
+@code{Z}
+@item Colombia:
+@code{'\(SK\|MC\)'}
+@item Comoros:
+@code{FM}
+@item Congo:
+@code{FC}
+@item Costa Rica:
+@code{MR}
+@item Cote D'Ivoire:
+@code{DI}
+@item Croatia:
+@code{LD}
+@item Cuba:
+@code{MU}
+@item Cyprus:
+@code{LC}
+@item Czech Republic:
+@code{LK}
+@item Denmark:
+@code{EK}
+@item Djibouti:
+@code{'H[DF]'}
+@item Dominica Island:
+@code{TD}
+@item Dominican Republic:
+@code{'\(MD\|TS\)'}
+@item East Timor:
+@code{WP}
+@item Ecuador:
+@code{SE}
+@item Egypt:
+@code{HE}
+@item El Salvador:
+@code{MS}
+@item Equatorial Guinea:
+@code{FG}
+@item Estonia:
+@code{EE}
+@item Ethiopia:
+@code{HA}
+@item Falkland Islands:
+@code{'\(SF\|EG\)'}
+@item Fiji:
+@code{'N[FGL]'}
+@item Finland:
+@code{EF}
+@item France:
+@code{LF}
+@item Gabon:
+@code{FO}
+@item Gambia:
+@code{GB}
+@item Georgia:
+@code{UG}
+@item Germany:
+@code{'E[DT]'}
+@item Ghana:
+@code{DG}
+@item Gibraltar:
+@code{LX}
+@item Grand Cayman:
+@code{MW}
+@item Greece:
+@code{LG}
+@item Greenland:
+@code{'B[GIM]'}
+@item Grenada:
+@code{'\(TG\|MK\)'}
+@item Guatemala:
+@code{MG}
+@item Guinea-Bissau:
+@code{'G[GU]'}
+@item Guyana:
+@code{'S[OY]'}
+@item Haiti:
+@code{'[CM]T'}
+@item Hawaii:
+@code{P}
+@item Honduras:
+@code{'\(MH\|TR\)'}
+@item Hong Kong:
+@code{'\(VH\|HK\)'}
+@item Hungary:
+@code{LH}
+@item Iceland:
+@code{BI}
+@item India:
+@code{'V[AEIO]'}
+@item Indonesia:
+@code{'W[AIR]'}
+@item Iran:
+@code{OI}
+@item Iraq:
+@code{'\(EQ|OR\)'}
+@item Ireland:
+@code{EI}
+@item Israel:
+@code{LL}
+@item Italy:
+@code{LI}
+@item Jamaica:
+@code{MK}
+@item Japan:
+@code{'\(R[JO]\|TA\)'}
+@item Jordan:
+@code{OJ}
+@item Kazakhstan:
+@code{UA}
+@item Kenya:
+@code{HK}
+@item Korea:
+@code{RK}
+@item Kuwait:
+@code{OK}
+@item Kyrgyzstan:
+@code{UC}
+@item Lao:
+@code{VL}
+@item Latvia:
+@code{'\(EV\|UM\)'}
+@item Lebanon:
+@code{OL}
+@item Lesotho:
+@code{FX}
+@item Lesser Antilles:
+@code{'\(MC\|T\)'}
+@item Liberia:
+@code{GL}
+@item Libyan Arab Jamahi:
+@code{HL}
+@item Lithuania:
+@code{EY}
+@item Luxembourg:
+@code{EL}
+@item Macau:
+@code{VM}
+@item Macedonia:
+@code{LW}
+@item Madagascar:
+@code{FM}
+@item Malawi:
+@code{FW}
+@item Malaysia:
+@code{'W[BM]'}
+@item Maldives:
+@code{VR}
+@item Mali:
+@code{GA}
+@item Malta:
+@code{LM}
+@item Marshall Islands:
+@code{'\(PK\|ML\|UJ\|EN\)'}
+@item Mauritania:
+@code{GQ}
+@item Mauritius:
+@code{'F[IJ]'}
+@item Mexico:
+@code{MM}
+@item Micronesia:
+@code{'P[GT]'}
+@item Moldova:
+@code{'\(LU\|UK\)'}
+@item Montserrat:
+@code{TR}
+@item Morocco:
+@code{GM}
+@item Mozambique:
+@code{FQ}
+@item Myanmar:
+@code{'V[BY]'}
+@item Namibia:
+@code{FY}
+@item Nepal:
+@code{VN}
+@item Netherlands:
+@code{EH}
+@item New Caledonia:
+@code{NW}
+@item New Zealand:
+@code{NZ}
+@item Nicaragua:
+@code{MN}
+@item Niger:
+@code{DR}
+@item Nigeria:
+@code{DN}
+@item Norway:
+@code{EN}
+@item Oman:
+@code{OO}
+@item Pakistan:
+@code{OP}
+@item Panama:
+@code{MP}
+@item Papua New Guinea:
+@code{AY}
+@item Paraguay:
+@code{SG}
+@item Peru:
+@code{SP}
+@item Philippines:
+@code{RP}
+@item Poland:
+@code{EP}
+@item Polynesia:
+@code{'N[CILSTW]'}
+@item Portugal:
+@code{LP}
+@item Principe:
+@code{FP}
+@item Puerto Rico:
+@code{TJ}
+@item Qatar:
+@code{OT}
+@item Reunion:
+@code{FM}
+@item Romania:
+@code{LR}
+@item Russian Federation:
+@code{U}
+@item Rwanda:
+@code{HR}
+@item Sahara Occidental:
+@code{GS}
+@item Saint Helena:
+@code{FH}
+@item Samoa:
+@code{'N[CILSTW]'}
+@item Sao Tome:
+@code{FP}
+@item Saudi Arabia:
+@code{OE}
+@item Senegal:
+@code{GO}
+@item Seychelles:
+@code{FS}
+@item Sierra Leone:
+@code{GF}
+@item Singapore:
+@code{WS}
+@item Slovakia:
+@code{LZ}
+@item Slovenia:
+@code{LJ}
+@item Solomon Islands:
+@code{AG}
+@item Somalia:
+@code{HC}
+@item South Africa:
+@code{FA}
+@item Spain:
+@code{'\(LE\|G[CE]\)'}
+@item Sri Lanka:
+@code{VC}
+@item Sudan:
+@code{HS}
+@item Suriname:
+@code{SM}
+@item Swaziland:
+@code{FD}
+@item Sweden:
+@code{ES}
+@item Switzerland:
+@code{LS}
+@item Syria:
+@code{OS}
+@item Tadjikistan:
+@code{UT}
+@item Taiwan:
+@code{RC}
+@item Tanzania:
+@code{HT}
+@item Thailand:
+@code{VT}
+@item Togo:
+@code{DX}
+@item Tonga:
+@code{'N[FGL]'}
+@item Trinidad Tobago:
+@code{TT}
+@item Tunisia:
+@code{DT}
+@item Turkey:
+@code{LT}
+@item Turkmenistan:
+@code{UT}
+@item Tuvalu:
+@code{'N[FGL]'}
+@item Uganda:
+@code{HU}
+@item Ukraine:
+@code{'U[KR]'}
+@item United Arab Emirates:
+@code{OM}
+@item United Kingdom:
+@code{EG}
+@item United States:
+@code{'\([PK]\|ML\)'}
+@item Uruguay:
+@code{SU}
+@item Uzbekistan:
+@code{UT}
+@item Vanuatu:
+@code{NV}
+@item Venezuela:
+@code{'[SM]V'}
+@item Vietnam:
+@code{'V[V-Y]'}
+@item Virgin Islands:
+@code{'\(KS\|T\)'}
+@item Yemen:
+@code{'O[YD]'}
+@item Yugoslavia:
+@code{'\(BK\|L[QY]\)'}
+@item Zaire:
+@code{FZ}
+@item Zambia:
+@code{FL}
+@item Zimbabwe:
+@code{FV}
+@end itemize
+
+
+
+@node /etc/localtime
+@section @file{/etc/localtime}
+
+@file{/etc/localtime} is a system configuration file. It shall
+be a symbolic link to the file in @file{/usr/share/zoneinfo}
+that describes the user's time zone in a summer time--standard
+time-independent way. For example, if you are in Sweden, you
+would make @file{/etc/localtime} a symbolic link to
+@file{/usr/share/zoneinfo/Europe/Stockholm} --- the time zone
+is Europe/Stockholm.
+
