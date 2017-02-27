@@ -336,7 +336,7 @@ performance of the available systems
 type running
 @command{cryptsetup benchmark}.
 To encrypt a non-formatted partition
-using the serpent-xts-plain64 cipher
+using the aes-xts-plain64 cipher
 (required Linux 2.6.33 or a newer
 kernel), with 512-bit key-size and
 a passhrase hashed with SHA512
@@ -346,12 +346,12 @@ run (for partition @file{/dev/sdx99})
 run:
 
 @example
-cryptsetup --cipher     serpent-xts-plain64 \
-           --key-size   512                 \
-           --hash       sha512              \
-           --iter-time  5000                \
-           --use-random                     \
-           --verify-passphrase              \
+cryptsetup --cipher     aes-xts-plain64 \
+           --key-size   512             \
+           --hash       sha512          \
+           --iter-time  5000            \
+           --use-random                 \
+           --verify-passphrase          \
            luksFormat /dev/sdx99
 @end example
 
